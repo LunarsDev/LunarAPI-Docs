@@ -8,7 +8,7 @@ Usage: $me [<options>] <command> [<command-options>]
 Run commands related to the slate process.
 
 Commands:
-
+  update                  Update the application to the lastest git commit.
   serve                   Run the middleman server process, useful for
                           development.
   build                   Run the build process.
@@ -36,6 +36,10 @@ run_serve() {
 
 run_build() {
   bundle exec middleman build --clean
+}
+
+run_update() {
+  git fetch --all && git reset --hard origin/main
 }
 
 parse_args() {
@@ -240,6 +244,8 @@ if [ "${command}" = "serve" ]; then
   run_serve
 elif [[ "${command}" = "build" ]]; then
   run_build
+elif [[ "${command}" = "update" ]]; then
+  run_update
 elif [[ ${command} = "deploy" ]]; then
   if [[ ${no_build} != true ]]; then
     run_build
