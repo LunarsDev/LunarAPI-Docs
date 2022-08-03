@@ -1,14 +1,11 @@
 ---
-title: API Reference
+title: Lunar API
 
 language_tabs: # must be one of https://git.io/vQNgJ
-  - shell
-  - ruby
   - python
-  - javascript
 
 toc_footers:
-  - <a href='#'>Sign Up for a Developer Key</a>
+  - <a href='lunardev.group/apply'>Sign Up for a Developer Key</a>
   - <a href='https://github.com/slatedocs/slate'>Documentation Powered by Slate</a>
 
 includes:
@@ -20,67 +17,55 @@ code_clipboard: true
 
 meta:
   - name: description
-    content: Documentation for the Kittn API
+    content: Documentation for the Lunar API
 ---
 
 # Introduction
 
-Welcome to the Kittn API! You can use our API to access Kittn API endpoints, which can get information on various cats, kittens, and breeds in our database.
+Welcome to the Lunar API! With our async API, you can retrieve image data for NSFW images of multiple categories. Image generation, such as welcome banners, memes, and more!
 
-We have language bindings in Shell, Ruby, Python, and JavaScript! You can view code examples in the dark area to the right, and you can switch the programming language of the examples with the tabs in the top right.
-
-This example API documentation page was created with [Slate](https://github.com/slatedocs/slate). Feel free to edit it and use it as a base for your own API's documentation.
+We have language bindings in Python! You can view code examples in the dark area to the right, and you can switch the programming language of the examples with the tabs in the top right (only currently supported languages are provided a tab).
 
 # Authentication
 
 > To authorize, use this code:
 
-```ruby
-require 'kittn'
-
-api = Kittn::APIClient.authorize!('meowmeowmeow')
-```
-
 ```python
-import kittn
+from pylunar import Client, endpoints
+from aiohttp import ClientSession
+import asyncio
 
-api = kittn.authorize('meowmeowmeow')
+token = "Bearer <JWT>" # Replace with your Lunar API Key.
+
+async def main():
+  async with ClientSession() as session:
+    client = Client(session=session, token=token)
+
+    image = await client.request(endpoints.generate_achievement, text="Woo! I made a request!")
+    await image.save("image.jpg")  
+
+    nsfw_jpg = await client.request(endpoints.nsfw("jpg"))
+    data = await nsfw_jpg.to_dict()
+    print("Image URL is", data["url"])
+
+asyncio.run(main())
 ```
 
-```shell
-# With shell, you can just pass the correct header with each request
-curl "api_endpoint_here" \
-  -H "Authorization: meowmeowmeow"
-```
+> Make sure to replace `Bearer <JWT>` with your API key.
 
-```javascript
-const kittn = require('kittn');
+Lunar API uses API keys to allow access to the API. You can apply for an API key at our [application page](https://lunardev.group/apply) or request on directly in our [Discord](https://lunardev.group/discord)
 
-let api = kittn.authorize('meowmeowmeow');
-```
+Lunar expects for the API key to be included in all API requests to the server in a header that looks like the following:
 
-> Make sure to replace `meowmeowmeow` with your API key.
-
-Kittn uses API keys to allow access to the API. You can register a new Kittn API key at our [developer portal](http://example.com/developers).
-
-Kittn expects for the API key to be included in all API requests to the server in a header that looks like the following:
-
-`Authorization: meowmeowmeow`
+`Authorization: Bearer eyJ0eXAiORX00IsyJzW4Ovsux-ciOiJIUzI1NiJ9.eyJpYXQiOjE2NTg3MjE0NDUsIm5iZiI6MTY1ODcyMTQ0NSwianRpIjoiNDQ5MDkwZjQtNTg5NC00ODNiLTkzMDEtMWU3OTNlMzJmZmRkIiwiaWRlbnRpdHkiOiJMdW5hciIsImZyZXNoIjpmYWxzZSwidHlwZSI6ImFjY2VzcyJ9.nJsgmXX6jy1BZX8soYuQcDwUXM`
 
 <aside class="notice">
-You must replace <code>meowmeowmeow</code> with your personal API key.
+You must replace <code>Bearer JWT</code> with your personal API key.
 </aside>
 
-# Kittens
+# Image Generation
 
-## Get All Kittens
-
-```ruby
-require 'kittn'
-
-api = Kittn::APIClient.authorize!('meowmeowmeow')
-api.kittens.get
-```
+## Welcome Image Generation
 
 ```python
 import kittn
@@ -89,157 +74,25 @@ api = kittn.authorize('meowmeowmeow')
 api.kittens.get()
 ```
 
-```shell
-curl "http://example.com/api/kittens" \
-  -H "Authorization: meowmeowmeow"
+> The above command returns a Bytes-like object:
+
+```
+[Image]
 ```
 
-```javascript
-const kittn = require('kittn');
-
-let api = kittn.authorize('meowmeowmeow');
-let kittens = api.kittens.get();
-```
-
-> The above command returns JSON structured like this:
-
-```json
-[
-  {
-    "id": 1,
-    "name": "Fluffums",
-    "breed": "calico",
-    "fluffiness": 6,
-    "cuteness": 7
-  },
-  {
-    "id": 2,
-    "name": "Max",
-    "breed": "unknown",
-    "fluffiness": 5,
-    "cuteness": 10
-  }
-]
-```
-
-This endpoint retrieves all kittens.
+This endpoint generates a welcome image
 
 ### HTTP Request
 
-`GET http://example.com/api/kittens`
+`GET https://api.lunardev.group/gen/welcome?avatar=url&username=text`
 
 ### Query Parameters
 
-Parameter | Default | Description
---------- | ------- | -----------
-include_cats | false | If set to true, the result will also include cats.
-available | true | If set to false, the result will include kittens that have already been adopted.
+Parameter | Default | Description | Required
+--------- | ------- | ----------- | -----------
+avatar | null | Set the profile image in the image. | True
+username | null | Set the username for the user in the image | True
 
 <aside class="success">
-Remember — a happy kitten is an authenticated kitten!
+Remember — This is returning a bytes-like object!
 </aside>
-
-## Get a Specific Kitten
-
-```ruby
-require 'kittn'
-
-api = Kittn::APIClient.authorize!('meowmeowmeow')
-api.kittens.get(2)
-```
-
-```python
-import kittn
-
-api = kittn.authorize('meowmeowmeow')
-api.kittens.get(2)
-```
-
-```shell
-curl "http://example.com/api/kittens/2" \
-  -H "Authorization: meowmeowmeow"
-```
-
-```javascript
-const kittn = require('kittn');
-
-let api = kittn.authorize('meowmeowmeow');
-let max = api.kittens.get(2);
-```
-
-> The above command returns JSON structured like this:
-
-```json
-{
-  "id": 2,
-  "name": "Max",
-  "breed": "unknown",
-  "fluffiness": 5,
-  "cuteness": 10
-}
-```
-
-This endpoint retrieves a specific kitten.
-
-<aside class="warning">Inside HTML code blocks like this one, you can't use Markdown, so use <code>&lt;code&gt;</code> blocks to denote code.</aside>
-
-### HTTP Request
-
-`GET http://example.com/kittens/<ID>`
-
-### URL Parameters
-
-Parameter | Description
---------- | -----------
-ID | The ID of the kitten to retrieve
-
-## Delete a Specific Kitten
-
-```ruby
-require 'kittn'
-
-api = Kittn::APIClient.authorize!('meowmeowmeow')
-api.kittens.delete(2)
-```
-
-```python
-import kittn
-
-api = kittn.authorize('meowmeowmeow')
-api.kittens.delete(2)
-```
-
-```shell
-curl "http://example.com/api/kittens/2" \
-  -X DELETE \
-  -H "Authorization: meowmeowmeow"
-```
-
-```javascript
-const kittn = require('kittn');
-
-let api = kittn.authorize('meowmeowmeow');
-let max = api.kittens.delete(2);
-```
-
-> The above command returns JSON structured like this:
-
-```json
-{
-  "id": 2,
-  "deleted" : ":("
-}
-```
-
-This endpoint deletes a specific kitten.
-
-### HTTP Request
-
-`DELETE http://example.com/kittens/<ID>`
-
-### URL Parameters
-
-Parameter | Description
---------- | -----------
-ID | The ID of the kitten to delete
-
