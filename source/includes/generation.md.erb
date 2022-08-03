@@ -1,0 +1,43 @@
+# Image Generation
+
+## Welcome Image Generation
+
+```python
+from pylunar import Client, endpoints
+from aiohttp import ClientSession
+import asyncio
+
+token = ""  # Replace with your Lunar API Key.
+
+async def main():
+    async with ClientSession() as session:
+        client = Client(session=session, token=token)
+
+        image = await client.request(endpoints.generate_achievement, text="Woo! I made a request!")
+        await image.save("image.jpg")
+
+asyncio.run(main())
+```
+
+> The above command returns a Bytes-like object:
+
+```
+[Image]
+```
+
+This endpoint generates a welcome image
+
+### HTTP Request
+
+`GET https://api.lunardev.group/gen/welcome?avatar=url&username=text`
+
+### Query Parameters
+
+Parameter | Default | Description | Required
+--------- | ------- | ----------- | -----------
+avatar | null | Set the profile image in the image. | True
+username | null | Set the username for the user in the image | True
+
+<aside class="success">
+Remember — This is returning a bytes-like object!
+</aside>
