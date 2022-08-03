@@ -1,0 +1,29 @@
+# Authentication
+
+> To authorize, use this code:
+
+```python
+from pylunar import Client, endpoints
+from aiohttp import ClientSession
+import asyncio
+
+token = "Bearer <JWT>" # Replace with your Lunar API Key.
+
+async def main():
+  async with ClientSession() as session:
+    client = Client(session=session, token=token)
+
+asyncio.run(main())
+```
+
+> Make sure to replace `Bearer <JWT>` with your API key.
+
+Lunar API uses API keys to allow access to the API. You can apply for an API key at our [application page](https://lunardev.group/apply) or request on directly in our [Discord](https://lunardev.group/discord)
+
+Lunar expects for the API key to be included in all API requests to the server in a header that looks like the following:
+
+`Authorization: Bearer eyJ0eXAiORX00IsyJzW4Ovsux-ciOiJIUzI1NiJ9.eyJpYXQiOjE2NTg3MjE0NDUsIm5iZiI6MTY1ODcyMTQ0NSwianRpIjoiNDQ5MDkwZjQtNTg5NC00ODNiLTkzMDEtMWU3OTNlMzJmZmRkIiwiaWRlbnRpdHkiOiJMdW5hciIsImZyZXNoIjpmYWxzZSwidHlwZSI6ImFjY2VzcyJ9.nJsgmXX6jy1BZX8soYuQcDwUXM`
+
+<aside class="notice">
+You must replace <code>Bearer JWT</code> with your personal API key.
+</aside>
