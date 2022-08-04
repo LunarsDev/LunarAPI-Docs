@@ -1,0 +1,60 @@
+# Image API (NSFW) 
+
+## Ahegao
+
+```python
+from pylunar import Client, endpoints
+from aiohttp import ClientSession
+import asyncio
+
+token = ""  # Replace with your Lunar API Key.
+
+async def main():
+    async with ClientSession() as session:
+        client = Client(session=session, token=token)
+
+        image = await client.request(endpoints.nsfw("ahegao"))
+        print(await image.to_dict())
+
+asyncio.run(main())
+
+### Discord.py Usage:
+import pylunar
+
+@commands.command()
+async def ahegao(self, ctx):
+    async with aiohttp.ClientSession() as session:
+        client = pylunar.Client(
+            session=session,
+            token=token,
+        )
+        image = await client.request(
+            pylunar.endpoints.nsfw("ahegao")
+        )
+        data = await image.to_dict()
+
+        await ctx.send(f"{data["url"]}")
+```
+
+> The above returns a JSON object:
+
+```json
+{
+    "id": "ahegao_MF2cWkDS7",
+    "url: "https://api.lunardev.group/ahegao/ahegao_MF2cWkDS7.jpg"
+}
+```
+
+This endpoint generates a JSON object
+
+### HTTP Request
+
+`GET https://api.lunardev.group/nsfw/ahegao`
+
+### Query Parameters
+
+NONE :D
+
+<aside class="success">
+Remember — This is returning a JSON object!
+</aside>
