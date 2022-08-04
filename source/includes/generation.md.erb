@@ -175,3 +175,115 @@ image | null | Set the image top place on the meme. | True
 
 ### Result:
 <%= image_tag "images/gen_amiajoke.png" %>
+
+## Bad
+
+```python
+from pylunar import Client, endpoints
+from aiohttp import ClientSession
+import asyncio
+
+token = ""  # Replace with your Lunar API Key.
+
+async def main():
+    async with ClientSession() as session:
+        client = Client(session=session, token=token)
+
+        image = await client.request(endpoints.generate_bad, image="https://docs.lunardev.group/images/logo.png")
+        await image.save("image.jpg")
+
+asyncio.run(main())
+
+### Discord.py Usage:
+import pylunar
+
+@commands.command()
+async def amiajoke(self, ctx, *, user: discord.User):
+    async with aiohttp.ClientSession() as session:
+        client = pylunar.Client(
+            session=session,
+            token=token,
+        )
+        image = await client.request(
+            pylunar.endpoints.generate_bad, image=user.avatar.url
+        )
+
+        await ctx.send(file=await image.file())
+```
+
+> The above returns a Bytes-like object:
+
+```
+[Image]
+```
+
+This endpoint generates a meme
+
+### HTTP Request
+
+`GET https://api.lunardev.group/gen/bad?image=url`
+
+### Query Parameters
+
+Parameter | Default | Description | Required
+--------- | ------- | ----------- | -----------
+image | null | Set the image top place on the meme. | True
+
+### Result:
+<%= image_tag "images/gen_bad.png" %>
+
+## Calling
+
+```python
+from pylunar import Client, endpoints
+from aiohttp import ClientSession
+import asyncio
+
+token = ""  # Replace with your Lunar API Key.
+
+async def main():
+    async with ClientSession() as session:
+        client = Client(session=session, token=token)
+
+        image = await client.request(endpoints.generate_calling,text="Ring ring haha")
+        await image.save("image.jpg")
+
+asyncio.run(main())
+
+### Discord.py Usage:
+import pylunar
+
+@commands.command()
+async def amiajoke(self, ctx, *, text: str):
+    async with aiohttp.ClientSession() as session:
+        client = pylunar.Client(
+            session=session,
+            token=token,
+        )
+        image = await client.request(
+            pylunar.endpoints.generate_calling, text=text
+        )
+
+        await ctx.send(file=await image.file())
+```
+
+> The above returns a Bytes-like object:
+
+```
+[Image]
+```
+
+This endpoint generates a meme. Tbh we don't understand this meme, we just wanted more memes.
+
+### HTTP Request
+
+`GET https://api.lunardev.group/gen/calling?text=text`
+
+### Query Parameters
+
+Parameter | Default | Description | Required
+--------- | ------- | ----------- | -----------
+text | null | Set the text for the meme. | True
+
+### Result:
+<%= image_tag "images/gen_calling.png" %>
