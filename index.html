@@ -1,0 +1,1452 @@
+
+<!doctype html>
+<html>
+  <head>
+    <link href="images/favicon-e9b2c400.ico" rel="icon" type="image/ico" />
+    <meta charset="utf-8">
+    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+        <meta
+            name="description"
+            content="Documentation for the Lunar API"
+        >
+    <title>Lunar API</title>
+
+    <style media="screen">
+      .highlight table td { padding: 5px; }
+.highlight table pre { margin: 0; }
+.highlight .gh {
+  color: #999999;
+}
+.highlight .sr {
+  color: #f6aa11;
+}
+.highlight .go {
+  color: #888888;
+}
+.highlight .gp {
+  color: #555555;
+}
+.highlight .gs {
+}
+.highlight .gu {
+  color: #aaaaaa;
+}
+.highlight .nb {
+  color: #f6aa11;
+}
+.highlight .cm {
+  color: #75715e;
+}
+.highlight .cp {
+  color: #75715e;
+}
+.highlight .c1 {
+  color: #75715e;
+}
+.highlight .cs {
+  color: #75715e;
+}
+.highlight .c, .highlight .ch, .highlight .cd, .highlight .cpf {
+  color: #75715e;
+}
+.highlight .err {
+  color: #960050;
+}
+.highlight .gr {
+  color: #960050;
+}
+.highlight .gt {
+  color: #960050;
+}
+.highlight .gd {
+  color: #49483e;
+}
+.highlight .gi {
+  color: #49483e;
+}
+.highlight .ge {
+  color: #49483e;
+}
+.highlight .kc {
+  color: #66d9ef;
+}
+.highlight .kd {
+  color: #66d9ef;
+}
+.highlight .kr {
+  color: #66d9ef;
+}
+.highlight .no {
+  color: #66d9ef;
+}
+.highlight .kt {
+  color: #66d9ef;
+}
+.highlight .mf {
+  color: #ae81ff;
+}
+.highlight .mh {
+  color: #ae81ff;
+}
+.highlight .il {
+  color: #ae81ff;
+}
+.highlight .mi {
+  color: #ae81ff;
+}
+.highlight .mo {
+  color: #ae81ff;
+}
+.highlight .m, .highlight .mb, .highlight .mx {
+  color: #ae81ff;
+}
+.highlight .sc {
+  color: #ae81ff;
+}
+.highlight .se {
+  color: #ae81ff;
+}
+.highlight .ss {
+  color: #ae81ff;
+}
+.highlight .sd {
+  color: #e6db74;
+}
+.highlight .s2 {
+  color: #e6db74;
+}
+.highlight .sb {
+  color: #e6db74;
+}
+.highlight .sh {
+  color: #e6db74;
+}
+.highlight .si {
+  color: #e6db74;
+}
+.highlight .sx {
+  color: #e6db74;
+}
+.highlight .s1 {
+  color: #e6db74;
+}
+.highlight .s, .highlight .sa, .highlight .dl {
+  color: #e6db74;
+}
+.highlight .na {
+  color: #a6e22e;
+}
+.highlight .nc {
+  color: #a6e22e;
+}
+.highlight .nd {
+  color: #a6e22e;
+}
+.highlight .ne {
+  color: #a6e22e;
+}
+.highlight .nf, .highlight .fm {
+  color: #a6e22e;
+}
+.highlight .vc {
+  color: #ffffff;
+}
+.highlight .nn {
+  color: #ffffff;
+}
+.highlight .ni {
+  color: #ffffff;
+}
+.highlight .bp {
+  color: #ffffff;
+}
+.highlight .vg {
+  color: #ffffff;
+}
+.highlight .vi {
+  color: #ffffff;
+}
+.highlight .nv, .highlight .vm {
+  color: #ffffff;
+}
+.highlight .w {
+  color: #ffffff;
+}
+.highlight {
+  color: #ffffff;
+}
+.highlight .n, .highlight .py, .highlight .nx {
+  color: #ffffff;
+}
+.highlight .nl {
+  color: #f92672;
+}
+.highlight .ow {
+  color: #f92672;
+}
+.highlight .nt {
+  color: #f92672;
+}
+.highlight .k, .highlight .kv {
+  color: #f92672;
+}
+.highlight .kn {
+  color: #f92672;
+}
+.highlight .kp {
+  color: #f92672;
+}
+.highlight .o {
+  color: #f92672;
+}
+    </style>
+    <style media="print">
+      * {
+        -webkit-transition:none!important;
+        transition:none!important;
+      }
+      .highlight table td { padding: 5px; }
+.highlight table pre { margin: 0; }
+.highlight, .highlight .w {
+  color: #586e75;
+}
+.highlight .err {
+  color: #002b36;
+  background-color: #dc322f;
+}
+.highlight .c, .highlight .ch, .highlight .cd, .highlight .cm, .highlight .cpf, .highlight .c1, .highlight .cs {
+  color: #657b83;
+}
+.highlight .cp {
+  color: #b58900;
+}
+.highlight .nt {
+  color: #b58900;
+}
+.highlight .o, .highlight .ow {
+  color: #93a1a1;
+}
+.highlight .p, .highlight .pi {
+  color: #93a1a1;
+}
+.highlight .gi {
+  color: #859900;
+}
+.highlight .gd {
+  color: #dc322f;
+}
+.highlight .gh {
+  color: #268bd2;
+  background-color: #002b36;
+  font-weight: bold;
+}
+.highlight .k, .highlight .kn, .highlight .kp, .highlight .kr, .highlight .kv {
+  color: #6c71c4;
+}
+.highlight .kc {
+  color: #cb4b16;
+}
+.highlight .kt {
+  color: #cb4b16;
+}
+.highlight .kd {
+  color: #cb4b16;
+}
+.highlight .s, .highlight .sb, .highlight .sc, .highlight .dl, .highlight .sd, .highlight .s2, .highlight .sh, .highlight .sx, .highlight .s1 {
+  color: #859900;
+}
+.highlight .sa {
+  color: #6c71c4;
+}
+.highlight .sr {
+  color: #2aa198;
+}
+.highlight .si {
+  color: #d33682;
+}
+.highlight .se {
+  color: #d33682;
+}
+.highlight .nn {
+  color: #b58900;
+}
+.highlight .nc {
+  color: #b58900;
+}
+.highlight .no {
+  color: #b58900;
+}
+.highlight .na {
+  color: #268bd2;
+}
+.highlight .m, .highlight .mb, .highlight .mf, .highlight .mh, .highlight .mi, .highlight .il, .highlight .mo, .highlight .mx {
+  color: #859900;
+}
+.highlight .ss {
+  color: #859900;
+}
+    </style>
+    <link href="stylesheets/screen-c9d8fa83.css" rel="stylesheet" media="screen" />
+    <link href="stylesheets/print-953e3353.css" rel="stylesheet" media="print" />
+      <script src="javascripts/all-b12a2749.js"></script>
+
+    <script>
+      $(function() { setupCodeCopy(); });
+    </script>
+  </head>
+
+  <body class="index" data-languages="[&quot;python&quot;]">
+    <a href="#" id="nav-button">
+      <span>
+        NAV
+        <img src="images/navbar-cad8cdcb.png" alt="" />
+      </span>
+    </a>
+    <div class="toc-wrapper">
+      <img src="images/logo-a1f45b97.png" class="logo" alt="" />
+        <div class="lang-selector">
+              <a href="#" data-language-name="python">python</a>
+        </div>
+        <div class="search">
+          <input type="text" class="search" id="input-search" placeholder="Search">
+        </div>
+        <ul class="search-results"></ul>
+      <ul id="toc" class="toc-list-h1">
+          <li>
+            <a href="#introduction" class="toc-h1 toc-link" data-title="Introduction">Introduction</a>
+          </li>
+          <li>
+            <a href="#authentication" class="toc-h1 toc-link" data-title="Authentication">Authentication</a>
+          </li>
+          <li>
+            <a href="#image-generation" class="toc-h1 toc-link" data-title="Image Generation">Image Generation</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#welcome" class="toc-h2 toc-link" data-title="Welcome">Welcome</a>
+                  </li>
+                  <li>
+                    <a href="#achievement" class="toc-h2 toc-link" data-title="Achievement">Achievement</a>
+                  </li>
+                  <li>
+                    <a href="#amiajoke" class="toc-h2 toc-link" data-title="Amiajoke">Amiajoke</a>
+                  </li>
+                  <li>
+                    <a href="#bad" class="toc-h2 toc-link" data-title="Bad">Bad</a>
+                  </li>
+                  <li>
+                    <a href="#calling" class="toc-h2 toc-link" data-title="Calling">Calling</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#image-api-nsfw" class="toc-h1 toc-link" data-title="Image API (NSFW)">Image API (NSFW)</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#ahegao" class="toc-h2 toc-link" data-title="Ahegao">Ahegao</a>
+                  </li>
+                  <li>
+                    <a href="#ass" class="toc-h2 toc-link" data-title="Ass">Ass</a>
+                  </li>
+                  <li>
+                    <a href="#boobs" class="toc-h2 toc-link" data-title="Boobs">Boobs</a>
+                  </li>
+                  <li>
+                    <a href="#cum" class="toc-h2 toc-link" data-title="Cum">Cum</a>
+                  </li>
+                  <li>
+                    <a href="#gif" class="toc-h2 toc-link" data-title="Gif">Gif</a>
+                  </li>
+                  <li>
+                    <a href="#hololive" class="toc-h2 toc-link" data-title="Hololive">Hololive</a>
+                  </li>
+                  <li>
+                    <a href="#jpg" class="toc-h2 toc-link" data-title="Jpg">Jpg</a>
+                  </li>
+                  <li>
+                    <a href="#neko" class="toc-h2 toc-link" data-title="Neko">Neko</a>
+                  </li>
+                  <li>
+                    <a href="#panties" class="toc-h2 toc-link" data-title="Panties">Panties</a>
+                  </li>
+                  <li>
+                    <a href="#thighs" class="toc-h2 toc-link" data-title="Thighs">Thighs</a>
+                  </li>
+                  <li>
+                    <a href="#yuri" class="toc-h2 toc-link" data-title="Yuri">Yuri</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#errors" class="toc-h1 toc-link" data-title="Errors">Errors</a>
+          </li>
+      </ul>
+    </div>
+    <div class="page-wrapper">
+      <div class="dark-box"></div>
+      <div class="content">
+        <h1 id='introduction'>Introduction</h1>
+<p>Welcome to the Lunar API! With our async API, you can retrieve image data for NSFW images of multiple categories. Image generation, such as welcome banners, memes, and more!</p>
+
+<p>We have language bindings in Python! You can view code examples in the dark area to the right, and you can switch the programming language of the examples with the tabs in the top right (only currently supported languages are provided a tab).</p>
+
+<p><em>All examples are in assumption that our wrapper is being used.</em></p>
+
+<p><strong>Content Warning: This API includes NSFW content underneath the <code>Image API (NSFW)</code> section.</strong></p>
+
+<blockquote>
+<p>The Python wrapper is not yet publically available.</p>
+
+<blockquote>
+<p>ETA: ~2 weeks</p>
+</blockquote>
+</blockquote>
+<h1 id='authentication'>Authentication</h1>
+<blockquote>
+<p>To authorize, use this code:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight python tab-python"><code><span class="kn">from</span> <span class="nn">pylunar</span> <span class="kn">import</span> <span class="n">Client</span><span class="p">,</span> <span class="n">endpoints</span>
+<span class="kn">from</span> <span class="nn">aiohttp</span> <span class="kn">import</span> <span class="n">ClientSession</span>
+<span class="kn">import</span> <span class="nn">asyncio</span>
+
+<span class="n">token</span> <span class="o">=</span> <span class="s">"&lt;JWT&gt;"</span> <span class="c1"># Replace with your Lunar API Key.
+</span>
+<span class="k">async</span> <span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
+  <span class="k">async</span> <span class="k">with</span> <span class="n">ClientSession</span><span class="p">()</span> <span class="k">as</span> <span class="n">session</span><span class="p">:</span>
+    <span class="n">client</span> <span class="o">=</span> <span class="n">Client</span><span class="p">(</span><span class="n">session</span><span class="o">=</span><span class="n">session</span><span class="p">,</span> <span class="n">token</span><span class="o">=</span><span class="n">token</span><span class="p">)</span>
+
+<span class="n">asyncio</span><span class="p">.</span><span class="n">run</span><span class="p">(</span><span class="n">main</span><span class="p">())</span>
+</code></pre></div>
+<blockquote>
+<p>Make sure to replace <code>&lt;JWT&gt;</code> with your API key.</p>
+</blockquote>
+
+<p>Lunar API uses API keys to allow access to the API. You can apply for an API key at our <a href="https://lunardev.group/apply">application page</a> or request on directly in our <a href="https://lunardev.group/discord">Discord</a></p>
+
+<p>Lunar expects for the API key to be included in all API requests to the server in a header that looks like the following:</p>
+
+<p><code>Authorization: eyJ0eXAiORX00IsyJzW4Ovsux-ciOiJIUzI1NiJ9.eyJpYXQiOjE2NTg3MjE0NDUsIm5iZiI6MTY1ODcyMTQ0NSwianRpIjoiNDQ5MDkwZjQtNTg5NC00ODNiLTkzMDEtMWU3OTNlMzJmZmRkIiwiaWRlbnRpdHkiOiJMdW5hciIsImZyZXNoIjpmYWxzZSwidHlwZSI6ImFjY2VzcyJ9.nJsgmXX6jy1BZX8soYuQcDwUXM</code></p>
+
+<aside class="notice">
+You must replace <code>JWT</code> with your personal API key.
+</aside>
+<h1 id='image-generation'>Image Generation</h1><h2 id='welcome'>Welcome</h2><div class="highlight"><pre class="highlight python tab-python"><code><span class="kn">from</span> <span class="nn">pylunar</span> <span class="kn">import</span> <span class="n">Client</span><span class="p">,</span> <span class="n">endpoints</span>
+<span class="kn">from</span> <span class="nn">aiohttp</span> <span class="kn">import</span> <span class="n">ClientSession</span>
+<span class="kn">import</span> <span class="nn">asyncio</span>
+
+<span class="n">token</span> <span class="o">=</span> <span class="s">""</span>  <span class="c1"># Replace with your Lunar API Key.
+</span>
+<span class="k">async</span> <span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
+    <span class="k">async</span> <span class="k">with</span> <span class="n">ClientSession</span><span class="p">()</span> <span class="k">as</span> <span class="n">session</span><span class="p">:</span>
+        <span class="n">client</span> <span class="o">=</span> <span class="n">Client</span><span class="p">(</span><span class="n">session</span><span class="o">=</span><span class="n">session</span><span class="p">,</span> <span class="n">token</span><span class="o">=</span><span class="n">token</span><span class="p">)</span>
+
+        <span class="n">image</span> <span class="o">=</span> <span class="k">await</span> <span class="n">client</span><span class="p">.</span><span class="n">request</span><span class="p">(</span><span class="n">endpoints</span><span class="p">.</span><span class="n">generate_welcome</span><span class="p">,</span> <span class="n">avatar</span><span class="o">=</span><span class="s">"https://docs.lunardev.group/images/logo.png"</span><span class="p">,</span> <span class="n">username</span><span class="o">=</span><span class="s">"WinterFe"</span><span class="p">)</span>
+        <span class="k">await</span> <span class="n">image</span><span class="p">.</span><span class="n">save</span><span class="p">(</span><span class="s">"image.jpg"</span><span class="p">)</span>
+
+<span class="n">asyncio</span><span class="p">.</span><span class="n">run</span><span class="p">(</span><span class="n">main</span><span class="p">())</span>
+
+<span class="c1">### Discord.py Usage:
+</span>
+<span class="o">@</span><span class="n">commands</span><span class="p">.</span><span class="n">command</span><span class="p">()</span>
+<span class="k">async</span> <span class="k">def</span> <span class="nf">welcome</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ctx</span><span class="p">,</span> <span class="o">*</span><span class="p">,</span> <span class="n">user</span><span class="p">:</span> <span class="n">Member</span><span class="p">):</span>
+    <span class="k">async</span> <span class="k">with</span> <span class="n">aiohttp</span><span class="p">.</span><span class="n">ClientSession</span><span class="p">()</span> <span class="k">as</span> <span class="n">session</span><span class="p">:</span>
+        <span class="n">client</span> <span class="o">=</span> <span class="n">pylunar</span><span class="p">.</span><span class="n">Client</span><span class="p">(</span>
+            <span class="n">session</span><span class="o">=</span><span class="n">session</span><span class="p">,</span>
+            <span class="n">token</span><span class="o">=</span><span class="n">token</span><span class="p">,</span>
+        <span class="p">)</span>
+        <span class="n">image</span> <span class="o">=</span> <span class="k">await</span> <span class="n">client</span><span class="p">.</span><span class="n">request</span><span class="p">(</span>
+            <span class="n">pylunar</span><span class="p">.</span><span class="n">endpoints</span><span class="p">.</span><span class="n">generate_welcome</span><span class="p">,</span>
+            <span class="n">avatar</span><span class="o">=</span><span class="n">user</span><span class="p">.</span><span class="n">avatar</span><span class="p">.</span><span class="n">url</span><span class="p">,</span>
+            <span class="n">username</span><span class="o">=</span><span class="n">user</span><span class="p">.</span><span class="n">name</span><span class="p">,</span>
+        <span class="p">)</span>
+
+        <span class="k">await</span> <span class="n">ctx</span><span class="p">.</span><span class="n">send</span><span class="p">(</span><span class="nb">file</span><span class="o">=</span><span class="k">await</span> <span class="n">image</span><span class="p">.</span><span class="nb">file</span><span class="p">())</span>
+</code></pre></div>
+<blockquote>
+<p>The above returns a Bytes-like object:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight plaintext"><code>[Image]
+</code></pre></div>
+<p>This endpoint generates a welcome image
+<em>Discord.py users: In reference to the example on the Python tab, <code>image.file()</code> is built into our wrapper.</em></p>
+<h3 id='http-request'>HTTP Request</h3>
+<p><code>GET https://api.lunardev.group/gen/welcome?avatar=url&amp;username=text</code></p>
+<h3 id='query-parameters'>Query Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Default</th>
+<th>Description</th>
+<th>Required</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>avatar</td>
+<td>null</td>
+<td>Set the profile image in the image.</td>
+<td>True</td>
+</tr>
+<tr>
+<td>username</td>
+<td>null</td>
+<td>Set the username for the user in the image</td>
+<td>True</td>
+</tr>
+</tbody></table>
+<h3 id='result'>Result:</h3>
+<p><img src="images/gen_welcome-0b4c21fa.png" alt="" /></p>
+
+<aside class="success">
+Remember — This is returning a bytes-like object!
+</aside>
+<h2 id='achievement'>Achievement</h2><div class="highlight"><pre class="highlight python tab-python"><code><span class="kn">from</span> <span class="nn">pylunar</span> <span class="kn">import</span> <span class="n">Client</span><span class="p">,</span> <span class="n">endpoints</span>
+<span class="kn">from</span> <span class="nn">aiohttp</span> <span class="kn">import</span> <span class="n">ClientSession</span>
+<span class="kn">import</span> <span class="nn">asyncio</span>
+
+<span class="n">token</span> <span class="o">=</span> <span class="s">""</span>  <span class="c1"># Replace with your Lunar API Key.
+</span>
+<span class="k">async</span> <span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
+    <span class="k">async</span> <span class="k">with</span> <span class="n">ClientSession</span><span class="p">()</span> <span class="k">as</span> <span class="n">session</span><span class="p">:</span>
+        <span class="n">client</span> <span class="o">=</span> <span class="n">Client</span><span class="p">(</span><span class="n">session</span><span class="o">=</span><span class="n">session</span><span class="p">,</span> <span class="n">token</span><span class="o">=</span><span class="n">token</span><span class="p">)</span>
+
+        <span class="n">image</span> <span class="o">=</span> <span class="k">await</span> <span class="n">client</span><span class="p">.</span><span class="n">request</span><span class="p">(</span><span class="n">endpoints</span><span class="p">.</span><span class="n">generate_achievement</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="s">"Woohoo! I made a request!"</span><span class="p">)</span>
+        <span class="k">await</span> <span class="n">image</span><span class="p">.</span><span class="n">save</span><span class="p">(</span><span class="s">"image.jpg"</span><span class="p">)</span>
+
+<span class="n">asyncio</span><span class="p">.</span><span class="n">run</span><span class="p">(</span><span class="n">main</span><span class="p">())</span>
+
+<span class="c1">### Discord.py Usage:
+</span><span class="kn">import</span> <span class="nn">pylunar</span>
+
+<span class="o">@</span><span class="n">commands</span><span class="p">.</span><span class="n">command</span><span class="p">()</span>
+    <span class="k">async</span> <span class="k">def</span> <span class="nf">achievement</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ctx</span><span class="p">,</span> <span class="o">*</span><span class="p">,</span> <span class="n">text</span><span class="p">:</span> <span class="nb">str</span><span class="p">):</span>
+        <span class="k">async</span> <span class="k">with</span> <span class="n">aiohttp</span><span class="p">.</span><span class="n">ClientSession</span><span class="p">()</span> <span class="k">as</span> <span class="n">session</span><span class="p">:</span>
+            <span class="n">client</span> <span class="o">=</span> <span class="n">pylunar</span><span class="p">.</span><span class="n">Client</span><span class="p">(</span>
+                <span class="n">session</span><span class="o">=</span><span class="n">session</span><span class="p">,</span>
+                <span class="n">token</span><span class="o">=</span><span class="n">token</span><span class="p">,</span>
+            <span class="p">)</span>
+            <span class="n">image</span> <span class="o">=</span> <span class="k">await</span> <span class="n">client</span><span class="p">.</span><span class="n">request</span><span class="p">(</span>
+                <span class="n">pylunar</span><span class="p">.</span><span class="n">endpoints</span><span class="p">.</span><span class="n">generate_achievement</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="n">text</span>
+            <span class="p">)</span>
+
+            <span class="k">await</span> <span class="n">ctx</span><span class="p">.</span><span class="n">send</span><span class="p">(</span><span class="nb">file</span><span class="o">=</span><span class="k">await</span> <span class="n">image</span><span class="p">.</span><span class="nb">file</span><span class="p">())</span>
+</code></pre></div>
+<blockquote>
+<p>The above returns a Bytes-like object:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight plaintext"><code>[Image]
+</code></pre></div>
+<p>This endpoint generates a Minecraft achievement :D</p>
+<h3 id='http-request-2'>HTTP Request</h3>
+<p><code>GET https://api.lunardev.group/gen/achievement?text=text[&amp;icon=int]</code></p>
+<h3 id='query-parameters-2'>Query Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Default</th>
+<th>Description</th>
+<th>Required</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>text</td>
+<td>null</td>
+<td>Set the text for the achievement.</td>
+<td>True</td>
+</tr>
+<tr>
+<td>icon</td>
+<td>random</td>
+<td>Set the icon for the achievement. This is an int 1-45</td>
+<td>False</td>
+</tr>
+</tbody></table>
+<h3 id='result-2'>Result:</h3>
+<p><img src="images/gen_achievement-2dca1fc8.png" alt="" /></p>
+<h2 id='amiajoke'>Amiajoke</h2><div class="highlight"><pre class="highlight python tab-python"><code><span class="kn">from</span> <span class="nn">pylunar</span> <span class="kn">import</span> <span class="n">Client</span><span class="p">,</span> <span class="n">endpoints</span>
+<span class="kn">from</span> <span class="nn">aiohttp</span> <span class="kn">import</span> <span class="n">ClientSession</span>
+<span class="kn">import</span> <span class="nn">asyncio</span>
+
+<span class="n">token</span> <span class="o">=</span> <span class="s">""</span>  <span class="c1"># Replace with your Lunar API Key.
+</span>
+<span class="k">async</span> <span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
+    <span class="k">async</span> <span class="k">with</span> <span class="n">ClientSession</span><span class="p">()</span> <span class="k">as</span> <span class="n">session</span><span class="p">:</span>
+        <span class="n">client</span> <span class="o">=</span> <span class="n">Client</span><span class="p">(</span><span class="n">session</span><span class="o">=</span><span class="n">session</span><span class="p">,</span> <span class="n">token</span><span class="o">=</span><span class="n">token</span><span class="p">)</span>
+
+        <span class="n">image</span> <span class="o">=</span> <span class="k">await</span> <span class="n">client</span><span class="p">.</span><span class="n">request</span><span class="p">(</span><span class="n">endpoints</span><span class="p">.</span><span class="n">generate_amiajoke</span><span class="p">,</span> <span class="n">image</span><span class="o">=</span><span class="s">"https://docs.lunardev.group/images/logo.png"</span><span class="p">)</span>
+        <span class="k">await</span> <span class="n">image</span><span class="p">.</span><span class="n">save</span><span class="p">(</span><span class="s">"image.jpg"</span><span class="p">)</span>
+
+<span class="n">asyncio</span><span class="p">.</span><span class="n">run</span><span class="p">(</span><span class="n">main</span><span class="p">())</span>
+
+<span class="c1">### Discord.py Usage:
+</span><span class="kn">import</span> <span class="nn">pylunar</span>
+
+<span class="o">@</span><span class="n">commands</span><span class="p">.</span><span class="n">command</span><span class="p">()</span>
+<span class="k">async</span> <span class="k">def</span> <span class="nf">amiajoke</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ctx</span><span class="p">,</span> <span class="o">*</span><span class="p">,</span> <span class="n">user</span><span class="p">:</span> <span class="n">discord</span><span class="p">.</span><span class="n">User</span><span class="p">):</span>
+    <span class="k">async</span> <span class="k">with</span> <span class="n">aiohttp</span><span class="p">.</span><span class="n">ClientSession</span><span class="p">()</span> <span class="k">as</span> <span class="n">session</span><span class="p">:</span>
+        <span class="n">client</span> <span class="o">=</span> <span class="n">pylunar</span><span class="p">.</span><span class="n">Client</span><span class="p">(</span>
+            <span class="n">session</span><span class="o">=</span><span class="n">session</span><span class="p">,</span>
+            <span class="n">token</span><span class="o">=</span><span class="n">token</span><span class="p">,</span>
+        <span class="p">)</span>
+        <span class="n">image</span> <span class="o">=</span> <span class="k">await</span> <span class="n">client</span><span class="p">.</span><span class="n">request</span><span class="p">(</span>
+            <span class="n">pylunar</span><span class="p">.</span><span class="n">endpoints</span><span class="p">.</span><span class="n">generate_amiajoke</span><span class="p">,</span> <span class="n">image</span><span class="o">=</span><span class="n">user</span><span class="p">.</span><span class="n">avatar</span><span class="p">.</span><span class="n">url</span>
+        <span class="p">)</span>
+
+        <span class="k">await</span> <span class="n">ctx</span><span class="p">.</span><span class="n">send</span><span class="p">(</span><span class="nb">file</span><span class="o">=</span><span class="k">await</span> <span class="n">image</span><span class="p">.</span><span class="nb">file</span><span class="p">())</span>
+</code></pre></div>
+<blockquote>
+<p>The above returns a Bytes-like object:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight plaintext"><code>[Image]
+</code></pre></div>
+<p>This endpoint generates a meme</p>
+<h3 id='http-request-3'>HTTP Request</h3>
+<p><code>GET https://api.lunardev.group/gen/amiajoke?image=url</code></p>
+<h3 id='query-parameters-3'>Query Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Default</th>
+<th>Description</th>
+<th>Required</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>image</td>
+<td>null</td>
+<td>Set the image top place on the meme.</td>
+<td>True</td>
+</tr>
+</tbody></table>
+<h3 id='result-3'>Result:</h3>
+<p><img src="images/gen_amiajoke-cdd175fa.png" alt="" /></p>
+<h2 id='bad'>Bad</h2><div class="highlight"><pre class="highlight python tab-python"><code><span class="kn">from</span> <span class="nn">pylunar</span> <span class="kn">import</span> <span class="n">Client</span><span class="p">,</span> <span class="n">endpoints</span>
+<span class="kn">from</span> <span class="nn">aiohttp</span> <span class="kn">import</span> <span class="n">ClientSession</span>
+<span class="kn">import</span> <span class="nn">asyncio</span>
+
+<span class="n">token</span> <span class="o">=</span> <span class="s">""</span>  <span class="c1"># Replace with your Lunar API Key.
+</span>
+<span class="k">async</span> <span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
+    <span class="k">async</span> <span class="k">with</span> <span class="n">ClientSession</span><span class="p">()</span> <span class="k">as</span> <span class="n">session</span><span class="p">:</span>
+        <span class="n">client</span> <span class="o">=</span> <span class="n">Client</span><span class="p">(</span><span class="n">session</span><span class="o">=</span><span class="n">session</span><span class="p">,</span> <span class="n">token</span><span class="o">=</span><span class="n">token</span><span class="p">)</span>
+
+        <span class="n">image</span> <span class="o">=</span> <span class="k">await</span> <span class="n">client</span><span class="p">.</span><span class="n">request</span><span class="p">(</span><span class="n">endpoints</span><span class="p">.</span><span class="n">generate_bad</span><span class="p">,</span> <span class="n">image</span><span class="o">=</span><span class="s">"https://docs.lunardev.group/images/logo.png"</span><span class="p">)</span>
+        <span class="k">await</span> <span class="n">image</span><span class="p">.</span><span class="n">save</span><span class="p">(</span><span class="s">"image.jpg"</span><span class="p">)</span>
+
+<span class="n">asyncio</span><span class="p">.</span><span class="n">run</span><span class="p">(</span><span class="n">main</span><span class="p">())</span>
+
+<span class="c1">### Discord.py Usage:
+</span><span class="kn">import</span> <span class="nn">pylunar</span>
+
+<span class="o">@</span><span class="n">commands</span><span class="p">.</span><span class="n">command</span><span class="p">()</span>
+<span class="k">async</span> <span class="k">def</span> <span class="nf">amiajoke</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ctx</span><span class="p">,</span> <span class="o">*</span><span class="p">,</span> <span class="n">user</span><span class="p">:</span> <span class="n">discord</span><span class="p">.</span><span class="n">User</span><span class="p">):</span>
+    <span class="k">async</span> <span class="k">with</span> <span class="n">aiohttp</span><span class="p">.</span><span class="n">ClientSession</span><span class="p">()</span> <span class="k">as</span> <span class="n">session</span><span class="p">:</span>
+        <span class="n">client</span> <span class="o">=</span> <span class="n">pylunar</span><span class="p">.</span><span class="n">Client</span><span class="p">(</span>
+            <span class="n">session</span><span class="o">=</span><span class="n">session</span><span class="p">,</span>
+            <span class="n">token</span><span class="o">=</span><span class="n">token</span><span class="p">,</span>
+        <span class="p">)</span>
+        <span class="n">image</span> <span class="o">=</span> <span class="k">await</span> <span class="n">client</span><span class="p">.</span><span class="n">request</span><span class="p">(</span>
+            <span class="n">pylunar</span><span class="p">.</span><span class="n">endpoints</span><span class="p">.</span><span class="n">generate_bad</span><span class="p">,</span> <span class="n">image</span><span class="o">=</span><span class="n">user</span><span class="p">.</span><span class="n">avatar</span><span class="p">.</span><span class="n">url</span>
+        <span class="p">)</span>
+
+        <span class="k">await</span> <span class="n">ctx</span><span class="p">.</span><span class="n">send</span><span class="p">(</span><span class="nb">file</span><span class="o">=</span><span class="k">await</span> <span class="n">image</span><span class="p">.</span><span class="nb">file</span><span class="p">())</span>
+</code></pre></div>
+<blockquote>
+<p>The above returns a Bytes-like object:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight plaintext"><code>[Image]
+</code></pre></div>
+<p>This endpoint generates a meme</p>
+<h3 id='http-request-4'>HTTP Request</h3>
+<p><code>GET https://api.lunardev.group/gen/bad?image=url</code></p>
+<h3 id='query-parameters-4'>Query Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Default</th>
+<th>Description</th>
+<th>Required</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>image</td>
+<td>null</td>
+<td>Set the image top place on the meme.</td>
+<td>True</td>
+</tr>
+</tbody></table>
+<h3 id='result-4'>Result:</h3>
+<p><img src="images/gen_bad-a2c3690a.png" alt="" /></p>
+<h2 id='calling'>Calling</h2><div class="highlight"><pre class="highlight python tab-python"><code><span class="kn">from</span> <span class="nn">pylunar</span> <span class="kn">import</span> <span class="n">Client</span><span class="p">,</span> <span class="n">endpoints</span>
+<span class="kn">from</span> <span class="nn">aiohttp</span> <span class="kn">import</span> <span class="n">ClientSession</span>
+<span class="kn">import</span> <span class="nn">asyncio</span>
+
+<span class="n">token</span> <span class="o">=</span> <span class="s">""</span>  <span class="c1"># Replace with your Lunar API Key.
+</span>
+<span class="k">async</span> <span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
+    <span class="k">async</span> <span class="k">with</span> <span class="n">ClientSession</span><span class="p">()</span> <span class="k">as</span> <span class="n">session</span><span class="p">:</span>
+        <span class="n">client</span> <span class="o">=</span> <span class="n">Client</span><span class="p">(</span><span class="n">session</span><span class="o">=</span><span class="n">session</span><span class="p">,</span> <span class="n">token</span><span class="o">=</span><span class="n">token</span><span class="p">)</span>
+
+        <span class="n">image</span> <span class="o">=</span> <span class="k">await</span> <span class="n">client</span><span class="p">.</span><span class="n">request</span><span class="p">(</span><span class="n">endpoints</span><span class="p">.</span><span class="n">generate_calling</span><span class="p">,</span><span class="n">text</span><span class="o">=</span><span class="s">"Ring ring haha"</span><span class="p">)</span>
+        <span class="k">await</span> <span class="n">image</span><span class="p">.</span><span class="n">save</span><span class="p">(</span><span class="s">"image.jpg"</span><span class="p">)</span>
+
+<span class="n">asyncio</span><span class="p">.</span><span class="n">run</span><span class="p">(</span><span class="n">main</span><span class="p">())</span>
+
+<span class="c1">### Discord.py Usage:
+</span><span class="kn">import</span> <span class="nn">pylunar</span>
+
+<span class="o">@</span><span class="n">commands</span><span class="p">.</span><span class="n">command</span><span class="p">()</span>
+<span class="k">async</span> <span class="k">def</span> <span class="nf">amiajoke</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ctx</span><span class="p">,</span> <span class="o">*</span><span class="p">,</span> <span class="n">text</span><span class="p">:</span> <span class="nb">str</span><span class="p">):</span>
+    <span class="k">async</span> <span class="k">with</span> <span class="n">aiohttp</span><span class="p">.</span><span class="n">ClientSession</span><span class="p">()</span> <span class="k">as</span> <span class="n">session</span><span class="p">:</span>
+        <span class="n">client</span> <span class="o">=</span> <span class="n">pylunar</span><span class="p">.</span><span class="n">Client</span><span class="p">(</span>
+            <span class="n">session</span><span class="o">=</span><span class="n">session</span><span class="p">,</span>
+            <span class="n">token</span><span class="o">=</span><span class="n">token</span><span class="p">,</span>
+        <span class="p">)</span>
+        <span class="n">image</span> <span class="o">=</span> <span class="k">await</span> <span class="n">client</span><span class="p">.</span><span class="n">request</span><span class="p">(</span>
+            <span class="n">pylunar</span><span class="p">.</span><span class="n">endpoints</span><span class="p">.</span><span class="n">generate_calling</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="n">text</span>
+        <span class="p">)</span>
+
+        <span class="k">await</span> <span class="n">ctx</span><span class="p">.</span><span class="n">send</span><span class="p">(</span><span class="nb">file</span><span class="o">=</span><span class="k">await</span> <span class="n">image</span><span class="p">.</span><span class="nb">file</span><span class="p">())</span>
+</code></pre></div>
+<blockquote>
+<p>The above returns a Bytes-like object:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight plaintext"><code>[Image]
+</code></pre></div>
+<p>This endpoint generates a meme. Tbh we don&#39;t understand this meme, we just wanted more memes.</p>
+<h3 id='http-request-5'>HTTP Request</h3>
+<p><code>GET https://api.lunardev.group/gen/calling?text=text</code></p>
+<h3 id='query-parameters-5'>Query Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Default</th>
+<th>Description</th>
+<th>Required</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>text</td>
+<td>null</td>
+<td>Set the text for the meme.</td>
+<td>True</td>
+</tr>
+</tbody></table>
+<h3 id='result-5'>Result:</h3>
+<p><img src="images/gen_calling-44441c14.png" alt="" /></p>
+<h1 id='image-api-nsfw'>Image API (NSFW)</h1><h2 id='ahegao'>Ahegao</h2><div class="highlight"><pre class="highlight python tab-python"><code><span class="kn">from</span> <span class="nn">pylunar</span> <span class="kn">import</span> <span class="n">Client</span><span class="p">,</span> <span class="n">endpoints</span>
+<span class="kn">from</span> <span class="nn">aiohttp</span> <span class="kn">import</span> <span class="n">ClientSession</span>
+<span class="kn">import</span> <span class="nn">asyncio</span>
+
+<span class="n">token</span> <span class="o">=</span> <span class="s">""</span>  <span class="c1"># Replace with your Lunar API Key.
+</span>
+<span class="k">async</span> <span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
+    <span class="k">async</span> <span class="k">with</span> <span class="n">ClientSession</span><span class="p">()</span> <span class="k">as</span> <span class="n">session</span><span class="p">:</span>
+        <span class="n">client</span> <span class="o">=</span> <span class="n">Client</span><span class="p">(</span><span class="n">session</span><span class="o">=</span><span class="n">session</span><span class="p">,</span> <span class="n">token</span><span class="o">=</span><span class="n">token</span><span class="p">)</span>
+
+        <span class="n">image</span> <span class="o">=</span> <span class="k">await</span> <span class="n">client</span><span class="p">.</span><span class="n">request</span><span class="p">(</span><span class="n">endpoints</span><span class="p">.</span><span class="n">nsfw</span><span class="p">(</span><span class="s">"ahegao"</span><span class="p">))</span>
+        <span class="k">print</span><span class="p">(</span><span class="k">await</span> <span class="n">image</span><span class="p">.</span><span class="n">to_dict</span><span class="p">())</span>
+
+<span class="n">asyncio</span><span class="p">.</span><span class="n">run</span><span class="p">(</span><span class="n">main</span><span class="p">())</span>
+
+<span class="c1">### Discord.py Usage:
+</span><span class="kn">import</span> <span class="nn">pylunar</span>
+
+<span class="o">@</span><span class="n">commands</span><span class="p">.</span><span class="n">command</span><span class="p">()</span>
+<span class="k">async</span> <span class="k">def</span> <span class="nf">ahegao</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ctx</span><span class="p">):</span>
+    <span class="k">async</span> <span class="k">with</span> <span class="n">aiohttp</span><span class="p">.</span><span class="n">ClientSession</span><span class="p">()</span> <span class="k">as</span> <span class="n">session</span><span class="p">:</span>
+        <span class="n">client</span> <span class="o">=</span> <span class="n">pylunar</span><span class="p">.</span><span class="n">Client</span><span class="p">(</span>
+            <span class="n">session</span><span class="o">=</span><span class="n">session</span><span class="p">,</span>
+            <span class="n">token</span><span class="o">=</span><span class="n">token</span><span class="p">,</span>
+        <span class="p">)</span>
+        <span class="n">image</span> <span class="o">=</span> <span class="k">await</span> <span class="n">client</span><span class="p">.</span><span class="n">request</span><span class="p">(</span>
+            <span class="n">pylunar</span><span class="p">.</span><span class="n">endpoints</span><span class="p">.</span><span class="n">nsfw</span><span class="p">(</span><span class="s">"ahegao"</span><span class="p">)</span>
+        <span class="p">)</span>
+        <span class="n">data</span> <span class="o">=</span> <span class="k">await</span> <span class="n">image</span><span class="p">.</span><span class="n">to_dict</span><span class="p">()</span>
+
+        <span class="k">await</span> <span class="n">ctx</span><span class="p">.</span><span class="n">send</span><span class="p">(</span><span class="sa">f</span><span class="s">"</span><span class="si">{</span><span class="n">data</span><span class="p">[</span><span class="s">"url"</span><span class="p">]</span><span class="si">}</span><span class="s">"</span><span class="p">)</span>
+</code></pre></div>
+<blockquote>
+<p>The above returns a JSON object:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ahegao_MF2cWkDS7"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"url: "</span><span class="err">https://api.lunardev.group/ahegao/ahegao_MF</span><span class="mi">2</span><span class="err">cWkDS</span><span class="mi">7</span><span class="err">.jpg</span><span class="s2">"
+}
+</span></code></pre></div>
+<p>This endpoint generates a JSON object</p>
+<h3 id='http-request'>HTTP Request</h3>
+<p><code>GET https://api.lunardev.group/nsfw/ahegao</code></p>
+<h3 id='returned-data'>Returned data</h3>
+<table><thead>
+<tr>
+<th>Key</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>id</td>
+<td>This is what we refer to as the image ID. It is useful for logging and reporting purposes.</td>
+</tr>
+<tr>
+<td>url</td>
+<td>The direct image URL for the image retrieved. You can use this in embeds and whatever else you wish.</td>
+</tr>
+</tbody></table>
+
+<aside class="success">
+Remember — This is returning a JSON object!
+</aside>
+<h2 id='ass'>Ass</h2><div class="highlight"><pre class="highlight python tab-python"><code><span class="kn">from</span> <span class="nn">pylunar</span> <span class="kn">import</span> <span class="n">Client</span><span class="p">,</span> <span class="n">endpoints</span>
+<span class="kn">from</span> <span class="nn">aiohttp</span> <span class="kn">import</span> <span class="n">ClientSession</span>
+<span class="kn">import</span> <span class="nn">asyncio</span>
+
+<span class="n">token</span> <span class="o">=</span> <span class="s">""</span>  <span class="c1"># Replace with your Lunar API Key.
+</span>
+<span class="k">async</span> <span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
+    <span class="k">async</span> <span class="k">with</span> <span class="n">ClientSession</span><span class="p">()</span> <span class="k">as</span> <span class="n">session</span><span class="p">:</span>
+        <span class="n">client</span> <span class="o">=</span> <span class="n">Client</span><span class="p">(</span><span class="n">session</span><span class="o">=</span><span class="n">session</span><span class="p">,</span> <span class="n">token</span><span class="o">=</span><span class="n">token</span><span class="p">)</span>
+
+        <span class="n">image</span> <span class="o">=</span> <span class="k">await</span> <span class="n">client</span><span class="p">.</span><span class="n">request</span><span class="p">(</span><span class="n">endpoints</span><span class="p">.</span><span class="n">nsfw</span><span class="p">(</span><span class="s">"ass"</span><span class="p">))</span>
+        <span class="k">print</span><span class="p">(</span><span class="k">await</span> <span class="n">image</span><span class="p">.</span><span class="n">to_dict</span><span class="p">())</span>
+
+<span class="n">asyncio</span><span class="p">.</span><span class="n">run</span><span class="p">(</span><span class="n">main</span><span class="p">())</span>
+
+<span class="c1">### Discord.py Usage:
+</span><span class="kn">import</span> <span class="nn">pylunar</span>
+
+<span class="o">@</span><span class="n">commands</span><span class="p">.</span><span class="n">command</span><span class="p">()</span>
+<span class="k">async</span> <span class="k">def</span> <span class="nf">ass</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ctx</span><span class="p">):</span>
+    <span class="k">async</span> <span class="k">with</span> <span class="n">aiohttp</span><span class="p">.</span><span class="n">ClientSession</span><span class="p">()</span> <span class="k">as</span> <span class="n">session</span><span class="p">:</span>
+        <span class="n">client</span> <span class="o">=</span> <span class="n">pylunar</span><span class="p">.</span><span class="n">Client</span><span class="p">(</span>
+            <span class="n">session</span><span class="o">=</span><span class="n">session</span><span class="p">,</span>
+            <span class="n">token</span><span class="o">=</span><span class="n">token</span><span class="p">,</span>
+        <span class="p">)</span>
+        <span class="n">image</span> <span class="o">=</span> <span class="k">await</span> <span class="n">client</span><span class="p">.</span><span class="n">request</span><span class="p">(</span>
+            <span class="n">pylunar</span><span class="p">.</span><span class="n">endpoints</span><span class="p">.</span><span class="n">nsfw</span><span class="p">(</span><span class="s">"ass"</span><span class="p">)</span>
+        <span class="p">)</span>
+        <span class="n">data</span> <span class="o">=</span> <span class="k">await</span> <span class="n">image</span><span class="p">.</span><span class="n">to_dict</span><span class="p">()</span>
+
+        <span class="k">await</span> <span class="n">ctx</span><span class="p">.</span><span class="n">send</span><span class="p">(</span><span class="sa">f</span><span class="s">"</span><span class="si">{</span><span class="n">data</span><span class="p">[</span><span class="s">"url"</span><span class="p">]</span><span class="si">}</span><span class="s">"</span><span class="p">)</span>
+</code></pre></div>
+<blockquote>
+<p>The above returns a JSON object:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ass_MF2cWkDS7"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"url: "</span><span class="err">https://api.lunardev.group/ass/ass_MF</span><span class="mi">2</span><span class="err">cWkDS</span><span class="mi">7</span><span class="err">.jpg</span><span class="s2">"
+}
+</span></code></pre></div>
+<p>This endpoint generates a JSON object</p>
+<h3 id='http-request-2'>HTTP Request</h3>
+<p><code>GET https://api.lunardev.group/nsfw/ass</code></p>
+<h3 id='returned-data-2'>Returned data</h3>
+<table><thead>
+<tr>
+<th>Key</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>id</td>
+<td>This is what we refer to as the image ID. It is useful for logging and reporting purposes.</td>
+</tr>
+<tr>
+<td>url</td>
+<td>The direct image URL for the image retrieved. You can use this in embeds and whatever else you wish.</td>
+</tr>
+</tbody></table>
+<h2 id='boobs'>Boobs</h2><div class="highlight"><pre class="highlight python tab-python"><code><span class="kn">from</span> <span class="nn">pylunar</span> <span class="kn">import</span> <span class="n">Client</span><span class="p">,</span> <span class="n">endpoints</span>
+<span class="kn">from</span> <span class="nn">aiohttp</span> <span class="kn">import</span> <span class="n">ClientSession</span>
+<span class="kn">import</span> <span class="nn">asyncio</span>
+
+<span class="n">token</span> <span class="o">=</span> <span class="s">""</span>  <span class="c1"># Replace with your Lunar API Key.
+</span>
+<span class="k">async</span> <span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
+    <span class="k">async</span> <span class="k">with</span> <span class="n">ClientSession</span><span class="p">()</span> <span class="k">as</span> <span class="n">session</span><span class="p">:</span>
+        <span class="n">client</span> <span class="o">=</span> <span class="n">Client</span><span class="p">(</span><span class="n">session</span><span class="o">=</span><span class="n">session</span><span class="p">,</span> <span class="n">token</span><span class="o">=</span><span class="n">token</span><span class="p">)</span>
+
+        <span class="n">image</span> <span class="o">=</span> <span class="k">await</span> <span class="n">client</span><span class="p">.</span><span class="n">request</span><span class="p">(</span><span class="n">endpoints</span><span class="p">.</span><span class="n">nsfw</span><span class="p">(</span><span class="s">"boobs"</span><span class="p">))</span>
+        <span class="k">print</span><span class="p">(</span><span class="k">await</span> <span class="n">image</span><span class="p">.</span><span class="n">to_dict</span><span class="p">())</span>
+
+<span class="n">asyncio</span><span class="p">.</span><span class="n">run</span><span class="p">(</span><span class="n">main</span><span class="p">())</span>
+
+<span class="c1">### Discord.py Usage:
+</span><span class="kn">import</span> <span class="nn">pylunar</span>
+
+<span class="o">@</span><span class="n">commands</span><span class="p">.</span><span class="n">command</span><span class="p">()</span>
+<span class="k">async</span> <span class="k">def</span> <span class="nf">boobs</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ctx</span><span class="p">):</span>
+    <span class="k">async</span> <span class="k">with</span> <span class="n">aiohttp</span><span class="p">.</span><span class="n">ClientSession</span><span class="p">()</span> <span class="k">as</span> <span class="n">session</span><span class="p">:</span>
+        <span class="n">client</span> <span class="o">=</span> <span class="n">pylunar</span><span class="p">.</span><span class="n">Client</span><span class="p">(</span>
+            <span class="n">session</span><span class="o">=</span><span class="n">session</span><span class="p">,</span>
+            <span class="n">token</span><span class="o">=</span><span class="n">token</span><span class="p">,</span>
+        <span class="p">)</span>
+        <span class="n">image</span> <span class="o">=</span> <span class="k">await</span> <span class="n">client</span><span class="p">.</span><span class="n">request</span><span class="p">(</span>
+            <span class="n">pylunar</span><span class="p">.</span><span class="n">endpoints</span><span class="p">.</span><span class="n">nsfw</span><span class="p">(</span><span class="s">"boobs"</span><span class="p">)</span>
+        <span class="p">)</span>
+        <span class="n">data</span> <span class="o">=</span> <span class="k">await</span> <span class="n">image</span><span class="p">.</span><span class="n">to_dict</span><span class="p">()</span>
+
+        <span class="k">await</span> <span class="n">ctx</span><span class="p">.</span><span class="n">send</span><span class="p">(</span><span class="sa">f</span><span class="s">"</span><span class="si">{</span><span class="n">data</span><span class="p">[</span><span class="s">"url"</span><span class="p">]</span><span class="si">}</span><span class="s">"</span><span class="p">)</span>
+</code></pre></div>
+<blockquote>
+<p>The above returns a JSON object:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"boobs_MF2cWkDS7"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"url: "</span><span class="err">https://api.lunardev.group/boobs/boobs_MF</span><span class="mi">2</span><span class="err">cWkDS</span><span class="mi">7</span><span class="err">.jpg</span><span class="s2">"
+}
+</span></code></pre></div>
+<p>This endpoint generates a JSON object</p>
+<h3 id='http-request-3'>HTTP Request</h3>
+<p><code>GET https://api.lunardev.group/nsfw/boobs</code></p>
+<h3 id='returned-data-3'>Returned data</h3>
+<table><thead>
+<tr>
+<th>Key</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>id</td>
+<td>This is what we refer to as the image ID. It is useful for logging and reporting purposes.</td>
+</tr>
+<tr>
+<td>url</td>
+<td>The direct image URL for the image retrieved. You can use this in embeds and whatever else you wish.</td>
+</tr>
+</tbody></table>
+<h2 id='cum'>Cum</h2><div class="highlight"><pre class="highlight python tab-python"><code><span class="kn">from</span> <span class="nn">pylunar</span> <span class="kn">import</span> <span class="n">Client</span><span class="p">,</span> <span class="n">endpoints</span>
+<span class="kn">from</span> <span class="nn">aiohttp</span> <span class="kn">import</span> <span class="n">ClientSession</span>
+<span class="kn">import</span> <span class="nn">asyncio</span>
+
+<span class="n">token</span> <span class="o">=</span> <span class="s">""</span>  <span class="c1"># Replace with your Lunar API Key.
+</span>
+<span class="k">async</span> <span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
+    <span class="k">async</span> <span class="k">with</span> <span class="n">ClientSession</span><span class="p">()</span> <span class="k">as</span> <span class="n">session</span><span class="p">:</span>
+        <span class="n">client</span> <span class="o">=</span> <span class="n">Client</span><span class="p">(</span><span class="n">session</span><span class="o">=</span><span class="n">session</span><span class="p">,</span> <span class="n">token</span><span class="o">=</span><span class="n">token</span><span class="p">)</span>
+
+        <span class="n">image</span> <span class="o">=</span> <span class="k">await</span> <span class="n">client</span><span class="p">.</span><span class="n">request</span><span class="p">(</span><span class="n">endpoints</span><span class="p">.</span><span class="n">nsfw</span><span class="p">(</span><span class="s">"cum"</span><span class="p">))</span>
+        <span class="k">print</span><span class="p">(</span><span class="k">await</span> <span class="n">image</span><span class="p">.</span><span class="n">to_dict</span><span class="p">())</span>
+
+<span class="n">asyncio</span><span class="p">.</span><span class="n">run</span><span class="p">(</span><span class="n">main</span><span class="p">())</span>
+
+<span class="c1">### Discord.py Usage:
+</span><span class="kn">import</span> <span class="nn">pylunar</span>
+
+<span class="o">@</span><span class="n">commands</span><span class="p">.</span><span class="n">command</span><span class="p">()</span>
+<span class="k">async</span> <span class="k">def</span> <span class="nf">cum</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ctx</span><span class="p">):</span>
+    <span class="k">async</span> <span class="k">with</span> <span class="n">aiohttp</span><span class="p">.</span><span class="n">ClientSession</span><span class="p">()</span> <span class="k">as</span> <span class="n">session</span><span class="p">:</span>
+        <span class="n">client</span> <span class="o">=</span> <span class="n">pylunar</span><span class="p">.</span><span class="n">Client</span><span class="p">(</span>
+            <span class="n">session</span><span class="o">=</span><span class="n">session</span><span class="p">,</span>
+            <span class="n">token</span><span class="o">=</span><span class="n">token</span><span class="p">,</span>
+        <span class="p">)</span>
+        <span class="n">image</span> <span class="o">=</span> <span class="k">await</span> <span class="n">client</span><span class="p">.</span><span class="n">request</span><span class="p">(</span>
+            <span class="n">pylunar</span><span class="p">.</span><span class="n">endpoints</span><span class="p">.</span><span class="n">nsfw</span><span class="p">(</span><span class="s">"cum"</span><span class="p">)</span>
+        <span class="p">)</span>
+        <span class="n">data</span> <span class="o">=</span> <span class="k">await</span> <span class="n">image</span><span class="p">.</span><span class="n">to_dict</span><span class="p">()</span>
+
+        <span class="k">await</span> <span class="n">ctx</span><span class="p">.</span><span class="n">send</span><span class="p">(</span><span class="sa">f</span><span class="s">"</span><span class="si">{</span><span class="n">data</span><span class="p">[</span><span class="s">"url"</span><span class="p">]</span><span class="si">}</span><span class="s">"</span><span class="p">)</span>
+</code></pre></div>
+<blockquote>
+<p>The above returns a JSON object:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"cum_MF2cWkDS7"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"url: "</span><span class="err">https://api.lunardev.group/cum/cum_MF</span><span class="mi">2</span><span class="err">cWkDS</span><span class="mi">7</span><span class="err">.jpg</span><span class="s2">"
+}
+</span></code></pre></div>
+<p>This endpoint generates a JSON object</p>
+<h3 id='http-request-4'>HTTP Request</h3>
+<p><code>GET https://api.lunardev.group/nsfw/cum</code></p>
+<h3 id='returned-data-4'>Returned data</h3>
+<table><thead>
+<tr>
+<th>Key</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>id</td>
+<td>This is what we refer to as the image ID. It is useful for logging and reporting purposes.</td>
+</tr>
+<tr>
+<td>url</td>
+<td>The direct image URL for the image retrieved. You can use this in embeds and whatever else you wish.</td>
+</tr>
+</tbody></table>
+<h2 id='gif'>Gif</h2><div class="highlight"><pre class="highlight python tab-python"><code><span class="kn">from</span> <span class="nn">pylunar</span> <span class="kn">import</span> <span class="n">Client</span><span class="p">,</span> <span class="n">endpoints</span>
+<span class="kn">from</span> <span class="nn">aiohttp</span> <span class="kn">import</span> <span class="n">ClientSession</span>
+<span class="kn">import</span> <span class="nn">asyncio</span>
+
+<span class="n">token</span> <span class="o">=</span> <span class="s">""</span>  <span class="c1"># Replace with your Lunar API Key.
+</span>
+<span class="k">async</span> <span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
+    <span class="k">async</span> <span class="k">with</span> <span class="n">ClientSession</span><span class="p">()</span> <span class="k">as</span> <span class="n">session</span><span class="p">:</span>
+        <span class="n">client</span> <span class="o">=</span> <span class="n">Client</span><span class="p">(</span><span class="n">session</span><span class="o">=</span><span class="n">session</span><span class="p">,</span> <span class="n">token</span><span class="o">=</span><span class="n">token</span><span class="p">)</span>
+
+        <span class="n">image</span> <span class="o">=</span> <span class="k">await</span> <span class="n">client</span><span class="p">.</span><span class="n">request</span><span class="p">(</span><span class="n">endpoints</span><span class="p">.</span><span class="n">nsfw</span><span class="p">(</span><span class="s">"gif"</span><span class="p">))</span>
+        <span class="k">print</span><span class="p">(</span><span class="k">await</span> <span class="n">image</span><span class="p">.</span><span class="n">to_dict</span><span class="p">())</span>
+
+<span class="n">asyncio</span><span class="p">.</span><span class="n">run</span><span class="p">(</span><span class="n">main</span><span class="p">())</span>
+
+<span class="c1">### Discord.py Usage:
+</span><span class="kn">import</span> <span class="nn">pylunar</span>
+
+<span class="o">@</span><span class="n">commands</span><span class="p">.</span><span class="n">command</span><span class="p">()</span>
+<span class="k">async</span> <span class="k">def</span> <span class="nf">gif</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ctx</span><span class="p">):</span>
+    <span class="k">async</span> <span class="k">with</span> <span class="n">aiohttp</span><span class="p">.</span><span class="n">ClientSession</span><span class="p">()</span> <span class="k">as</span> <span class="n">session</span><span class="p">:</span>
+        <span class="n">client</span> <span class="o">=</span> <span class="n">pylunar</span><span class="p">.</span><span class="n">Client</span><span class="p">(</span>
+            <span class="n">session</span><span class="o">=</span><span class="n">session</span><span class="p">,</span>
+            <span class="n">token</span><span class="o">=</span><span class="n">token</span><span class="p">,</span>
+        <span class="p">)</span>
+        <span class="n">image</span> <span class="o">=</span> <span class="k">await</span> <span class="n">client</span><span class="p">.</span><span class="n">request</span><span class="p">(</span>
+            <span class="n">pylunar</span><span class="p">.</span><span class="n">endpoints</span><span class="p">.</span><span class="n">nsfw</span><span class="p">(</span><span class="s">"gif"</span><span class="p">)</span>
+        <span class="p">)</span>
+        <span class="n">data</span> <span class="o">=</span> <span class="k">await</span> <span class="n">image</span><span class="p">.</span><span class="n">to_dict</span><span class="p">()</span>
+
+        <span class="k">await</span> <span class="n">ctx</span><span class="p">.</span><span class="n">send</span><span class="p">(</span><span class="sa">f</span><span class="s">"</span><span class="si">{</span><span class="n">data</span><span class="p">[</span><span class="s">"url"</span><span class="p">]</span><span class="si">}</span><span class="s">"</span><span class="p">)</span>
+</code></pre></div>
+<blockquote>
+<p>The above returns a JSON object:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"gif_MF2cWkDS7"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"url: "</span><span class="err">https://api.lunardev.group/gif/gif_MF</span><span class="mi">2</span><span class="err">cWkDS</span><span class="mi">7</span><span class="err">.gif</span><span class="s2">"
+}
+</span></code></pre></div>
+<p>This endpoint generates a JSON object</p>
+<h3 id='http-request-5'>HTTP Request</h3>
+<p><code>GET https://api.lunardev.group/nsfw/gif</code></p>
+<h3 id='returned-data-5'>Returned data</h3>
+<table><thead>
+<tr>
+<th>Key</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>id</td>
+<td>This is what we refer to as the image ID. It is useful for logging and reporting purposes.</td>
+</tr>
+<tr>
+<td>url</td>
+<td>The direct image URL for the image retrieved. You can use this in embeds and whatever else you wish.</td>
+</tr>
+</tbody></table>
+<h2 id='hololive'>Hololive</h2><div class="highlight"><pre class="highlight python tab-python"><code><span class="kn">from</span> <span class="nn">pylunar</span> <span class="kn">import</span> <span class="n">Client</span><span class="p">,</span> <span class="n">endpoints</span>
+<span class="kn">from</span> <span class="nn">aiohttp</span> <span class="kn">import</span> <span class="n">ClientSession</span>
+<span class="kn">import</span> <span class="nn">asyncio</span>
+
+<span class="n">token</span> <span class="o">=</span> <span class="s">""</span>  <span class="c1"># Replace with your Lunar API Key.
+</span>
+<span class="k">async</span> <span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
+    <span class="k">async</span> <span class="k">with</span> <span class="n">ClientSession</span><span class="p">()</span> <span class="k">as</span> <span class="n">session</span><span class="p">:</span>
+        <span class="n">client</span> <span class="o">=</span> <span class="n">Client</span><span class="p">(</span><span class="n">session</span><span class="o">=</span><span class="n">session</span><span class="p">,</span> <span class="n">token</span><span class="o">=</span><span class="n">token</span><span class="p">)</span>
+
+        <span class="n">image</span> <span class="o">=</span> <span class="k">await</span> <span class="n">client</span><span class="p">.</span><span class="n">request</span><span class="p">(</span><span class="n">endpoints</span><span class="p">.</span><span class="n">nsfw</span><span class="p">(</span><span class="s">"hololive"</span><span class="p">))</span>
+        <span class="k">print</span><span class="p">(</span><span class="k">await</span> <span class="n">image</span><span class="p">.</span><span class="n">to_dict</span><span class="p">())</span>
+
+<span class="n">asyncio</span><span class="p">.</span><span class="n">run</span><span class="p">(</span><span class="n">main</span><span class="p">())</span>
+
+<span class="c1">### Discord.py Usage:
+</span><span class="kn">import</span> <span class="nn">pylunar</span>
+
+<span class="o">@</span><span class="n">commands</span><span class="p">.</span><span class="n">command</span><span class="p">()</span>
+<span class="k">async</span> <span class="k">def</span> <span class="nf">hololive</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ctx</span><span class="p">):</span>
+    <span class="k">async</span> <span class="k">with</span> <span class="n">aiohttp</span><span class="p">.</span><span class="n">ClientSession</span><span class="p">()</span> <span class="k">as</span> <span class="n">session</span><span class="p">:</span>
+        <span class="n">client</span> <span class="o">=</span> <span class="n">pylunar</span><span class="p">.</span><span class="n">Client</span><span class="p">(</span>
+            <span class="n">session</span><span class="o">=</span><span class="n">session</span><span class="p">,</span>
+            <span class="n">token</span><span class="o">=</span><span class="n">token</span><span class="p">,</span>
+        <span class="p">)</span>
+        <span class="n">image</span> <span class="o">=</span> <span class="k">await</span> <span class="n">client</span><span class="p">.</span><span class="n">request</span><span class="p">(</span>
+            <span class="n">pylunar</span><span class="p">.</span><span class="n">endpoints</span><span class="p">.</span><span class="n">nsfw</span><span class="p">(</span><span class="s">"hololive"</span><span class="p">)</span>
+        <span class="p">)</span>
+        <span class="n">data</span> <span class="o">=</span> <span class="k">await</span> <span class="n">image</span><span class="p">.</span><span class="n">to_dict</span><span class="p">()</span>
+
+        <span class="k">await</span> <span class="n">ctx</span><span class="p">.</span><span class="n">send</span><span class="p">(</span><span class="sa">f</span><span class="s">"</span><span class="si">{</span><span class="n">data</span><span class="p">[</span><span class="s">"url"</span><span class="p">]</span><span class="si">}</span><span class="s">"</span><span class="p">)</span>
+</code></pre></div>
+<blockquote>
+<p>The above returns a JSON object:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"hololive_MF2cWkDS7"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"url: "</span><span class="err">https://api.lunardev.group/hololive/hololive_MF</span><span class="mi">2</span><span class="err">cWkDS</span><span class="mi">7</span><span class="err">.jpg</span><span class="s2">"
+}
+</span></code></pre></div>
+<p>This endpoint generates a JSON object</p>
+<h3 id='http-request-6'>HTTP Request</h3>
+<p><code>GET https://api.lunardev.group/nsfw/hololive</code></p>
+<h3 id='returned-data-6'>Returned data</h3>
+<table><thead>
+<tr>
+<th>Key</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>id</td>
+<td>This is what we refer to as the image ID. It is useful for logging and reporting purposes.</td>
+</tr>
+<tr>
+<td>url</td>
+<td>The direct image URL for the image retrieved. You can use this in embeds and whatever else you wish.</td>
+</tr>
+</tbody></table>
+<h2 id='jpg'>Jpg</h2><div class="highlight"><pre class="highlight python tab-python"><code><span class="kn">from</span> <span class="nn">pylunar</span> <span class="kn">import</span> <span class="n">Client</span><span class="p">,</span> <span class="n">endpoints</span>
+<span class="kn">from</span> <span class="nn">aiohttp</span> <span class="kn">import</span> <span class="n">ClientSession</span>
+<span class="kn">import</span> <span class="nn">asyncio</span>
+
+<span class="n">token</span> <span class="o">=</span> <span class="s">""</span>  <span class="c1"># Replace with your Lunar API Key.
+</span>
+<span class="k">async</span> <span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
+    <span class="k">async</span> <span class="k">with</span> <span class="n">ClientSession</span><span class="p">()</span> <span class="k">as</span> <span class="n">session</span><span class="p">:</span>
+        <span class="n">client</span> <span class="o">=</span> <span class="n">Client</span><span class="p">(</span><span class="n">session</span><span class="o">=</span><span class="n">session</span><span class="p">,</span> <span class="n">token</span><span class="o">=</span><span class="n">token</span><span class="p">)</span>
+
+        <span class="n">image</span> <span class="o">=</span> <span class="k">await</span> <span class="n">client</span><span class="p">.</span><span class="n">request</span><span class="p">(</span><span class="n">endpoints</span><span class="p">.</span><span class="n">nsfw</span><span class="p">(</span><span class="s">"jpg"</span><span class="p">))</span>
+        <span class="k">print</span><span class="p">(</span><span class="k">await</span> <span class="n">image</span><span class="p">.</span><span class="n">to_dict</span><span class="p">())</span>
+
+<span class="n">asyncio</span><span class="p">.</span><span class="n">run</span><span class="p">(</span><span class="n">main</span><span class="p">())</span>
+
+<span class="c1">### Discord.py Usage:
+</span><span class="kn">import</span> <span class="nn">pylunar</span>
+
+<span class="o">@</span><span class="n">commands</span><span class="p">.</span><span class="n">command</span><span class="p">()</span>
+<span class="k">async</span> <span class="k">def</span> <span class="nf">jpg</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ctx</span><span class="p">):</span>
+    <span class="k">async</span> <span class="k">with</span> <span class="n">aiohttp</span><span class="p">.</span><span class="n">ClientSession</span><span class="p">()</span> <span class="k">as</span> <span class="n">session</span><span class="p">:</span>
+        <span class="n">client</span> <span class="o">=</span> <span class="n">pylunar</span><span class="p">.</span><span class="n">Client</span><span class="p">(</span>
+            <span class="n">session</span><span class="o">=</span><span class="n">session</span><span class="p">,</span>
+            <span class="n">token</span><span class="o">=</span><span class="n">token</span><span class="p">,</span>
+        <span class="p">)</span>
+        <span class="n">image</span> <span class="o">=</span> <span class="k">await</span> <span class="n">client</span><span class="p">.</span><span class="n">request</span><span class="p">(</span>
+            <span class="n">pylunar</span><span class="p">.</span><span class="n">endpoints</span><span class="p">.</span><span class="n">nsfw</span><span class="p">(</span><span class="s">"jpg"</span><span class="p">)</span>
+        <span class="p">)</span>
+        <span class="n">data</span> <span class="o">=</span> <span class="k">await</span> <span class="n">image</span><span class="p">.</span><span class="n">to_dict</span><span class="p">()</span>
+
+        <span class="k">await</span> <span class="n">ctx</span><span class="p">.</span><span class="n">send</span><span class="p">(</span><span class="sa">f</span><span class="s">"</span><span class="si">{</span><span class="n">data</span><span class="p">[</span><span class="s">"url"</span><span class="p">]</span><span class="si">}</span><span class="s">"</span><span class="p">)</span>
+</code></pre></div>
+<blockquote>
+<p>The above returns a JSON object:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"jpg_MF2cWkDS7"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"url: "</span><span class="err">https://api.lunardev.group/jpg/jpg_MF</span><span class="mi">2</span><span class="err">cWkDS</span><span class="mi">7</span><span class="err">.jpg</span><span class="s2">"
+}
+</span></code></pre></div>
+<p>This endpoint generates a JSON object</p>
+<h3 id='http-request-7'>HTTP Request</h3>
+<p><code>GET https://api.lunardev.group/nsfw/jpg</code></p>
+<h3 id='returned-data-7'>Returned data</h3>
+<table><thead>
+<tr>
+<th>Key</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>id</td>
+<td>This is what we refer to as the image ID. It is useful for logging and reporting purposes.</td>
+</tr>
+<tr>
+<td>url</td>
+<td>The direct image URL for the image retrieved. You can use this in embeds and whatever else you wish.</td>
+</tr>
+</tbody></table>
+<h2 id='neko'>Neko</h2><div class="highlight"><pre class="highlight python tab-python"><code><span class="kn">from</span> <span class="nn">pylunar</span> <span class="kn">import</span> <span class="n">Client</span><span class="p">,</span> <span class="n">endpoints</span>
+<span class="kn">from</span> <span class="nn">aiohttp</span> <span class="kn">import</span> <span class="n">ClientSession</span>
+<span class="kn">import</span> <span class="nn">asyncio</span>
+
+<span class="n">token</span> <span class="o">=</span> <span class="s">""</span>  <span class="c1"># Replace with your Lunar API Key.
+</span>
+<span class="k">async</span> <span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
+    <span class="k">async</span> <span class="k">with</span> <span class="n">ClientSession</span><span class="p">()</span> <span class="k">as</span> <span class="n">session</span><span class="p">:</span>
+        <span class="n">client</span> <span class="o">=</span> <span class="n">Client</span><span class="p">(</span><span class="n">session</span><span class="o">=</span><span class="n">session</span><span class="p">,</span> <span class="n">token</span><span class="o">=</span><span class="n">token</span><span class="p">)</span>
+
+        <span class="n">image</span> <span class="o">=</span> <span class="k">await</span> <span class="n">client</span><span class="p">.</span><span class="n">request</span><span class="p">(</span><span class="n">endpoints</span><span class="p">.</span><span class="n">nsfw</span><span class="p">(</span><span class="s">"neko"</span><span class="p">))</span>
+        <span class="k">print</span><span class="p">(</span><span class="k">await</span> <span class="n">image</span><span class="p">.</span><span class="n">to_dict</span><span class="p">())</span>
+
+<span class="n">asyncio</span><span class="p">.</span><span class="n">run</span><span class="p">(</span><span class="n">main</span><span class="p">())</span>
+
+<span class="c1">### Discord.py Usage:
+</span><span class="kn">import</span> <span class="nn">pylunar</span>
+
+<span class="o">@</span><span class="n">commands</span><span class="p">.</span><span class="n">command</span><span class="p">()</span>
+<span class="k">async</span> <span class="k">def</span> <span class="nf">neko</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ctx</span><span class="p">):</span>
+    <span class="k">async</span> <span class="k">with</span> <span class="n">aiohttp</span><span class="p">.</span><span class="n">ClientSession</span><span class="p">()</span> <span class="k">as</span> <span class="n">session</span><span class="p">:</span>
+        <span class="n">client</span> <span class="o">=</span> <span class="n">pylunar</span><span class="p">.</span><span class="n">Client</span><span class="p">(</span>
+            <span class="n">session</span><span class="o">=</span><span class="n">session</span><span class="p">,</span>
+            <span class="n">token</span><span class="o">=</span><span class="n">token</span><span class="p">,</span>
+        <span class="p">)</span>
+        <span class="n">image</span> <span class="o">=</span> <span class="k">await</span> <span class="n">client</span><span class="p">.</span><span class="n">request</span><span class="p">(</span>
+            <span class="n">pylunar</span><span class="p">.</span><span class="n">endpoints</span><span class="p">.</span><span class="n">nsfw</span><span class="p">(</span><span class="s">"neko"</span><span class="p">)</span>
+        <span class="p">)</span>
+        <span class="n">data</span> <span class="o">=</span> <span class="k">await</span> <span class="n">image</span><span class="p">.</span><span class="n">to_dict</span><span class="p">()</span>
+
+        <span class="k">await</span> <span class="n">ctx</span><span class="p">.</span><span class="n">send</span><span class="p">(</span><span class="sa">f</span><span class="s">"</span><span class="si">{</span><span class="n">data</span><span class="p">[</span><span class="s">"url"</span><span class="p">]</span><span class="si">}</span><span class="s">"</span><span class="p">)</span>
+</code></pre></div>
+<blockquote>
+<p>The above returns a JSON object:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"neko_MF2cWkDS7"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"url: "</span><span class="err">https://api.lunardev.group/neko/neko_MF</span><span class="mi">2</span><span class="err">cWkDS</span><span class="mi">7</span><span class="err">.jpg</span><span class="s2">"
+}
+</span></code></pre></div>
+<p>This endpoint generates a JSON object</p>
+<h3 id='http-request-8'>HTTP Request</h3>
+<p><code>GET https://api.lunardev.group/nsfw/neko</code></p>
+<h3 id='returned-data-8'>Returned data</h3>
+<table><thead>
+<tr>
+<th>Key</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>id</td>
+<td>This is what we refer to as the image ID. It is useful for logging and reporting purposes.</td>
+</tr>
+<tr>
+<td>url</td>
+<td>The direct image URL for the image retrieved. You can use this in embeds and whatever else you wish.</td>
+</tr>
+</tbody></table>
+<h2 id='panties'>Panties</h2><div class="highlight"><pre class="highlight python tab-python"><code><span class="kn">from</span> <span class="nn">pylunar</span> <span class="kn">import</span> <span class="n">Client</span><span class="p">,</span> <span class="n">endpoints</span>
+<span class="kn">from</span> <span class="nn">aiohttp</span> <span class="kn">import</span> <span class="n">ClientSession</span>
+<span class="kn">import</span> <span class="nn">asyncio</span>
+
+<span class="n">token</span> <span class="o">=</span> <span class="s">""</span>  <span class="c1"># Replace with your Lunar API Key.
+</span>
+<span class="k">async</span> <span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
+    <span class="k">async</span> <span class="k">with</span> <span class="n">ClientSession</span><span class="p">()</span> <span class="k">as</span> <span class="n">session</span><span class="p">:</span>
+        <span class="n">client</span> <span class="o">=</span> <span class="n">Client</span><span class="p">(</span><span class="n">session</span><span class="o">=</span><span class="n">session</span><span class="p">,</span> <span class="n">token</span><span class="o">=</span><span class="n">token</span><span class="p">)</span>
+
+        <span class="n">image</span> <span class="o">=</span> <span class="k">await</span> <span class="n">client</span><span class="p">.</span><span class="n">request</span><span class="p">(</span><span class="n">endpoints</span><span class="p">.</span><span class="n">nsfw</span><span class="p">(</span><span class="s">"panties"</span><span class="p">))</span>
+        <span class="k">print</span><span class="p">(</span><span class="k">await</span> <span class="n">image</span><span class="p">.</span><span class="n">to_dict</span><span class="p">())</span>
+
+<span class="n">asyncio</span><span class="p">.</span><span class="n">run</span><span class="p">(</span><span class="n">main</span><span class="p">())</span>
+
+<span class="c1">### Discord.py Usage:
+</span><span class="kn">import</span> <span class="nn">pylunar</span>
+
+<span class="o">@</span><span class="n">commands</span><span class="p">.</span><span class="n">command</span><span class="p">()</span>
+<span class="k">async</span> <span class="k">def</span> <span class="nf">panties</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ctx</span><span class="p">):</span>
+    <span class="k">async</span> <span class="k">with</span> <span class="n">aiohttp</span><span class="p">.</span><span class="n">ClientSession</span><span class="p">()</span> <span class="k">as</span> <span class="n">session</span><span class="p">:</span>
+        <span class="n">client</span> <span class="o">=</span> <span class="n">pylunar</span><span class="p">.</span><span class="n">Client</span><span class="p">(</span>
+            <span class="n">session</span><span class="o">=</span><span class="n">session</span><span class="p">,</span>
+            <span class="n">token</span><span class="o">=</span><span class="n">token</span><span class="p">,</span>
+        <span class="p">)</span>
+        <span class="n">image</span> <span class="o">=</span> <span class="k">await</span> <span class="n">client</span><span class="p">.</span><span class="n">request</span><span class="p">(</span>
+            <span class="n">pylunar</span><span class="p">.</span><span class="n">endpoints</span><span class="p">.</span><span class="n">nsfw</span><span class="p">(</span><span class="s">"panties"</span><span class="p">)</span>
+        <span class="p">)</span>
+        <span class="n">data</span> <span class="o">=</span> <span class="k">await</span> <span class="n">image</span><span class="p">.</span><span class="n">to_dict</span><span class="p">()</span>
+
+        <span class="k">await</span> <span class="n">ctx</span><span class="p">.</span><span class="n">send</span><span class="p">(</span><span class="sa">f</span><span class="s">"</span><span class="si">{</span><span class="n">data</span><span class="p">[</span><span class="s">"url"</span><span class="p">]</span><span class="si">}</span><span class="s">"</span><span class="p">)</span>
+</code></pre></div>
+<blockquote>
+<p>The above returns a JSON object:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"panties_MF2cWkDS7"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"url: "</span><span class="err">https://api.lunardev.group/panties/panties_MF</span><span class="mi">2</span><span class="err">cWkDS</span><span class="mi">7</span><span class="err">.jpg</span><span class="s2">"
+}
+</span></code></pre></div>
+<p>This endpoint generates a JSON object</p>
+<h3 id='http-request-9'>HTTP Request</h3>
+<p><code>GET https://api.lunardev.group/nsfw/panties</code></p>
+<h3 id='returned-data-9'>Returned data</h3>
+<table><thead>
+<tr>
+<th>Key</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>id</td>
+<td>This is what we refer to as the image ID. It is useful for logging and reporting purposes.</td>
+</tr>
+<tr>
+<td>url</td>
+<td>The direct image URL for the image retrieved. You can use this in embeds and whatever else you wish.</td>
+</tr>
+</tbody></table>
+<h2 id='thighs'>Thighs</h2><div class="highlight"><pre class="highlight python tab-python"><code><span class="kn">from</span> <span class="nn">pylunar</span> <span class="kn">import</span> <span class="n">Client</span><span class="p">,</span> <span class="n">endpoints</span>
+<span class="kn">from</span> <span class="nn">aiohttp</span> <span class="kn">import</span> <span class="n">ClientSession</span>
+<span class="kn">import</span> <span class="nn">asyncio</span>
+
+<span class="n">token</span> <span class="o">=</span> <span class="s">""</span>  <span class="c1"># Replace with your Lunar API Key.
+</span>
+<span class="k">async</span> <span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
+    <span class="k">async</span> <span class="k">with</span> <span class="n">ClientSession</span><span class="p">()</span> <span class="k">as</span> <span class="n">session</span><span class="p">:</span>
+        <span class="n">client</span> <span class="o">=</span> <span class="n">Client</span><span class="p">(</span><span class="n">session</span><span class="o">=</span><span class="n">session</span><span class="p">,</span> <span class="n">token</span><span class="o">=</span><span class="n">token</span><span class="p">)</span>
+
+        <span class="n">image</span> <span class="o">=</span> <span class="k">await</span> <span class="n">client</span><span class="p">.</span><span class="n">request</span><span class="p">(</span><span class="n">endpoints</span><span class="p">.</span><span class="n">nsfw</span><span class="p">(</span><span class="s">"thighs"</span><span class="p">))</span>
+        <span class="k">print</span><span class="p">(</span><span class="k">await</span> <span class="n">image</span><span class="p">.</span><span class="n">to_dict</span><span class="p">())</span>
+
+<span class="n">asyncio</span><span class="p">.</span><span class="n">run</span><span class="p">(</span><span class="n">main</span><span class="p">())</span>
+
+<span class="c1">### Discord.py Usage:
+</span><span class="kn">import</span> <span class="nn">pylunar</span>
+
+<span class="o">@</span><span class="n">commands</span><span class="p">.</span><span class="n">command</span><span class="p">()</span>
+<span class="k">async</span> <span class="k">def</span> <span class="nf">thighs</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ctx</span><span class="p">):</span>
+    <span class="k">async</span> <span class="k">with</span> <span class="n">aiohttp</span><span class="p">.</span><span class="n">ClientSession</span><span class="p">()</span> <span class="k">as</span> <span class="n">session</span><span class="p">:</span>
+        <span class="n">client</span> <span class="o">=</span> <span class="n">pylunar</span><span class="p">.</span><span class="n">Client</span><span class="p">(</span>
+            <span class="n">session</span><span class="o">=</span><span class="n">session</span><span class="p">,</span>
+            <span class="n">token</span><span class="o">=</span><span class="n">token</span><span class="p">,</span>
+        <span class="p">)</span>
+        <span class="n">image</span> <span class="o">=</span> <span class="k">await</span> <span class="n">client</span><span class="p">.</span><span class="n">request</span><span class="p">(</span>
+            <span class="n">pylunar</span><span class="p">.</span><span class="n">endpoints</span><span class="p">.</span><span class="n">nsfw</span><span class="p">(</span><span class="s">"thighs"</span><span class="p">)</span>
+        <span class="p">)</span>
+        <span class="n">data</span> <span class="o">=</span> <span class="k">await</span> <span class="n">image</span><span class="p">.</span><span class="n">to_dict</span><span class="p">()</span>
+
+        <span class="k">await</span> <span class="n">ctx</span><span class="p">.</span><span class="n">send</span><span class="p">(</span><span class="sa">f</span><span class="s">"</span><span class="si">{</span><span class="n">data</span><span class="p">[</span><span class="s">"url"</span><span class="p">]</span><span class="si">}</span><span class="s">"</span><span class="p">)</span>
+</code></pre></div>
+<blockquote>
+<p>The above returns a JSON object:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"thighs_MF2cWkDS7"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"url: "</span><span class="err">https://api.lunardev.group/thighs/thighs_MF</span><span class="mi">2</span><span class="err">cWkDS</span><span class="mi">7</span><span class="err">.jpg</span><span class="s2">"
+}
+</span></code></pre></div>
+<p>This endpoint generates a JSON object</p>
+<h3 id='http-request-10'>HTTP Request</h3>
+<p><code>GET https://api.lunardev.group/nsfw/thighs</code></p>
+<h3 id='returned-data-10'>Returned data</h3>
+<table><thead>
+<tr>
+<th>Key</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>id</td>
+<td>This is what we refer to as the image ID. It is useful for logging and reporting purposes.</td>
+</tr>
+<tr>
+<td>url</td>
+<td>The direct image URL for the image retrieved. You can use this in embeds and whatever else you wish.</td>
+</tr>
+</tbody></table>
+<h2 id='yuri'>Yuri</h2><div class="highlight"><pre class="highlight python tab-python"><code><span class="kn">from</span> <span class="nn">pylunar</span> <span class="kn">import</span> <span class="n">Client</span><span class="p">,</span> <span class="n">endpoints</span>
+<span class="kn">from</span> <span class="nn">aiohttp</span> <span class="kn">import</span> <span class="n">ClientSession</span>
+<span class="kn">import</span> <span class="nn">asyncio</span>
+
+<span class="n">token</span> <span class="o">=</span> <span class="s">""</span>  <span class="c1"># Replace with your Lunar API Key.
+</span>
+<span class="k">async</span> <span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
+    <span class="k">async</span> <span class="k">with</span> <span class="n">ClientSession</span><span class="p">()</span> <span class="k">as</span> <span class="n">session</span><span class="p">:</span>
+        <span class="n">client</span> <span class="o">=</span> <span class="n">Client</span><span class="p">(</span><span class="n">session</span><span class="o">=</span><span class="n">session</span><span class="p">,</span> <span class="n">token</span><span class="o">=</span><span class="n">token</span><span class="p">)</span>
+
+        <span class="n">image</span> <span class="o">=</span> <span class="k">await</span> <span class="n">client</span><span class="p">.</span><span class="n">request</span><span class="p">(</span><span class="n">endpoints</span><span class="p">.</span><span class="n">nsfw</span><span class="p">(</span><span class="s">"yuri"</span><span class="p">))</span>
+        <span class="k">print</span><span class="p">(</span><span class="k">await</span> <span class="n">image</span><span class="p">.</span><span class="n">to_dict</span><span class="p">())</span>
+
+<span class="n">asyncio</span><span class="p">.</span><span class="n">run</span><span class="p">(</span><span class="n">main</span><span class="p">())</span>
+
+<span class="c1">### Discord.py Usage:
+</span><span class="kn">import</span> <span class="nn">pylunar</span>
+
+<span class="o">@</span><span class="n">commands</span><span class="p">.</span><span class="n">command</span><span class="p">()</span>
+<span class="k">async</span> <span class="k">def</span> <span class="nf">yuri</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ctx</span><span class="p">):</span>
+    <span class="k">async</span> <span class="k">with</span> <span class="n">aiohttp</span><span class="p">.</span><span class="n">ClientSession</span><span class="p">()</span> <span class="k">as</span> <span class="n">session</span><span class="p">:</span>
+        <span class="n">client</span> <span class="o">=</span> <span class="n">pylunar</span><span class="p">.</span><span class="n">Client</span><span class="p">(</span>
+            <span class="n">session</span><span class="o">=</span><span class="n">session</span><span class="p">,</span>
+            <span class="n">token</span><span class="o">=</span><span class="n">token</span><span class="p">,</span>
+        <span class="p">)</span>
+        <span class="n">image</span> <span class="o">=</span> <span class="k">await</span> <span class="n">client</span><span class="p">.</span><span class="n">request</span><span class="p">(</span>
+            <span class="n">pylunar</span><span class="p">.</span><span class="n">endpoints</span><span class="p">.</span><span class="n">nsfw</span><span class="p">(</span><span class="s">"yuri"</span><span class="p">)</span>
+        <span class="p">)</span>
+        <span class="n">data</span> <span class="o">=</span> <span class="k">await</span> <span class="n">image</span><span class="p">.</span><span class="n">to_dict</span><span class="p">()</span>
+
+        <span class="k">await</span> <span class="n">ctx</span><span class="p">.</span><span class="n">send</span><span class="p">(</span><span class="sa">f</span><span class="s">"</span><span class="si">{</span><span class="n">data</span><span class="p">[</span><span class="s">"url"</span><span class="p">]</span><span class="si">}</span><span class="s">"</span><span class="p">)</span>
+</code></pre></div>
+<blockquote>
+<p>The above returns a JSON object:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"yuri_MF2cWkDS7"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"url: "</span><span class="err">https://api.lunardev.group/yuri/yuri_MF</span><span class="mi">2</span><span class="err">cWkDS</span><span class="mi">7</span><span class="err">.jpg</span><span class="s2">"
+}
+</span></code></pre></div>
+<p>This endpoint generates a JSON object</p>
+<h3 id='http-request-11'>HTTP Request</h3>
+<p><code>GET https://api.lunardev.group/nsfw/yuri</code></p>
+<h3 id='returned-data-11'>Returned data</h3>
+<table><thead>
+<tr>
+<th>Key</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>id</td>
+<td>This is what we refer to as the image ID. It is useful for logging and reporting purposes.</td>
+</tr>
+<tr>
+<td>url</td>
+<td>The direct image URL for the image retrieved. You can use this in embeds and whatever else you wish.</td>
+</tr>
+</tbody></table>
+<h1 id='errors'>Errors</h1>
+<p>The Lunar API uses the following error codes:</p>
+
+<table><thead>
+<tr>
+<th>Error Code</th>
+<th>Meaning</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>400</td>
+<td>Bad Request -- Your request is invalid.</td>
+</tr>
+<tr>
+<td>401</td>
+<td>Unauthorized -- Your API key is wrong.</td>
+</tr>
+<tr>
+<td>403</td>
+<td>Forbidden -- The endpoint requested is hidden for administrators only.</td>
+</tr>
+<tr>
+<td>404</td>
+<td>Not Found -- The specified endpoint could not be found.</td>
+</tr>
+<tr>
+<td>405</td>
+<td>Method Not Allowed -- You tried to access an endpoint with an invalid method.</td>
+</tr>
+<tr>
+<td>406</td>
+<td>Not Acceptable -- You requested a format that isn&#39;t json.</td>
+</tr>
+<tr>
+<td>410</td>
+<td>Gone -- The endpoint requested has been removed from our servers.</td>
+</tr>
+<tr>
+<td>418</td>
+<td>I&#39;m a teapot.</td>
+</tr>
+<tr>
+<td>429</td>
+<td>Too Many Requests -- You&#39;re requesting too many things! Slow down!</td>
+</tr>
+<tr>
+<td>500</td>
+<td>Internal Server Error -- We had a problem with our server. Try again later.</td>
+</tr>
+<tr>
+<td>503</td>
+<td>Service Unavailable -- We&#39;re temporarily offline for maintenance. Please try again later.</td>
+</tr>
+</tbody></table>
+
+      </div>
+      <div class="dark-box">
+          <div class="lang-selector">
+                <a href="#" data-language-name="python">python</a>
+          </div>
+      </div>
+    </div>
+  </body>
+</html>

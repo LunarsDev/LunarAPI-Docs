@@ -1,0 +1,16 @@
+<h1 id='introduction'>Introduction</h1>
+<p>Welcome to the Lunar API! With our async API, you can retrieve image data for NSFW images of multiple categories. Image generation, such as welcome banners, memes, and more!</p>
+
+<p>We have language bindings in Python! You can view code examples in the dark area to the right, and you can switch the programming language of the examples with the tabs in the top right (only currently supported languages are provided a tab).</p>
+
+<p><em>All examples are in assumption that our wrapper is being used.</em></p>
+
+<p><strong>Content Warning: This API includes NSFW content underneath the <code>Image API (NSFW)</code> section.</strong></p>
+
+<blockquote>
+<p>The Python wrapper is not yet publically available.</p>
+
+<blockquote>
+<p>ETA: ~2 weeks</p>
+</blockquote>
+</blockquote>
