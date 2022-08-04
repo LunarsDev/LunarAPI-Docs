@@ -51,10 +51,582 @@ This endpoint generates a JSON object
 
 `GET https://api.lunardev.group/nsfw/ahegao`
 
-### Query Parameters
-
-NONE :D
+### Returned data
+Key | Description 
+--------- | ------- 
+id | This is what we refer to as the image ID. It is useful for logging and reporting purposes.
+url | The direct image URL for the image retrieved. You can use this in embeds and whatever else you wish.
 
 <aside class="success">
 Remember — This is returning a JSON object!
 </aside>
+
+## Ass
+
+```python
+from pylunar import Client, endpoints
+from aiohttp import ClientSession
+import asyncio
+
+token = ""  # Replace with your Lunar API Key.
+
+async def main():
+    async with ClientSession() as session:
+        client = Client(session=session, token=token)
+
+        image = await client.request(endpoints.nsfw("ass"))
+        print(await image.to_dict())
+
+asyncio.run(main())
+
+### Discord.py Usage:
+import pylunar
+
+@commands.command()
+async def ass(self, ctx):
+    async with aiohttp.ClientSession() as session:
+        client = pylunar.Client(
+            session=session,
+            token=token,
+        )
+        image = await client.request(
+            pylunar.endpoints.nsfw("ass")
+        )
+        data = await image.to_dict()
+
+        await ctx.send(f"{data["url"]}")
+```
+
+> The above returns a JSON object:
+
+```json
+{
+    "id": "ass_MF2cWkDS7",
+    "url: "https://api.lunardev.group/ass/ass_MF2cWkDS7.jpg"
+}
+```
+
+This endpoint generates a JSON object
+
+### HTTP Request
+
+`GET https://api.lunardev.group/nsfw/ass`
+
+### Returned data
+Key | Description 
+--------- | ------- 
+id | This is what we refer to as the image ID. It is useful for logging and reporting purposes.
+url | The direct image URL for the image retrieved. You can use this in embeds and whatever else you wish.
+
+## Boobs
+
+```python
+from pylunar import Client, endpoints
+from aiohttp import ClientSession
+import asyncio
+
+token = ""  # Replace with your Lunar API Key.
+
+async def main():
+    async with ClientSession() as session:
+        client = Client(session=session, token=token)
+
+        image = await client.request(endpoints.nsfw("boobs"))
+        print(await image.to_dict())
+
+asyncio.run(main())
+
+### Discord.py Usage:
+import pylunar
+
+@commands.command()
+async def boobs(self, ctx):
+    async with aiohttp.ClientSession() as session:
+        client = pylunar.Client(
+            session=session,
+            token=token,
+        )
+        image = await client.request(
+            pylunar.endpoints.nsfw("boobs")
+        )
+        data = await image.to_dict()
+
+        await ctx.send(f"{data["url"]}")
+```
+
+> The above returns a JSON object:
+
+```json
+{
+    "id": "boobs_MF2cWkDS7",
+    "url: "https://api.lunardev.group/boobs/boobs_MF2cWkDS7.jpg"
+}
+```
+
+This endpoint generates a JSON object
+
+### HTTP Request
+
+`GET https://api.lunardev.group/nsfw/boobs`
+
+### Returned data
+Key | Description 
+--------- | ------- 
+id | This is what we refer to as the image ID. It is useful for logging and reporting purposes.
+url | The direct image URL for the image retrieved. You can use this in embeds and whatever else you wish.
+
+## Cum
+
+```python
+from pylunar import Client, endpoints
+from aiohttp import ClientSession
+import asyncio
+
+token = ""  # Replace with your Lunar API Key.
+
+async def main():
+    async with ClientSession() as session:
+        client = Client(session=session, token=token)
+
+        image = await client.request(endpoints.nsfw("cum"))
+        print(await image.to_dict())
+
+asyncio.run(main())
+
+### Discord.py Usage:
+import pylunar
+
+@commands.command()
+async def cum(self, ctx):
+    async with aiohttp.ClientSession() as session:
+        client = pylunar.Client(
+            session=session,
+            token=token,
+        )
+        image = await client.request(
+            pylunar.endpoints.nsfw("cum")
+        )
+        data = await image.to_dict()
+
+        await ctx.send(f"{data["url"]}")
+```
+
+> The above returns a JSON object:
+
+```json
+{
+    "id": "cum_MF2cWkDS7",
+    "url: "https://api.lunardev.group/cum/cum_MF2cWkDS7.jpg"
+}
+```
+
+This endpoint generates a JSON object
+
+### HTTP Request
+
+`GET https://api.lunardev.group/nsfw/cum`
+
+### Returned data
+Key | Description 
+--------- | ------- 
+id | This is what we refer to as the image ID. It is useful for logging and reporting purposes.
+url | The direct image URL for the image retrieved. You can use this in embeds and whatever else you wish.
+
+## Gif
+
+```python
+from pylunar import Client, endpoints
+from aiohttp import ClientSession
+import asyncio
+
+token = ""  # Replace with your Lunar API Key.
+
+async def main():
+    async with ClientSession() as session:
+        client = Client(session=session, token=token)
+
+        image = await client.request(endpoints.nsfw("gif"))
+        print(await image.to_dict())
+
+asyncio.run(main())
+
+### Discord.py Usage:
+import pylunar
+
+@commands.command()
+async def gif(self, ctx):
+    async with aiohttp.ClientSession() as session:
+        client = pylunar.Client(
+            session=session,
+            token=token,
+        )
+        image = await client.request(
+            pylunar.endpoints.nsfw("gif")
+        )
+        data = await image.to_dict()
+
+        await ctx.send(f"{data["url"]}")
+```
+
+> The above returns a JSON object:
+
+```json
+{
+    "id": "gif_MF2cWkDS7",
+    "url: "https://api.lunardev.group/gif/gif_MF2cWkDS7.gif"
+}
+```
+
+This endpoint generates a JSON object
+
+### HTTP Request
+
+`GET https://api.lunardev.group/nsfw/gif`
+
+### Returned data
+Key | Description 
+--------- | ------- 
+id | This is what we refer to as the image ID. It is useful for logging and reporting purposes.
+url | The direct image URL for the image retrieved. You can use this in embeds and whatever else you wish.
+
+## Hololive
+
+```python
+from pylunar import Client, endpoints
+from aiohttp import ClientSession
+import asyncio
+
+token = ""  # Replace with your Lunar API Key.
+
+async def main():
+    async with ClientSession() as session:
+        client = Client(session=session, token=token)
+
+        image = await client.request(endpoints.nsfw("hololive"))
+        print(await image.to_dict())
+
+asyncio.run(main())
+
+### Discord.py Usage:
+import pylunar
+
+@commands.command()
+async def hololive(self, ctx):
+    async with aiohttp.ClientSession() as session:
+        client = pylunar.Client(
+            session=session,
+            token=token,
+        )
+        image = await client.request(
+            pylunar.endpoints.nsfw("hololive")
+        )
+        data = await image.to_dict()
+
+        await ctx.send(f"{data["url"]}")
+```
+
+> The above returns a JSON object:
+
+```json
+{
+    "id": "hololive_MF2cWkDS7",
+    "url: "https://api.lunardev.group/hololive/hololive_MF2cWkDS7.jpg"
+}
+```
+
+This endpoint generates a JSON object
+
+### HTTP Request
+
+`GET https://api.lunardev.group/nsfw/hololive`
+
+### Returned data
+Key | Description 
+--------- | ------- 
+id | This is what we refer to as the image ID. It is useful for logging and reporting purposes.
+url | The direct image URL for the image retrieved. You can use this in embeds and whatever else you wish.
+
+## Jpg
+
+```python
+from pylunar import Client, endpoints
+from aiohttp import ClientSession
+import asyncio
+
+token = ""  # Replace with your Lunar API Key.
+
+async def main():
+    async with ClientSession() as session:
+        client = Client(session=session, token=token)
+
+        image = await client.request(endpoints.nsfw("jpg"))
+        print(await image.to_dict())
+
+asyncio.run(main())
+
+### Discord.py Usage:
+import pylunar
+
+@commands.command()
+async def jpg(self, ctx):
+    async with aiohttp.ClientSession() as session:
+        client = pylunar.Client(
+            session=session,
+            token=token,
+        )
+        image = await client.request(
+            pylunar.endpoints.nsfw("jpg")
+        )
+        data = await image.to_dict()
+
+        await ctx.send(f"{data["url"]}")
+```
+
+> The above returns a JSON object:
+
+```json
+{
+    "id": "jpg_MF2cWkDS7",
+    "url: "https://api.lunardev.group/jpg/jpg_MF2cWkDS7.jpg"
+}
+```
+
+This endpoint generates a JSON object
+
+### HTTP Request
+
+`GET https://api.lunardev.group/nsfw/jpg`
+
+### Returned data
+Key | Description 
+--------- | ------- 
+id | This is what we refer to as the image ID. It is useful for logging and reporting purposes.
+url | The direct image URL for the image retrieved. You can use this in embeds and whatever else you wish.
+
+## Neko
+
+```python
+from pylunar import Client, endpoints
+from aiohttp import ClientSession
+import asyncio
+
+token = ""  # Replace with your Lunar API Key.
+
+async def main():
+    async with ClientSession() as session:
+        client = Client(session=session, token=token)
+
+        image = await client.request(endpoints.nsfw("neko"))
+        print(await image.to_dict())
+
+asyncio.run(main())
+
+### Discord.py Usage:
+import pylunar
+
+@commands.command()
+async def neko(self, ctx):
+    async with aiohttp.ClientSession() as session:
+        client = pylunar.Client(
+            session=session,
+            token=token,
+        )
+        image = await client.request(
+            pylunar.endpoints.nsfw("neko")
+        )
+        data = await image.to_dict()
+
+        await ctx.send(f"{data["url"]}")
+```
+
+> The above returns a JSON object:
+
+```json
+{
+    "id": "neko_MF2cWkDS7",
+    "url: "https://api.lunardev.group/neko/neko_MF2cWkDS7.jpg"
+}
+```
+
+This endpoint generates a JSON object
+
+### HTTP Request
+
+`GET https://api.lunardev.group/nsfw/neko`
+
+### Returned data
+Key | Description 
+--------- | ------- 
+id | This is what we refer to as the image ID. It is useful for logging and reporting purposes.
+url | The direct image URL for the image retrieved. You can use this in embeds and whatever else you wish.
+
+## Panties
+
+```python
+from pylunar import Client, endpoints
+from aiohttp import ClientSession
+import asyncio
+
+token = ""  # Replace with your Lunar API Key.
+
+async def main():
+    async with ClientSession() as session:
+        client = Client(session=session, token=token)
+
+        image = await client.request(endpoints.nsfw("panties"))
+        print(await image.to_dict())
+
+asyncio.run(main())
+
+### Discord.py Usage:
+import pylunar
+
+@commands.command()
+async def panties(self, ctx):
+    async with aiohttp.ClientSession() as session:
+        client = pylunar.Client(
+            session=session,
+            token=token,
+        )
+        image = await client.request(
+            pylunar.endpoints.nsfw("panties")
+        )
+        data = await image.to_dict()
+
+        await ctx.send(f"{data["url"]}")
+```
+
+> The above returns a JSON object:
+
+```json
+{
+    "id": "panties_MF2cWkDS7",
+    "url: "https://api.lunardev.group/panties/panties_MF2cWkDS7.jpg"
+}
+```
+
+This endpoint generates a JSON object
+
+### HTTP Request
+
+`GET https://api.lunardev.group/nsfw/panties`
+
+### Returned data
+Key | Description 
+--------- | ------- 
+id | This is what we refer to as the image ID. It is useful for logging and reporting purposes.
+url | The direct image URL for the image retrieved. You can use this in embeds and whatever else you wish.
+
+## Thighs
+
+```python
+from pylunar import Client, endpoints
+from aiohttp import ClientSession
+import asyncio
+
+token = ""  # Replace with your Lunar API Key.
+
+async def main():
+    async with ClientSession() as session:
+        client = Client(session=session, token=token)
+
+        image = await client.request(endpoints.nsfw("thighs"))
+        print(await image.to_dict())
+
+asyncio.run(main())
+
+### Discord.py Usage:
+import pylunar
+
+@commands.command()
+async def thighs(self, ctx):
+    async with aiohttp.ClientSession() as session:
+        client = pylunar.Client(
+            session=session,
+            token=token,
+        )
+        image = await client.request(
+            pylunar.endpoints.nsfw("thighs")
+        )
+        data = await image.to_dict()
+
+        await ctx.send(f"{data["url"]}")
+```
+
+> The above returns a JSON object:
+
+```json
+{
+    "id": "thighs_MF2cWkDS7",
+    "url: "https://api.lunardev.group/thighs/thighs_MF2cWkDS7.jpg"
+}
+```
+
+This endpoint generates a JSON object
+
+### HTTP Request
+
+`GET https://api.lunardev.group/nsfw/thighs`
+
+### Returned data
+Key | Description 
+--------- | ------- 
+id | This is what we refer to as the image ID. It is useful for logging and reporting purposes.
+url | The direct image URL for the image retrieved. You can use this in embeds and whatever else you wish.
+
+## Yuri
+
+```python
+from pylunar import Client, endpoints
+from aiohttp import ClientSession
+import asyncio
+
+token = ""  # Replace with your Lunar API Key.
+
+async def main():
+    async with ClientSession() as session:
+        client = Client(session=session, token=token)
+
+        image = await client.request(endpoints.nsfw("yuri"))
+        print(await image.to_dict())
+
+asyncio.run(main())
+
+### Discord.py Usage:
+import pylunar
+
+@commands.command()
+async def yuri(self, ctx):
+    async with aiohttp.ClientSession() as session:
+        client = pylunar.Client(
+            session=session,
+            token=token,
+        )
+        image = await client.request(
+            pylunar.endpoints.nsfw("yuri")
+        )
+        data = await image.to_dict()
+
+        await ctx.send(f"{data["url"]}")
+```
+
+> The above returns a JSON object:
+
+```json
+{
+    "id": "yuri_MF2cWkDS7",
+    "url: "https://api.lunardev.group/yuri/yuri_MF2cWkDS7.jpg"
+}
+```
+
+This endpoint generates a JSON object
+
+### HTTP Request
+
+`GET https://api.lunardev.group/nsfw/yuri`
+
+### Returned data
+Key | Description 
+--------- | ------- 
+id | This is what we refer to as the image ID. It is useful for logging and reporting purposes.
+url | The direct image URL for the image retrieved. You can use this in embeds and whatever else you wish.
