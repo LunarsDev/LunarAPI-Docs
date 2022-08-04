@@ -20,8 +20,7 @@ asyncio.run(main())
 
 ### Discord.py Usage:
 
-@dev.command(name="welcome")
-@commands.check(permissions.is_owner)
+@commands.command()
 async def welcome(self, ctx, *, user: Member):
     async with aiohttp.ClientSession() as session:
         client = pylunar.Client(
@@ -63,3 +62,61 @@ username | null | Set the username for the user in the image | True
 <aside class="success">
 Remember — This is returning a bytes-like object!
 </aside>
+
+## Achievement Image Generation
+
+```python
+from pylunar import Client, endpoints
+from aiohttp import ClientSession
+import asyncio
+
+token = ""  # Replace with your Lunar API Key.
+
+async def main():
+    async with ClientSession() as session:
+        client = Client(session=session, token=token)
+
+        image = await client.request(endpoints.generate_achievement, text="Woohoo! I made a request!")
+        await image.save("image.jpg")
+
+asyncio.run(main())
+
+### Discord.py Usage:
+import pylunar
+
+@commands.command()
+    async def achievement(self, ctx, *, text: str):
+        async with aiohttp.ClientSession() as session:
+            client = pylunar.Client(
+                session=session,
+                token=token,
+            )
+            image = await client.request(
+                pylunar.endpoints.generate_achievement, text=text
+            )
+
+            await ctx.send(file=await image.file())
+```
+
+> The above command returns a Bytes-like object:
+
+```
+[Image]
+```
+
+This endpoint generates a welcome image
+*Discord.py users: In reference to the example on the Python tab, `image.file()` is built into our wrapper.*
+
+### HTTP Request
+
+`GET https://api.lunardev.group/gen/achievement?text=text[&icon=int]`
+
+### Query Parameters
+
+Parameter | Default | Description | Required
+--------- | ------- | ----------- | -----------
+text | null | Set the text for the achievement. | True
+icon | random | Set the icon for the achievement. This is an int 1-45 | False
+
+### Result:
+<%= image_tag "images/gen_achievement.png" %>
