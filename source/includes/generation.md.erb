@@ -13,10 +13,28 @@ async def main():
     async with ClientSession() as session:
         client = Client(session=session, token=token)
 
-        image = await client.request(endpoints.generate_achievement, text="Woo! I made a request!")
+        image = await client.request(endpoints.generate_welcome, avatar="https://docs.lunardev.group/images/logo.png", username="WinterFe")
         await image.save("image.jpg")
 
 asyncio.run(main())
+
+### Discord.py Usage:
+
+@dev.command(name="welcome")
+@commands.check(permissions.is_owner)
+async def welcome(self, ctx, *, user: Member):
+    async with aiohttp.ClientSession() as session:
+        client = pylunar.Client(
+            session=session,
+            token=token,
+        )
+        image = await client.request(
+            pylunar.endpoints.generate_welcome,
+            avatar=user.avatar.url,
+            username=user.name,
+        )
+
+        await ctx.send(file=await image.file())
 ```
 
 > The above command returns a Bytes-like object:
@@ -26,6 +44,7 @@ asyncio.run(main())
 ```
 
 This endpoint generates a welcome image
+*Discord.py users: In reference to the example on the Python tab, `image.file()` is built into our wrapper.*
 
 ### HTTP Request
 
