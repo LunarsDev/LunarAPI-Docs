@@ -18,7 +18,7 @@
 <p>Make sure to replace <code>&lt;JWT&gt;</code> with your API key.</p>
 </blockquote>
 
-<p>Lunar API uses API keys to allow access to the API. You can apply for an API key at our <a href="https://lunardev.group/apply">application page</a> or request on directly in our <a href="https://lunardev.group/discord">Discord</a></p>
+<p>Lunar API uses API keys to allow access to the API. You can apply for an API key at our <a href="https://lunardev.group/apply">application page</a> or request for it directly in our <a href="https://lunardev.group/discord">Discord</a></p>
 
 <p>Lunar expects for the API key to be included in all API requests to the server in a header that looks like the following:</p>
 

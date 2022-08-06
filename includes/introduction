@@ -7,10 +7,6 @@
 
 <p><strong>Content Warning: This API includes NSFW content underneath the <code>Image API (NSFW)</code> section.</strong></p>
 
-<blockquote>
-<p>The Python wrapper is not yet publically available.</p>
-
-<blockquote>
-<p>ETA: ~2 weeks</p>
-</blockquote>
-</blockquote>
+<ul>
+<li>You can find our Python wrapper <a href="https://pypi.org/project/lunarapi/">here</a>.</li>
+</ul>

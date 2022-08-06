@@ -14,7 +14,9 @@
 <span class="n">asyncio</span><span class="p">.</span><span class="n">run</span><span class="p">(</span><span class="n">main</span><span class="p">())</span>
 
 <span class="c1">### Discord.py Usage:
-</span>
+</span><span class="kn">import</span> <span class="nn">lunarapi</span>
+<span class="kn">import</span> <span class="nn">discord</span>
+
 <span class="o">@</span><span class="n">commands</span><span class="p">.</span><span class="n">command</span><span class="p">()</span>
 <span class="k">async</span> <span class="k">def</span> <span class="nf">welcome</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ctx</span><span class="p">,</span> <span class="o">*</span><span class="p">,</span> <span class="n">user</span><span class="p">:</span> <span class="n">Member</span><span class="p">):</span>
     <span class="k">async</span> <span class="k">with</span> <span class="n">aiohttp</span><span class="p">.</span><span class="n">ClientSession</span><span class="p">()</span> <span class="k">as</span> <span class="n">session</span><span class="p">:</span>
@@ -28,7 +30,7 @@
             <span class="n">username</span><span class="o">=</span><span class="n">user</span><span class="p">.</span><span class="n">name</span><span class="p">,</span>
         <span class="p">)</span>
 
-        <span class="k">await</span> <span class="n">ctx</span><span class="p">.</span><span class="n">send</span><span class="p">(</span><span class="nb">file</span><span class="o">=</span><span class="k">await</span> <span class="n">image</span><span class="p">.</span><span class="nb">file</span><span class="p">())</span>
+        <span class="k">await</span> <span class="n">ctx</span><span class="p">.</span><span class="n">send</span><span class="p">(</span><span class="nb">file</span><span class="o">=</span><span class="k">await</span> <span class="n">image</span><span class="p">.</span><span class="nb">file</span><span class="p">(</span><span class="n">discord</span><span class="p">))</span>
 </code></pre></div>
 <blockquote>
 <p>The above returns a Bytes-like object:</p>
@@ -36,7 +38,7 @@
 <div class="highlight"><pre class="highlight plaintext"><code>[Image]
 </code></pre></div>
 <p>This endpoint generates a welcome image
-<em>Discord.py users: In reference to the example on the Python tab, <code>image.file()</code> is built into our wrapper.</em></p>
+<em>Discord.py users: In reference to the example on the Python tab, <code>image.file(discord)</code> is built into our wrapper.</em></p>
 <h3 id='http-request'>HTTP Request</h3>
 <p><code>GET https://api.lunardev.group/gen/welcome?avatar=url&amp;username=text</code></p>
 <h3 id='query-parameters'>Query Parameters</h3>
@@ -83,7 +85,8 @@ Remember — This is returning a bytes-like object!
 <span class="n">asyncio</span><span class="p">.</span><span class="n">run</span><span class="p">(</span><span class="n">main</span><span class="p">())</span>
 
 <span class="c1">### Discord.py Usage:
-</span><span class="kn">import</span> <span class="nn">pylunar</span>
+</span><span class="kn">import</span> <span class="nn">lunarapi</span>
+<span class="kn">import</span> <span class="nn">discord</span>
 
 <span class="o">@</span><span class="n">commands</span><span class="p">.</span><span class="n">command</span><span class="p">()</span>
     <span class="k">async</span> <span class="k">def</span> <span class="nf">achievement</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ctx</span><span class="p">,</span> <span class="o">*</span><span class="p">,</span> <span class="n">text</span><span class="p">:</span> <span class="nb">str</span><span class="p">):</span>
@@ -96,7 +99,7 @@ Remember — This is returning a bytes-like object!
                 <span class="n">pylunar</span><span class="p">.</span><span class="n">endpoints</span><span class="p">.</span><span class="n">generate_achievement</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="n">text</span>
             <span class="p">)</span>
 
-            <span class="k">await</span> <span class="n">ctx</span><span class="p">.</span><span class="n">send</span><span class="p">(</span><span class="nb">file</span><span class="o">=</span><span class="k">await</span> <span class="n">image</span><span class="p">.</span><span class="nb">file</span><span class="p">())</span>
+            <span class="k">await</span> <span class="n">ctx</span><span class="p">.</span><span class="n">send</span><span class="p">(</span><span class="nb">file</span><span class="o">=</span><span class="k">await</span> <span class="n">image</span><span class="p">.</span><span class="nb">file</span><span class="p">(</span><span class="n">discord</span><span class="p">))</span>
 </code></pre></div>
 <blockquote>
 <p>The above returns a Bytes-like object:</p>
@@ -146,7 +149,8 @@ Remember — This is returning a bytes-like object!
 <span class="n">asyncio</span><span class="p">.</span><span class="n">run</span><span class="p">(</span><span class="n">main</span><span class="p">())</span>
 
 <span class="c1">### Discord.py Usage:
-</span><span class="kn">import</span> <span class="nn">pylunar</span>
+</span><span class="kn">import</span> <span class="nn">lunarapi</span>
+<span class="kn">import</span> <span class="nn">discord</span>
 
 <span class="o">@</span><span class="n">commands</span><span class="p">.</span><span class="n">command</span><span class="p">()</span>
 <span class="k">async</span> <span class="k">def</span> <span class="nf">amiajoke</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ctx</span><span class="p">,</span> <span class="o">*</span><span class="p">,</span> <span class="n">user</span><span class="p">:</span> <span class="n">discord</span><span class="p">.</span><span class="n">User</span><span class="p">):</span>
@@ -159,7 +163,7 @@ Remember — This is returning a bytes-like object!
             <span class="n">pylunar</span><span class="p">.</span><span class="n">endpoints</span><span class="p">.</span><span class="n">generate_amiajoke</span><span class="p">,</span> <span class="n">image</span><span class="o">=</span><span class="n">user</span><span class="p">.</span><span class="n">avatar</span><span class="p">.</span><span class="n">url</span>
         <span class="p">)</span>
 
-        <span class="k">await</span> <span class="n">ctx</span><span class="p">.</span><span class="n">send</span><span class="p">(</span><span class="nb">file</span><span class="o">=</span><span class="k">await</span> <span class="n">image</span><span class="p">.</span><span class="nb">file</span><span class="p">())</span>
+        <span class="k">await</span> <span class="n">ctx</span><span class="p">.</span><span class="n">send</span><span class="p">(</span><span class="nb">file</span><span class="o">=</span><span class="k">await</span> <span class="n">image</span><span class="p">.</span><span class="nb">file</span><span class="p">(</span><span class="n">discord</span><span class="p">))</span>
 </code></pre></div>
 <blockquote>
 <p>The above returns a Bytes-like object:</p>
@@ -203,7 +207,8 @@ Remember — This is returning a bytes-like object!
 <span class="n">asyncio</span><span class="p">.</span><span class="n">run</span><span class="p">(</span><span class="n">main</span><span class="p">())</span>
 
 <span class="c1">### Discord.py Usage:
-</span><span class="kn">import</span> <span class="nn">pylunar</span>
+</span><span class="kn">import</span> <span class="nn">lunarapi</span>
+<span class="kn">import</span> <span class="nn">discord</span>
 
 <span class="o">@</span><span class="n">commands</span><span class="p">.</span><span class="n">command</span><span class="p">()</span>
 <span class="k">async</span> <span class="k">def</span> <span class="nf">amiajoke</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ctx</span><span class="p">,</span> <span class="o">*</span><span class="p">,</span> <span class="n">user</span><span class="p">:</span> <span class="n">discord</span><span class="p">.</span><span class="n">User</span><span class="p">):</span>
@@ -216,7 +221,7 @@ Remember — This is returning a bytes-like object!
             <span class="n">pylunar</span><span class="p">.</span><span class="n">endpoints</span><span class="p">.</span><span class="n">generate_bad</span><span class="p">,</span> <span class="n">image</span><span class="o">=</span><span class="n">user</span><span class="p">.</span><span class="n">avatar</span><span class="p">.</span><span class="n">url</span>
         <span class="p">)</span>
 
-        <span class="k">await</span> <span class="n">ctx</span><span class="p">.</span><span class="n">send</span><span class="p">(</span><span class="nb">file</span><span class="o">=</span><span class="k">await</span> <span class="n">image</span><span class="p">.</span><span class="nb">file</span><span class="p">())</span>
+        <span class="k">await</span> <span class="n">ctx</span><span class="p">.</span><span class="n">send</span><span class="p">(</span><span class="nb">file</span><span class="o">=</span><span class="k">await</span> <span class="n">image</span><span class="p">.</span><span class="nb">file</span><span class="p">(</span><span class="n">discord</span><span class="p">))</span>
 </code></pre></div>
 <blockquote>
 <p>The above returns a Bytes-like object:</p>
@@ -260,7 +265,8 @@ Remember — This is returning a bytes-like object!
 <span class="n">asyncio</span><span class="p">.</span><span class="n">run</span><span class="p">(</span><span class="n">main</span><span class="p">())</span>
 
 <span class="c1">### Discord.py Usage:
-</span><span class="kn">import</span> <span class="nn">pylunar</span>
+</span><span class="kn">import</span> <span class="nn">lunarapi</span>
+<span class="kn">import</span> <span class="nn">discord</span>
 
 <span class="o">@</span><span class="n">commands</span><span class="p">.</span><span class="n">command</span><span class="p">()</span>
 <span class="k">async</span> <span class="k">def</span> <span class="nf">amiajoke</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ctx</span><span class="p">,</span> <span class="o">*</span><span class="p">,</span> <span class="n">text</span><span class="p">:</span> <span class="nb">str</span><span class="p">):</span>
@@ -273,7 +279,7 @@ Remember — This is returning a bytes-like object!
             <span class="n">pylunar</span><span class="p">.</span><span class="n">endpoints</span><span class="p">.</span><span class="n">generate_calling</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="n">text</span>
         <span class="p">)</span>
 
-        <span class="k">await</span> <span class="n">ctx</span><span class="p">.</span><span class="n">send</span><span class="p">(</span><span class="nb">file</span><span class="o">=</span><span class="k">await</span> <span class="n">image</span><span class="p">.</span><span class="nb">file</span><span class="p">())</span>
+        <span class="k">await</span> <span class="n">ctx</span><span class="p">.</span><span class="n">send</span><span class="p">(</span><span class="nb">file</span><span class="o">=</span><span class="k">await</span> <span class="n">image</span><span class="p">.</span><span class="nb">file</span><span class="p">(</span><span class="n">discord</span><span class="p">))</span>
 </code></pre></div>
 <blockquote>
 <p>The above returns a Bytes-like object:</p>

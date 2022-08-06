@@ -14,7 +14,7 @@
 <span class="n">asyncio</span><span class="p">.</span><span class="n">run</span><span class="p">(</span><span class="n">main</span><span class="p">())</span>
 
 <span class="c1">### Discord.py Usage:
-</span><span class="kn">import</span> <span class="nn">pylunar</span>
+</span><span class="kn">import</span> <span class="nn">lunarapi</span>
 
 <span class="o">@</span><span class="n">commands</span><span class="p">.</span><span class="n">command</span><span class="p">()</span>
 <span class="k">async</span> <span class="k">def</span> <span class="nf">ahegao</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ctx</span><span class="p">):</span>
@@ -77,7 +77,7 @@ Remember — This is returning a JSON object!
 <span class="n">asyncio</span><span class="p">.</span><span class="n">run</span><span class="p">(</span><span class="n">main</span><span class="p">())</span>
 
 <span class="c1">### Discord.py Usage:
-</span><span class="kn">import</span> <span class="nn">pylunar</span>
+</span><span class="kn">import</span> <span class="nn">lunarapi</span>
 
 <span class="o">@</span><span class="n">commands</span><span class="p">.</span><span class="n">command</span><span class="p">()</span>
 <span class="k">async</span> <span class="k">def</span> <span class="nf">ass</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ctx</span><span class="p">):</span>
@@ -136,7 +136,7 @@ Remember — This is returning a JSON object!
 <span class="n">asyncio</span><span class="p">.</span><span class="n">run</span><span class="p">(</span><span class="n">main</span><span class="p">())</span>
 
 <span class="c1">### Discord.py Usage:
-</span><span class="kn">import</span> <span class="nn">pylunar</span>
+</span><span class="kn">import</span> <span class="nn">lunarapi</span>
 
 <span class="o">@</span><span class="n">commands</span><span class="p">.</span><span class="n">command</span><span class="p">()</span>
 <span class="k">async</span> <span class="k">def</span> <span class="nf">boobs</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ctx</span><span class="p">):</span>
@@ -195,7 +195,7 @@ Remember — This is returning a JSON object!
 <span class="n">asyncio</span><span class="p">.</span><span class="n">run</span><span class="p">(</span><span class="n">main</span><span class="p">())</span>
 
 <span class="c1">### Discord.py Usage:
-</span><span class="kn">import</span> <span class="nn">pylunar</span>
+</span><span class="kn">import</span> <span class="nn">lunarapi</span>
 
 <span class="o">@</span><span class="n">commands</span><span class="p">.</span><span class="n">command</span><span class="p">()</span>
 <span class="k">async</span> <span class="k">def</span> <span class="nf">cum</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ctx</span><span class="p">):</span>
@@ -254,7 +254,7 @@ Remember — This is returning a JSON object!
 <span class="n">asyncio</span><span class="p">.</span><span class="n">run</span><span class="p">(</span><span class="n">main</span><span class="p">())</span>
 
 <span class="c1">### Discord.py Usage:
-</span><span class="kn">import</span> <span class="nn">pylunar</span>
+</span><span class="kn">import</span> <span class="nn">lunarapi</span>
 
 <span class="o">@</span><span class="n">commands</span><span class="p">.</span><span class="n">command</span><span class="p">()</span>
 <span class="k">async</span> <span class="k">def</span> <span class="nf">gif</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ctx</span><span class="p">):</span>
@@ -313,7 +313,7 @@ Remember — This is returning a JSON object!
 <span class="n">asyncio</span><span class="p">.</span><span class="n">run</span><span class="p">(</span><span class="n">main</span><span class="p">())</span>
 
 <span class="c1">### Discord.py Usage:
-</span><span class="kn">import</span> <span class="nn">pylunar</span>
+</span><span class="kn">import</span> <span class="nn">lunarapi</span>
 
 <span class="o">@</span><span class="n">commands</span><span class="p">.</span><span class="n">command</span><span class="p">()</span>
 <span class="k">async</span> <span class="k">def</span> <span class="nf">hololive</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ctx</span><span class="p">):</span>
@@ -372,7 +372,7 @@ Remember — This is returning a JSON object!
 <span class="n">asyncio</span><span class="p">.</span><span class="n">run</span><span class="p">(</span><span class="n">main</span><span class="p">())</span>
 
 <span class="c1">### Discord.py Usage:
-</span><span class="kn">import</span> <span class="nn">pylunar</span>
+</span><span class="kn">import</span> <span class="nn">lunarapi</span>
 
 <span class="o">@</span><span class="n">commands</span><span class="p">.</span><span class="n">command</span><span class="p">()</span>
 <span class="k">async</span> <span class="k">def</span> <span class="nf">jpg</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ctx</span><span class="p">):</span>
@@ -431,7 +431,7 @@ Remember — This is returning a JSON object!
 <span class="n">asyncio</span><span class="p">.</span><span class="n">run</span><span class="p">(</span><span class="n">main</span><span class="p">())</span>
 
 <span class="c1">### Discord.py Usage:
-</span><span class="kn">import</span> <span class="nn">pylunar</span>
+</span><span class="kn">import</span> <span class="nn">lunarapi</span>
 
 <span class="o">@</span><span class="n">commands</span><span class="p">.</span><span class="n">command</span><span class="p">()</span>
 <span class="k">async</span> <span class="k">def</span> <span class="nf">neko</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ctx</span><span class="p">):</span>
@@ -490,7 +490,7 @@ Remember — This is returning a JSON object!
 <span class="n">asyncio</span><span class="p">.</span><span class="n">run</span><span class="p">(</span><span class="n">main</span><span class="p">())</span>
 
 <span class="c1">### Discord.py Usage:
-</span><span class="kn">import</span> <span class="nn">pylunar</span>
+</span><span class="kn">import</span> <span class="nn">lunarapi</span>
 
 <span class="o">@</span><span class="n">commands</span><span class="p">.</span><span class="n">command</span><span class="p">()</span>
 <span class="k">async</span> <span class="k">def</span> <span class="nf">panties</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ctx</span><span class="p">):</span>
@@ -549,7 +549,7 @@ Remember — This is returning a JSON object!
 <span class="n">asyncio</span><span class="p">.</span><span class="n">run</span><span class="p">(</span><span class="n">main</span><span class="p">())</span>
 
 <span class="c1">### Discord.py Usage:
-</span><span class="kn">import</span> <span class="nn">pylunar</span>
+</span><span class="kn">import</span> <span class="nn">lunarapi</span>
 
 <span class="o">@</span><span class="n">commands</span><span class="p">.</span><span class="n">command</span><span class="p">()</span>
 <span class="k">async</span> <span class="k">def</span> <span class="nf">thighs</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ctx</span><span class="p">):</span>
@@ -608,7 +608,7 @@ Remember — This is returning a JSON object!
 <span class="n">asyncio</span><span class="p">.</span><span class="n">run</span><span class="p">(</span><span class="n">main</span><span class="p">())</span>
 
 <span class="c1">### Discord.py Usage:
-</span><span class="kn">import</span> <span class="nn">pylunar</span>
+</span><span class="kn">import</span> <span class="nn">lunarapi</span>
 
 <span class="o">@</span><span class="n">commands</span><span class="p">.</span><span class="n">command</span><span class="p">()</span>
 <span class="k">async</span> <span class="k">def</span> <span class="nf">yuri</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ctx</span><span class="p">):</span>
