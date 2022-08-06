@@ -19,6 +19,8 @@ async def main():
 asyncio.run(main())
 
 ### Discord.py Usage:
+import lunarapi
+import discord
 
 @commands.command()
 async def welcome(self, ctx, *, user: Member):
@@ -33,7 +35,7 @@ async def welcome(self, ctx, *, user: Member):
             username=user.name,
         )
 
-        await ctx.send(file=await image.file())
+        await ctx.send(file=await image.file(discord))
 ```
 
 > The above returns a Bytes-like object:
@@ -43,7 +45,7 @@ async def welcome(self, ctx, *, user: Member):
 ```
 
 This endpoint generates a welcome image
-*Discord.py users: In reference to the example on the Python tab, `image.file()` is built into our wrapper.*
+*Discord.py users: In reference to the example on the Python tab, `image.file(discord)` is built into our wrapper.*
 
 ### HTTP Request
 
@@ -82,7 +84,8 @@ async def main():
 asyncio.run(main())
 
 ### Discord.py Usage:
-import pylunar
+import lunarapi
+import discord
 
 @commands.command()
     async def achievement(self, ctx, *, text: str):
@@ -95,7 +98,7 @@ import pylunar
                 pylunar.endpoints.generate_achievement, text=text
             )
 
-            await ctx.send(file=await image.file())
+            await ctx.send(file=await image.file(discord))
 ```
 
 > The above returns a Bytes-like object:
@@ -139,7 +142,8 @@ async def main():
 asyncio.run(main())
 
 ### Discord.py Usage:
-import pylunar
+import lunarapi
+import discord
 
 @commands.command()
 async def amiajoke(self, ctx, *, user: discord.User):
@@ -152,7 +156,7 @@ async def amiajoke(self, ctx, *, user: discord.User):
             pylunar.endpoints.generate_amiajoke, image=user.avatar.url
         )
 
-        await ctx.send(file=await image.file())
+        await ctx.send(file=await image.file(discord))
 ```
 
 > The above returns a Bytes-like object:
@@ -195,7 +199,8 @@ async def main():
 asyncio.run(main())
 
 ### Discord.py Usage:
-import pylunar
+import lunarapi
+import discord
 
 @commands.command()
 async def amiajoke(self, ctx, *, user: discord.User):
@@ -208,7 +213,7 @@ async def amiajoke(self, ctx, *, user: discord.User):
             pylunar.endpoints.generate_bad, image=user.avatar.url
         )
 
-        await ctx.send(file=await image.file())
+        await ctx.send(file=await image.file(discord))
 ```
 
 > The above returns a Bytes-like object:
@@ -251,7 +256,8 @@ async def main():
 asyncio.run(main())
 
 ### Discord.py Usage:
-import pylunar
+import lunarapi
+import discord
 
 @commands.command()
 async def amiajoke(self, ctx, *, text: str):
@@ -264,7 +270,7 @@ async def amiajoke(self, ctx, *, text: str):
             pylunar.endpoints.generate_calling, text=text
         )
 
-        await ctx.send(file=await image.file())
+        await ctx.send(file=await image.file(discord))
 ```
 
 > The above returns a Bytes-like object:
