@@ -60,3 +60,61 @@ url | The direct image URL for the image retrieved. You can use this in embeds a
 <aside class="success">
 Remember — This is returning a JSON object!
 </aside>
+
+
+## Pat
+
+```python
+from pylunar import Client, endpoints
+from aiohttp import ClientSession
+import asyncio
+
+token = ""  # Replace with your Lunar API Key.
+
+async def main():
+    async with ClientSession() as session:
+        client = Client(session=session, token=token)
+
+        image = await client.request(endpoints.sfw("pat"))
+        print(await image.to_dict())
+
+asyncio.run(main())
+
+### Discord.py Usage:
+import lunarapi
+
+@commands.command()
+async def pat(self, ctx):
+    async with aiohttp.ClientSession() as session:
+        client = pylunar.Client(
+            session=session,
+            token=token,
+        )
+        image = await client.request(
+            pylunar.endpoints.sfw("pat")
+        )
+        data = await image.to_dict()
+
+        await ctx.send(f"{data["url"]}")
+```
+
+> The above returns a JSON object:
+
+```json
+{
+    "id": "hug_MF2cWkDS7",
+    "url": "https://api.lunardev.group/pat/pat_MF2cWkDS7.jpg"
+}
+```
+
+This endpoint generates a JSON object
+
+### HTTP Request
+
+`GET https://api.lunardev.group/sfw/pat`
+
+### Returned data
+Key | Description 
+--------- | ------- 
+id | This is what we refer to as the image ID. It is useful for logging and reporting purposes.
+url | The direct image URL for the image retrieved. You can use this in embeds and whatever else you wish.
