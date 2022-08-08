@@ -13,7 +13,7 @@ async def main():
     async with ClientSession() as session:
         client = Client(session=session, token=token)
 
-        image = await client.request(endpoints.generate_welcome, avatar="https://docs.lunardev.group/images/logo.png", username="WinterFe")
+        image = await client.request(endpoints.generate_welcome, avatar="https://docs.lunardev.group/images/logo.png", username="WinterFe#2000", members="300")
         await image.save("image.jpg")
 
 asyncio.run(main())
@@ -23,7 +23,7 @@ import lunarapi
 import discord
 
 @commands.command()
-async def welcome(self, ctx, *, user: Member):
+async def welcome(self, ctx, *, user: Member, member_count: str):
     async with aiohttp.ClientSession() as session:
         client = pylunar.Client(
             session=session,
@@ -33,6 +33,7 @@ async def welcome(self, ctx, *, user: Member):
             pylunar.endpoints.generate_welcome,
             avatar=user.avatar.url,
             username=user.name,
+            members=member_count
         )
 
         await ctx.send(file=await image.file(discord))
@@ -49,7 +50,7 @@ This endpoint generates a welcome image
 
 ### HTTP Request
 
-`GET https://api.lunardev.group/gen/welcome?avatar=url&username=text`
+`GET https://api.lunardev.group/gen/welcome?avatar=url&username=text&members=str`
 
 ### Query Parameters
 
@@ -57,6 +58,7 @@ Parameter | Default | Description | Required
 --------- | ------- | ----------- | -----------
 avatar | null | Set the profile image in the image. | True
 username | null | Set the username for the user in the image | True
+membres | null | Set the member count for the image | True
 
 ### Result:
 <%= image_tag "images/gen_welcome.png" %>
