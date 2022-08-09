@@ -447,7 +447,7 @@ You must replace <code>JWT</code> with your personal API key.
     <span class="k">async</span> <span class="k">with</span> <span class="n">ClientSession</span><span class="p">()</span> <span class="k">as</span> <span class="n">session</span><span class="p">:</span>
         <span class="n">client</span> <span class="o">=</span> <span class="n">Client</span><span class="p">(</span><span class="n">session</span><span class="o">=</span><span class="n">session</span><span class="p">,</span> <span class="n">token</span><span class="o">=</span><span class="n">token</span><span class="p">)</span>
 
-        <span class="n">image</span> <span class="o">=</span> <span class="k">await</span> <span class="n">client</span><span class="p">.</span><span class="n">request</span><span class="p">(</span><span class="n">endpoints</span><span class="p">.</span><span class="n">generate_welcome</span><span class="p">,</span> <span class="n">avatar</span><span class="o">=</span><span class="s">"https://docs.lunardev.group/images/logo.png"</span><span class="p">,</span> <span class="n">username</span><span class="o">=</span><span class="s">"WinterFe"</span><span class="p">)</span>
+        <span class="n">image</span> <span class="o">=</span> <span class="k">await</span> <span class="n">client</span><span class="p">.</span><span class="n">request</span><span class="p">(</span><span class="n">endpoints</span><span class="p">.</span><span class="n">generate_welcome</span><span class="p">,</span> <span class="n">avatar</span><span class="o">=</span><span class="s">"https://docs.lunardev.group/images/logo.png"</span><span class="p">,</span> <span class="n">username</span><span class="o">=</span><span class="s">"WinterFe#2000"</span><span class="p">,</span> <span class="n">members</span><span class="o">=</span><span class="s">"300"</span><span class="p">)</span>
         <span class="k">await</span> <span class="n">image</span><span class="p">.</span><span class="n">save</span><span class="p">(</span><span class="s">"image.jpg"</span><span class="p">)</span>
 
 <span class="n">asyncio</span><span class="p">.</span><span class="n">run</span><span class="p">(</span><span class="n">main</span><span class="p">())</span>
@@ -457,7 +457,7 @@ You must replace <code>JWT</code> with your personal API key.
 <span class="kn">import</span> <span class="nn">discord</span>
 
 <span class="o">@</span><span class="n">commands</span><span class="p">.</span><span class="n">command</span><span class="p">()</span>
-<span class="k">async</span> <span class="k">def</span> <span class="nf">welcome</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ctx</span><span class="p">,</span> <span class="o">*</span><span class="p">,</span> <span class="n">user</span><span class="p">:</span> <span class="n">Member</span><span class="p">):</span>
+<span class="k">async</span> <span class="k">def</span> <span class="nf">welcome</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ctx</span><span class="p">,</span> <span class="o">*</span><span class="p">,</span> <span class="n">user</span><span class="p">:</span> <span class="n">Member</span><span class="p">,</span> <span class="n">member_count</span><span class="p">:</span> <span class="nb">str</span><span class="p">):</span>
     <span class="k">async</span> <span class="k">with</span> <span class="n">aiohttp</span><span class="p">.</span><span class="n">ClientSession</span><span class="p">()</span> <span class="k">as</span> <span class="n">session</span><span class="p">:</span>
         <span class="n">client</span> <span class="o">=</span> <span class="n">pylunar</span><span class="p">.</span><span class="n">Client</span><span class="p">(</span>
             <span class="n">session</span><span class="o">=</span><span class="n">session</span><span class="p">,</span>
@@ -467,6 +467,7 @@ You must replace <code>JWT</code> with your personal API key.
             <span class="n">pylunar</span><span class="p">.</span><span class="n">endpoints</span><span class="p">.</span><span class="n">generate_welcome</span><span class="p">,</span>
             <span class="n">avatar</span><span class="o">=</span><span class="n">user</span><span class="p">.</span><span class="n">avatar</span><span class="p">.</span><span class="n">url</span><span class="p">,</span>
             <span class="n">username</span><span class="o">=</span><span class="n">user</span><span class="p">.</span><span class="n">name</span><span class="p">,</span>
+            <span class="n">members</span><span class="o">=</span><span class="n">member_count</span>
         <span class="p">)</span>
 
         <span class="k">await</span> <span class="n">ctx</span><span class="p">.</span><span class="n">send</span><span class="p">(</span><span class="nb">file</span><span class="o">=</span><span class="k">await</span> <span class="n">image</span><span class="p">.</span><span class="nb">file</span><span class="p">(</span><span class="n">discord</span><span class="p">))</span>
@@ -479,7 +480,7 @@ You must replace <code>JWT</code> with your personal API key.
 <p>This endpoint generates a welcome image
 <em>Discord.py users: In reference to the example on the Python tab, <code>image.file(discord)</code> is built into our wrapper.</em></p>
 <h3 id='http-request'>HTTP Request</h3>
-<p><code>GET https://api.lunardev.group/gen/welcome?avatar=url&amp;username=text</code></p>
+<p><code>GET https://api.lunardev.group/gen/welcome?avatar=url&amp;username=text&amp;members=str</code></p>
 <h3 id='query-parameters'>Query Parameters</h3>
 <table><thead>
 <tr>
@@ -501,9 +502,15 @@ You must replace <code>JWT</code> with your personal API key.
 <td>Set the username for the user in the image</td>
 <td>True</td>
 </tr>
+<tr>
+<td>membres</td>
+<td>null</td>
+<td>Set the member count for the image</td>
+<td>True</td>
+</tr>
 </tbody></table>
 <h3 id='result'>Result:</h3>
-<p><img src="images/gen_welcome-0b4c21fa.png" alt="" /></p>
+<p><img src="images/gen_welcome-668fab22.png" alt="" /></p>
 
 <aside class="success">
 Remember — This is returning a bytes-like object!
