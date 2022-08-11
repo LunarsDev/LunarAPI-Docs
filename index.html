@@ -412,7 +412,7 @@
 <blockquote>
 <p>To authorize, use this code:</p>
 </blockquote>
-<div class="highlight"><pre class="highlight python tab-python"><code><span class="kn">from</span> <span class="nn">pylunar</span> <span class="kn">import</span> <span class="n">Client</span><span class="p">,</span> <span class="n">endpoints</span>
+<div class="highlight"><pre class="highlight python tab-python"><code><span class="kn">from</span> <span class="nn">lunarapi</span> <span class="kn">import</span> <span class="n">Client</span><span class="p">,</span> <span class="n">endpoints</span>
 <span class="kn">from</span> <span class="nn">aiohttp</span> <span class="kn">import</span> <span class="n">ClientSession</span>
 <span class="kn">import</span> <span class="nn">asyncio</span>
 
@@ -437,7 +437,7 @@
 <aside class="notice">
 You must replace <code>JWT</code> with your personal API key.
 </aside>
-<h1 id='image-generation'>Image Generation</h1><h2 id='welcome'>Welcome</h2><div class="highlight"><pre class="highlight python tab-python"><code><span class="kn">from</span> <span class="nn">pylunar</span> <span class="kn">import</span> <span class="n">Client</span><span class="p">,</span> <span class="n">endpoints</span>
+<h1 id='image-generation'>Image Generation</h1><h2 id='welcome'>Welcome</h2><div class="highlight"><pre class="highlight python tab-python"><code><span class="kn">from</span> <span class="nn">lunarapi</span> <span class="kn">import</span> <span class="n">Client</span><span class="p">,</span> <span class="n">endpoints</span>
 <span class="kn">from</span> <span class="nn">aiohttp</span> <span class="kn">import</span> <span class="n">ClientSession</span>
 <span class="kn">import</span> <span class="nn">asyncio</span>
 
@@ -459,12 +459,12 @@ You must replace <code>JWT</code> with your personal API key.
 <span class="o">@</span><span class="n">commands</span><span class="p">.</span><span class="n">command</span><span class="p">()</span>
 <span class="k">async</span> <span class="k">def</span> <span class="nf">welcome</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ctx</span><span class="p">,</span> <span class="o">*</span><span class="p">,</span> <span class="n">user</span><span class="p">:</span> <span class="n">Member</span><span class="p">,</span> <span class="n">member_count</span><span class="p">:</span> <span class="nb">str</span><span class="p">):</span>
     <span class="k">async</span> <span class="k">with</span> <span class="n">aiohttp</span><span class="p">.</span><span class="n">ClientSession</span><span class="p">()</span> <span class="k">as</span> <span class="n">session</span><span class="p">:</span>
-        <span class="n">client</span> <span class="o">=</span> <span class="n">pylunar</span><span class="p">.</span><span class="n">Client</span><span class="p">(</span>
+        <span class="n">client</span> <span class="o">=</span> <span class="n">lunarapi</span><span class="p">.</span><span class="n">Client</span><span class="p">(</span>
             <span class="n">session</span><span class="o">=</span><span class="n">session</span><span class="p">,</span>
             <span class="n">token</span><span class="o">=</span><span class="n">token</span><span class="p">,</span>
         <span class="p">)</span>
         <span class="n">image</span> <span class="o">=</span> <span class="k">await</span> <span class="n">client</span><span class="p">.</span><span class="n">request</span><span class="p">(</span>
-            <span class="n">pylunar</span><span class="p">.</span><span class="n">endpoints</span><span class="p">.</span><span class="n">generate_welcome</span><span class="p">,</span>
+            <span class="n">lunarapi</span><span class="p">.</span><span class="n">endpoints</span><span class="p">.</span><span class="n">generate_welcome</span><span class="p">,</span>
             <span class="n">avatar</span><span class="o">=</span><span class="n">user</span><span class="p">.</span><span class="n">avatar</span><span class="p">.</span><span class="n">url</span><span class="p">,</span>
             <span class="n">username</span><span class="o">=</span><span class="n">user</span><span class="p">.</span><span class="n">name</span><span class="p">,</span>
             <span class="n">members</span><span class="o">=</span><span class="n">member_count</span>
@@ -515,7 +515,7 @@ You must replace <code>JWT</code> with your personal API key.
 <aside class="success">
 Remember — This is returning a bytes-like object!
 </aside>
-<h2 id='achievement'>Achievement</h2><div class="highlight"><pre class="highlight python tab-python"><code><span class="kn">from</span> <span class="nn">pylunar</span> <span class="kn">import</span> <span class="n">Client</span><span class="p">,</span> <span class="n">endpoints</span>
+<h2 id='achievement'>Achievement</h2><div class="highlight"><pre class="highlight python tab-python"><code><span class="kn">from</span> <span class="nn">lunarapi</span> <span class="kn">import</span> <span class="n">Client</span><span class="p">,</span> <span class="n">endpoints</span>
 <span class="kn">from</span> <span class="nn">aiohttp</span> <span class="kn">import</span> <span class="n">ClientSession</span>
 <span class="kn">import</span> <span class="nn">asyncio</span>
 
@@ -537,12 +537,12 @@ Remember — This is returning a bytes-like object!
 <span class="o">@</span><span class="n">commands</span><span class="p">.</span><span class="n">command</span><span class="p">()</span>
     <span class="k">async</span> <span class="k">def</span> <span class="nf">achievement</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ctx</span><span class="p">,</span> <span class="o">*</span><span class="p">,</span> <span class="n">text</span><span class="p">:</span> <span class="nb">str</span><span class="p">):</span>
         <span class="k">async</span> <span class="k">with</span> <span class="n">aiohttp</span><span class="p">.</span><span class="n">ClientSession</span><span class="p">()</span> <span class="k">as</span> <span class="n">session</span><span class="p">:</span>
-            <span class="n">client</span> <span class="o">=</span> <span class="n">pylunar</span><span class="p">.</span><span class="n">Client</span><span class="p">(</span>
+            <span class="n">client</span> <span class="o">=</span> <span class="n">lunarapi</span><span class="p">.</span><span class="n">Client</span><span class="p">(</span>
                 <span class="n">session</span><span class="o">=</span><span class="n">session</span><span class="p">,</span>
                 <span class="n">token</span><span class="o">=</span><span class="n">token</span><span class="p">,</span>
             <span class="p">)</span>
             <span class="n">image</span> <span class="o">=</span> <span class="k">await</span> <span class="n">client</span><span class="p">.</span><span class="n">request</span><span class="p">(</span>
-                <span class="n">pylunar</span><span class="p">.</span><span class="n">endpoints</span><span class="p">.</span><span class="n">generate_achievement</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="n">text</span>
+                <span class="n">lunarapi</span><span class="p">.</span><span class="n">endpoints</span><span class="p">.</span><span class="n">generate_achievement</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="n">text</span>
             <span class="p">)</span>
 
             <span class="k">await</span> <span class="n">ctx</span><span class="p">.</span><span class="n">send</span><span class="p">(</span><span class="nb">file</span><span class="o">=</span><span class="k">await</span> <span class="n">image</span><span class="p">.</span><span class="nb">file</span><span class="p">(</span><span class="n">discord</span><span class="p">))</span>
@@ -579,7 +579,7 @@ Remember — This is returning a bytes-like object!
 </tbody></table>
 <h3 id='result-2'>Result:</h3>
 <p><img src="images/gen_achievement-2dca1fc8.png" alt="" /></p>
-<h2 id='amiajoke'>Amiajoke</h2><div class="highlight"><pre class="highlight python tab-python"><code><span class="kn">from</span> <span class="nn">pylunar</span> <span class="kn">import</span> <span class="n">Client</span><span class="p">,</span> <span class="n">endpoints</span>
+<h2 id='amiajoke'>Amiajoke</h2><div class="highlight"><pre class="highlight python tab-python"><code><span class="kn">from</span> <span class="nn">lunarapi</span> <span class="kn">import</span> <span class="n">Client</span><span class="p">,</span> <span class="n">endpoints</span>
 <span class="kn">from</span> <span class="nn">aiohttp</span> <span class="kn">import</span> <span class="n">ClientSession</span>
 <span class="kn">import</span> <span class="nn">asyncio</span>
 
@@ -601,12 +601,12 @@ Remember — This is returning a bytes-like object!
 <span class="o">@</span><span class="n">commands</span><span class="p">.</span><span class="n">command</span><span class="p">()</span>
 <span class="k">async</span> <span class="k">def</span> <span class="nf">amiajoke</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ctx</span><span class="p">,</span> <span class="o">*</span><span class="p">,</span> <span class="n">user</span><span class="p">:</span> <span class="n">discord</span><span class="p">.</span><span class="n">User</span><span class="p">):</span>
     <span class="k">async</span> <span class="k">with</span> <span class="n">aiohttp</span><span class="p">.</span><span class="n">ClientSession</span><span class="p">()</span> <span class="k">as</span> <span class="n">session</span><span class="p">:</span>
-        <span class="n">client</span> <span class="o">=</span> <span class="n">pylunar</span><span class="p">.</span><span class="n">Client</span><span class="p">(</span>
+        <span class="n">client</span> <span class="o">=</span> <span class="n">lunarapi</span><span class="p">.</span><span class="n">Client</span><span class="p">(</span>
             <span class="n">session</span><span class="o">=</span><span class="n">session</span><span class="p">,</span>
             <span class="n">token</span><span class="o">=</span><span class="n">token</span><span class="p">,</span>
         <span class="p">)</span>
         <span class="n">image</span> <span class="o">=</span> <span class="k">await</span> <span class="n">client</span><span class="p">.</span><span class="n">request</span><span class="p">(</span>
-            <span class="n">pylunar</span><span class="p">.</span><span class="n">endpoints</span><span class="p">.</span><span class="n">generate_amiajoke</span><span class="p">,</span> <span class="n">image</span><span class="o">=</span><span class="n">user</span><span class="p">.</span><span class="n">avatar</span><span class="p">.</span><span class="n">url</span>
+            <span class="n">lunarapi</span><span class="p">.</span><span class="n">endpoints</span><span class="p">.</span><span class="n">generate_amiajoke</span><span class="p">,</span> <span class="n">image</span><span class="o">=</span><span class="n">user</span><span class="p">.</span><span class="n">avatar</span><span class="p">.</span><span class="n">url</span>
         <span class="p">)</span>
 
         <span class="k">await</span> <span class="n">ctx</span><span class="p">.</span><span class="n">send</span><span class="p">(</span><span class="nb">file</span><span class="o">=</span><span class="k">await</span> <span class="n">image</span><span class="p">.</span><span class="nb">file</span><span class="p">(</span><span class="n">discord</span><span class="p">))</span>
@@ -637,7 +637,7 @@ Remember — This is returning a bytes-like object!
 </tbody></table>
 <h3 id='result-3'>Result:</h3>
 <p><img src="images/gen_amiajoke-cdd175fa.png" alt="" /></p>
-<h2 id='bad'>Bad</h2><div class="highlight"><pre class="highlight python tab-python"><code><span class="kn">from</span> <span class="nn">pylunar</span> <span class="kn">import</span> <span class="n">Client</span><span class="p">,</span> <span class="n">endpoints</span>
+<h2 id='bad'>Bad</h2><div class="highlight"><pre class="highlight python tab-python"><code><span class="kn">from</span> <span class="nn">lunarapi</span> <span class="kn">import</span> <span class="n">Client</span><span class="p">,</span> <span class="n">endpoints</span>
 <span class="kn">from</span> <span class="nn">aiohttp</span> <span class="kn">import</span> <span class="n">ClientSession</span>
 <span class="kn">import</span> <span class="nn">asyncio</span>
 
@@ -659,12 +659,12 @@ Remember — This is returning a bytes-like object!
 <span class="o">@</span><span class="n">commands</span><span class="p">.</span><span class="n">command</span><span class="p">()</span>
 <span class="k">async</span> <span class="k">def</span> <span class="nf">amiajoke</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ctx</span><span class="p">,</span> <span class="o">*</span><span class="p">,</span> <span class="n">user</span><span class="p">:</span> <span class="n">discord</span><span class="p">.</span><span class="n">User</span><span class="p">):</span>
     <span class="k">async</span> <span class="k">with</span> <span class="n">aiohttp</span><span class="p">.</span><span class="n">ClientSession</span><span class="p">()</span> <span class="k">as</span> <span class="n">session</span><span class="p">:</span>
-        <span class="n">client</span> <span class="o">=</span> <span class="n">pylunar</span><span class="p">.</span><span class="n">Client</span><span class="p">(</span>
+        <span class="n">client</span> <span class="o">=</span> <span class="n">lunarapi</span><span class="p">.</span><span class="n">Client</span><span class="p">(</span>
             <span class="n">session</span><span class="o">=</span><span class="n">session</span><span class="p">,</span>
             <span class="n">token</span><span class="o">=</span><span class="n">token</span><span class="p">,</span>
         <span class="p">)</span>
         <span class="n">image</span> <span class="o">=</span> <span class="k">await</span> <span class="n">client</span><span class="p">.</span><span class="n">request</span><span class="p">(</span>
-            <span class="n">pylunar</span><span class="p">.</span><span class="n">endpoints</span><span class="p">.</span><span class="n">generate_bad</span><span class="p">,</span> <span class="n">image</span><span class="o">=</span><span class="n">user</span><span class="p">.</span><span class="n">avatar</span><span class="p">.</span><span class="n">url</span>
+            <span class="n">lunarapi</span><span class="p">.</span><span class="n">endpoints</span><span class="p">.</span><span class="n">generate_bad</span><span class="p">,</span> <span class="n">image</span><span class="o">=</span><span class="n">user</span><span class="p">.</span><span class="n">avatar</span><span class="p">.</span><span class="n">url</span>
         <span class="p">)</span>
 
         <span class="k">await</span> <span class="n">ctx</span><span class="p">.</span><span class="n">send</span><span class="p">(</span><span class="nb">file</span><span class="o">=</span><span class="k">await</span> <span class="n">image</span><span class="p">.</span><span class="nb">file</span><span class="p">(</span><span class="n">discord</span><span class="p">))</span>
@@ -695,7 +695,7 @@ Remember — This is returning a bytes-like object!
 </tbody></table>
 <h3 id='result-4'>Result:</h3>
 <p><img src="images/gen_bad-a2c3690a.png" alt="" /></p>
-<h2 id='calling'>Calling</h2><div class="highlight"><pre class="highlight python tab-python"><code><span class="kn">from</span> <span class="nn">pylunar</span> <span class="kn">import</span> <span class="n">Client</span><span class="p">,</span> <span class="n">endpoints</span>
+<h2 id='calling'>Calling</h2><div class="highlight"><pre class="highlight python tab-python"><code><span class="kn">from</span> <span class="nn">lunarapi</span> <span class="kn">import</span> <span class="n">Client</span><span class="p">,</span> <span class="n">endpoints</span>
 <span class="kn">from</span> <span class="nn">aiohttp</span> <span class="kn">import</span> <span class="n">ClientSession</span>
 <span class="kn">import</span> <span class="nn">asyncio</span>
 
@@ -717,12 +717,12 @@ Remember — This is returning a bytes-like object!
 <span class="o">@</span><span class="n">commands</span><span class="p">.</span><span class="n">command</span><span class="p">()</span>
 <span class="k">async</span> <span class="k">def</span> <span class="nf">amiajoke</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ctx</span><span class="p">,</span> <span class="o">*</span><span class="p">,</span> <span class="n">text</span><span class="p">:</span> <span class="nb">str</span><span class="p">):</span>
     <span class="k">async</span> <span class="k">with</span> <span class="n">aiohttp</span><span class="p">.</span><span class="n">ClientSession</span><span class="p">()</span> <span class="k">as</span> <span class="n">session</span><span class="p">:</span>
-        <span class="n">client</span> <span class="o">=</span> <span class="n">pylunar</span><span class="p">.</span><span class="n">Client</span><span class="p">(</span>
+        <span class="n">client</span> <span class="o">=</span> <span class="n">lunarapi</span><span class="p">.</span><span class="n">Client</span><span class="p">(</span>
             <span class="n">session</span><span class="o">=</span><span class="n">session</span><span class="p">,</span>
             <span class="n">token</span><span class="o">=</span><span class="n">token</span><span class="p">,</span>
         <span class="p">)</span>
         <span class="n">image</span> <span class="o">=</span> <span class="k">await</span> <span class="n">client</span><span class="p">.</span><span class="n">request</span><span class="p">(</span>
-            <span class="n">pylunar</span><span class="p">.</span><span class="n">endpoints</span><span class="p">.</span><span class="n">generate_calling</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="n">text</span>
+            <span class="n">lunarapi</span><span class="p">.</span><span class="n">endpoints</span><span class="p">.</span><span class="n">generate_calling</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="n">text</span>
         <span class="p">)</span>
 
         <span class="k">await</span> <span class="n">ctx</span><span class="p">.</span><span class="n">send</span><span class="p">(</span><span class="nb">file</span><span class="o">=</span><span class="k">await</span> <span class="n">image</span><span class="p">.</span><span class="nb">file</span><span class="p">(</span><span class="n">discord</span><span class="p">))</span>
@@ -753,7 +753,7 @@ Remember — This is returning a bytes-like object!
 </tbody></table>
 <h3 id='result-5'>Result:</h3>
 <p><img src="images/gen_calling-44441c14.png" alt="" /></p>
-<h1 id='image-api-sfw'>Image API (SFW)</h1><h2 id='hug'>Hug</h2><div class="highlight"><pre class="highlight python tab-python"><code><span class="kn">from</span> <span class="nn">pylunar</span> <span class="kn">import</span> <span class="n">Client</span><span class="p">,</span> <span class="n">endpoints</span>
+<h1 id='image-api-sfw'>Image API (SFW)</h1><h2 id='hug'>Hug</h2><div class="highlight"><pre class="highlight python tab-python"><code><span class="kn">from</span> <span class="nn">lunarapi</span> <span class="kn">import</span> <span class="n">Client</span><span class="p">,</span> <span class="n">endpoints</span>
 <span class="kn">from</span> <span class="nn">aiohttp</span> <span class="kn">import</span> <span class="n">ClientSession</span>
 <span class="kn">import</span> <span class="nn">asyncio</span>
 
@@ -774,12 +774,12 @@ Remember — This is returning a bytes-like object!
 <span class="o">@</span><span class="n">commands</span><span class="p">.</span><span class="n">command</span><span class="p">()</span>
 <span class="k">async</span> <span class="k">def</span> <span class="nf">hug</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ctx</span><span class="p">):</span>
     <span class="k">async</span> <span class="k">with</span> <span class="n">aiohttp</span><span class="p">.</span><span class="n">ClientSession</span><span class="p">()</span> <span class="k">as</span> <span class="n">session</span><span class="p">:</span>
-        <span class="n">client</span> <span class="o">=</span> <span class="n">pylunar</span><span class="p">.</span><span class="n">Client</span><span class="p">(</span>
+        <span class="n">client</span> <span class="o">=</span> <span class="n">lunarapi</span><span class="p">.</span><span class="n">Client</span><span class="p">(</span>
             <span class="n">session</span><span class="o">=</span><span class="n">session</span><span class="p">,</span>
             <span class="n">token</span><span class="o">=</span><span class="n">token</span><span class="p">,</span>
         <span class="p">)</span>
         <span class="n">image</span> <span class="o">=</span> <span class="k">await</span> <span class="n">client</span><span class="p">.</span><span class="n">request</span><span class="p">(</span>
-            <span class="n">pylunar</span><span class="p">.</span><span class="n">endpoints</span><span class="p">.</span><span class="n">sfw</span><span class="p">(</span><span class="s">"hug"</span><span class="p">)</span>
+            <span class="n">lunarapi</span><span class="p">.</span><span class="n">endpoints</span><span class="p">.</span><span class="n">sfw</span><span class="p">(</span><span class="s">"hug"</span><span class="p">)</span>
         <span class="p">)</span>
         <span class="n">data</span> <span class="o">=</span> <span class="k">await</span> <span class="n">image</span><span class="p">.</span><span class="n">to_dict</span><span class="p">()</span>
 
@@ -816,7 +816,7 @@ Remember — This is returning a bytes-like object!
 <aside class="success">
 Remember — This is returning a JSON object!
 </aside>
-<h2 id='pat'>Pat</h2><div class="highlight"><pre class="highlight python tab-python"><code><span class="kn">from</span> <span class="nn">pylunar</span> <span class="kn">import</span> <span class="n">Client</span><span class="p">,</span> <span class="n">endpoints</span>
+<h2 id='pat'>Pat</h2><div class="highlight"><pre class="highlight python tab-python"><code><span class="kn">from</span> <span class="nn">lunarapi</span> <span class="kn">import</span> <span class="n">Client</span><span class="p">,</span> <span class="n">endpoints</span>
 <span class="kn">from</span> <span class="nn">aiohttp</span> <span class="kn">import</span> <span class="n">ClientSession</span>
 <span class="kn">import</span> <span class="nn">asyncio</span>
 
@@ -837,12 +837,12 @@ Remember — This is returning a JSON object!
 <span class="o">@</span><span class="n">commands</span><span class="p">.</span><span class="n">command</span><span class="p">()</span>
 <span class="k">async</span> <span class="k">def</span> <span class="nf">pat</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ctx</span><span class="p">):</span>
     <span class="k">async</span> <span class="k">with</span> <span class="n">aiohttp</span><span class="p">.</span><span class="n">ClientSession</span><span class="p">()</span> <span class="k">as</span> <span class="n">session</span><span class="p">:</span>
-        <span class="n">client</span> <span class="o">=</span> <span class="n">pylunar</span><span class="p">.</span><span class="n">Client</span><span class="p">(</span>
+        <span class="n">client</span> <span class="o">=</span> <span class="n">lunarapi</span><span class="p">.</span><span class="n">Client</span><span class="p">(</span>
             <span class="n">session</span><span class="o">=</span><span class="n">session</span><span class="p">,</span>
             <span class="n">token</span><span class="o">=</span><span class="n">token</span><span class="p">,</span>
         <span class="p">)</span>
         <span class="n">image</span> <span class="o">=</span> <span class="k">await</span> <span class="n">client</span><span class="p">.</span><span class="n">request</span><span class="p">(</span>
-            <span class="n">pylunar</span><span class="p">.</span><span class="n">endpoints</span><span class="p">.</span><span class="n">sfw</span><span class="p">(</span><span class="s">"pat"</span><span class="p">)</span>
+            <span class="n">lunarapi</span><span class="p">.</span><span class="n">endpoints</span><span class="p">.</span><span class="n">sfw</span><span class="p">(</span><span class="s">"pat"</span><span class="p">)</span>
         <span class="p">)</span>
         <span class="n">data</span> <span class="o">=</span> <span class="k">await</span> <span class="n">image</span><span class="p">.</span><span class="n">to_dict</span><span class="p">()</span>
 
@@ -875,7 +875,7 @@ Remember — This is returning a JSON object!
 <td>The direct image URL for the image retrieved. You can use this in embeds and whatever else you wish.</td>
 </tr>
 </tbody></table>
-<h1 id='image-api-nsfw'>Image API (NSFW)</h1><h2 id='ahegao'>Ahegao</h2><div class="highlight"><pre class="highlight python tab-python"><code><span class="kn">from</span> <span class="nn">pylunar</span> <span class="kn">import</span> <span class="n">Client</span><span class="p">,</span> <span class="n">endpoints</span>
+<h1 id='image-api-nsfw'>Image API (NSFW)</h1><h2 id='ahegao'>Ahegao</h2><div class="highlight"><pre class="highlight python tab-python"><code><span class="kn">from</span> <span class="nn">lunarapi</span> <span class="kn">import</span> <span class="n">Client</span><span class="p">,</span> <span class="n">endpoints</span>
 <span class="kn">from</span> <span class="nn">aiohttp</span> <span class="kn">import</span> <span class="n">ClientSession</span>
 <span class="kn">import</span> <span class="nn">asyncio</span>
 
@@ -896,12 +896,12 @@ Remember — This is returning a JSON object!
 <span class="o">@</span><span class="n">commands</span><span class="p">.</span><span class="n">command</span><span class="p">()</span>
 <span class="k">async</span> <span class="k">def</span> <span class="nf">ahegao</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ctx</span><span class="p">):</span>
     <span class="k">async</span> <span class="k">with</span> <span class="n">aiohttp</span><span class="p">.</span><span class="n">ClientSession</span><span class="p">()</span> <span class="k">as</span> <span class="n">session</span><span class="p">:</span>
-        <span class="n">client</span> <span class="o">=</span> <span class="n">pylunar</span><span class="p">.</span><span class="n">Client</span><span class="p">(</span>
+        <span class="n">client</span> <span class="o">=</span> <span class="n">lunarapi</span><span class="p">.</span><span class="n">Client</span><span class="p">(</span>
             <span class="n">session</span><span class="o">=</span><span class="n">session</span><span class="p">,</span>
             <span class="n">token</span><span class="o">=</span><span class="n">token</span><span class="p">,</span>
         <span class="p">)</span>
         <span class="n">image</span> <span class="o">=</span> <span class="k">await</span> <span class="n">client</span><span class="p">.</span><span class="n">request</span><span class="p">(</span>
-            <span class="n">pylunar</span><span class="p">.</span><span class="n">endpoints</span><span class="p">.</span><span class="n">nsfw</span><span class="p">(</span><span class="s">"ahegao"</span><span class="p">)</span>
+            <span class="n">lunarapi</span><span class="p">.</span><span class="n">endpoints</span><span class="p">.</span><span class="n">nsfw</span><span class="p">(</span><span class="s">"ahegao"</span><span class="p">)</span>
         <span class="p">)</span>
         <span class="n">data</span> <span class="o">=</span> <span class="k">await</span> <span class="n">image</span><span class="p">.</span><span class="n">to_dict</span><span class="p">()</span>
 
@@ -938,7 +938,7 @@ Remember — This is returning a JSON object!
 <aside class="success">
 Remember — This is returning a JSON object!
 </aside>
-<h2 id='ass'>Ass</h2><div class="highlight"><pre class="highlight python tab-python"><code><span class="kn">from</span> <span class="nn">pylunar</span> <span class="kn">import</span> <span class="n">Client</span><span class="p">,</span> <span class="n">endpoints</span>
+<h2 id='ass'>Ass</h2><div class="highlight"><pre class="highlight python tab-python"><code><span class="kn">from</span> <span class="nn">lunarapi</span> <span class="kn">import</span> <span class="n">Client</span><span class="p">,</span> <span class="n">endpoints</span>
 <span class="kn">from</span> <span class="nn">aiohttp</span> <span class="kn">import</span> <span class="n">ClientSession</span>
 <span class="kn">import</span> <span class="nn">asyncio</span>
 
@@ -959,12 +959,12 @@ Remember — This is returning a JSON object!
 <span class="o">@</span><span class="n">commands</span><span class="p">.</span><span class="n">command</span><span class="p">()</span>
 <span class="k">async</span> <span class="k">def</span> <span class="nf">ass</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ctx</span><span class="p">):</span>
     <span class="k">async</span> <span class="k">with</span> <span class="n">aiohttp</span><span class="p">.</span><span class="n">ClientSession</span><span class="p">()</span> <span class="k">as</span> <span class="n">session</span><span class="p">:</span>
-        <span class="n">client</span> <span class="o">=</span> <span class="n">pylunar</span><span class="p">.</span><span class="n">Client</span><span class="p">(</span>
+        <span class="n">client</span> <span class="o">=</span> <span class="n">lunarapi</span><span class="p">.</span><span class="n">Client</span><span class="p">(</span>
             <span class="n">session</span><span class="o">=</span><span class="n">session</span><span class="p">,</span>
             <span class="n">token</span><span class="o">=</span><span class="n">token</span><span class="p">,</span>
         <span class="p">)</span>
         <span class="n">image</span> <span class="o">=</span> <span class="k">await</span> <span class="n">client</span><span class="p">.</span><span class="n">request</span><span class="p">(</span>
-            <span class="n">pylunar</span><span class="p">.</span><span class="n">endpoints</span><span class="p">.</span><span class="n">nsfw</span><span class="p">(</span><span class="s">"ass"</span><span class="p">)</span>
+            <span class="n">lunarapi</span><span class="p">.</span><span class="n">endpoints</span><span class="p">.</span><span class="n">nsfw</span><span class="p">(</span><span class="s">"ass"</span><span class="p">)</span>
         <span class="p">)</span>
         <span class="n">data</span> <span class="o">=</span> <span class="k">await</span> <span class="n">image</span><span class="p">.</span><span class="n">to_dict</span><span class="p">()</span>
 
@@ -997,7 +997,7 @@ Remember — This is returning a JSON object!
 <td>The direct image URL for the image retrieved. You can use this in embeds and whatever else you wish.</td>
 </tr>
 </tbody></table>
-<h2 id='boobs'>Boobs</h2><div class="highlight"><pre class="highlight python tab-python"><code><span class="kn">from</span> <span class="nn">pylunar</span> <span class="kn">import</span> <span class="n">Client</span><span class="p">,</span> <span class="n">endpoints</span>
+<h2 id='boobs'>Boobs</h2><div class="highlight"><pre class="highlight python tab-python"><code><span class="kn">from</span> <span class="nn">lunarapi</span> <span class="kn">import</span> <span class="n">Client</span><span class="p">,</span> <span class="n">endpoints</span>
 <span class="kn">from</span> <span class="nn">aiohttp</span> <span class="kn">import</span> <span class="n">ClientSession</span>
 <span class="kn">import</span> <span class="nn">asyncio</span>
 
@@ -1018,12 +1018,12 @@ Remember — This is returning a JSON object!
 <span class="o">@</span><span class="n">commands</span><span class="p">.</span><span class="n">command</span><span class="p">()</span>
 <span class="k">async</span> <span class="k">def</span> <span class="nf">boobs</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ctx</span><span class="p">):</span>
     <span class="k">async</span> <span class="k">with</span> <span class="n">aiohttp</span><span class="p">.</span><span class="n">ClientSession</span><span class="p">()</span> <span class="k">as</span> <span class="n">session</span><span class="p">:</span>
-        <span class="n">client</span> <span class="o">=</span> <span class="n">pylunar</span><span class="p">.</span><span class="n">Client</span><span class="p">(</span>
+        <span class="n">client</span> <span class="o">=</span> <span class="n">lunarapi</span><span class="p">.</span><span class="n">Client</span><span class="p">(</span>
             <span class="n">session</span><span class="o">=</span><span class="n">session</span><span class="p">,</span>
             <span class="n">token</span><span class="o">=</span><span class="n">token</span><span class="p">,</span>
         <span class="p">)</span>
         <span class="n">image</span> <span class="o">=</span> <span class="k">await</span> <span class="n">client</span><span class="p">.</span><span class="n">request</span><span class="p">(</span>
-            <span class="n">pylunar</span><span class="p">.</span><span class="n">endpoints</span><span class="p">.</span><span class="n">nsfw</span><span class="p">(</span><span class="s">"boobs"</span><span class="p">)</span>
+            <span class="n">lunarapi</span><span class="p">.</span><span class="n">endpoints</span><span class="p">.</span><span class="n">nsfw</span><span class="p">(</span><span class="s">"boobs"</span><span class="p">)</span>
         <span class="p">)</span>
         <span class="n">data</span> <span class="o">=</span> <span class="k">await</span> <span class="n">image</span><span class="p">.</span><span class="n">to_dict</span><span class="p">()</span>
 
@@ -1056,7 +1056,7 @@ Remember — This is returning a JSON object!
 <td>The direct image URL for the image retrieved. You can use this in embeds and whatever else you wish.</td>
 </tr>
 </tbody></table>
-<h2 id='cum'>Cum</h2><div class="highlight"><pre class="highlight python tab-python"><code><span class="kn">from</span> <span class="nn">pylunar</span> <span class="kn">import</span> <span class="n">Client</span><span class="p">,</span> <span class="n">endpoints</span>
+<h2 id='cum'>Cum</h2><div class="highlight"><pre class="highlight python tab-python"><code><span class="kn">from</span> <span class="nn">lunarapi</span> <span class="kn">import</span> <span class="n">Client</span><span class="p">,</span> <span class="n">endpoints</span>
 <span class="kn">from</span> <span class="nn">aiohttp</span> <span class="kn">import</span> <span class="n">ClientSession</span>
 <span class="kn">import</span> <span class="nn">asyncio</span>
 
@@ -1077,12 +1077,12 @@ Remember — This is returning a JSON object!
 <span class="o">@</span><span class="n">commands</span><span class="p">.</span><span class="n">command</span><span class="p">()</span>
 <span class="k">async</span> <span class="k">def</span> <span class="nf">cum</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ctx</span><span class="p">):</span>
     <span class="k">async</span> <span class="k">with</span> <span class="n">aiohttp</span><span class="p">.</span><span class="n">ClientSession</span><span class="p">()</span> <span class="k">as</span> <span class="n">session</span><span class="p">:</span>
-        <span class="n">client</span> <span class="o">=</span> <span class="n">pylunar</span><span class="p">.</span><span class="n">Client</span><span class="p">(</span>
+        <span class="n">client</span> <span class="o">=</span> <span class="n">lunarapi</span><span class="p">.</span><span class="n">Client</span><span class="p">(</span>
             <span class="n">session</span><span class="o">=</span><span class="n">session</span><span class="p">,</span>
             <span class="n">token</span><span class="o">=</span><span class="n">token</span><span class="p">,</span>
         <span class="p">)</span>
         <span class="n">image</span> <span class="o">=</span> <span class="k">await</span> <span class="n">client</span><span class="p">.</span><span class="n">request</span><span class="p">(</span>
-            <span class="n">pylunar</span><span class="p">.</span><span class="n">endpoints</span><span class="p">.</span><span class="n">nsfw</span><span class="p">(</span><span class="s">"cum"</span><span class="p">)</span>
+            <span class="n">lunarapi</span><span class="p">.</span><span class="n">endpoints</span><span class="p">.</span><span class="n">nsfw</span><span class="p">(</span><span class="s">"cum"</span><span class="p">)</span>
         <span class="p">)</span>
         <span class="n">data</span> <span class="o">=</span> <span class="k">await</span> <span class="n">image</span><span class="p">.</span><span class="n">to_dict</span><span class="p">()</span>
 
@@ -1115,7 +1115,7 @@ Remember — This is returning a JSON object!
 <td>The direct image URL for the image retrieved. You can use this in embeds and whatever else you wish.</td>
 </tr>
 </tbody></table>
-<h2 id='gif'>Gif</h2><div class="highlight"><pre class="highlight python tab-python"><code><span class="kn">from</span> <span class="nn">pylunar</span> <span class="kn">import</span> <span class="n">Client</span><span class="p">,</span> <span class="n">endpoints</span>
+<h2 id='gif'>Gif</h2><div class="highlight"><pre class="highlight python tab-python"><code><span class="kn">from</span> <span class="nn">lunarapi</span> <span class="kn">import</span> <span class="n">Client</span><span class="p">,</span> <span class="n">endpoints</span>
 <span class="kn">from</span> <span class="nn">aiohttp</span> <span class="kn">import</span> <span class="n">ClientSession</span>
 <span class="kn">import</span> <span class="nn">asyncio</span>
 
@@ -1136,12 +1136,12 @@ Remember — This is returning a JSON object!
 <span class="o">@</span><span class="n">commands</span><span class="p">.</span><span class="n">command</span><span class="p">()</span>
 <span class="k">async</span> <span class="k">def</span> <span class="nf">gif</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ctx</span><span class="p">):</span>
     <span class="k">async</span> <span class="k">with</span> <span class="n">aiohttp</span><span class="p">.</span><span class="n">ClientSession</span><span class="p">()</span> <span class="k">as</span> <span class="n">session</span><span class="p">:</span>
-        <span class="n">client</span> <span class="o">=</span> <span class="n">pylunar</span><span class="p">.</span><span class="n">Client</span><span class="p">(</span>
+        <span class="n">client</span> <span class="o">=</span> <span class="n">lunarapi</span><span class="p">.</span><span class="n">Client</span><span class="p">(</span>
             <span class="n">session</span><span class="o">=</span><span class="n">session</span><span class="p">,</span>
             <span class="n">token</span><span class="o">=</span><span class="n">token</span><span class="p">,</span>
         <span class="p">)</span>
         <span class="n">image</span> <span class="o">=</span> <span class="k">await</span> <span class="n">client</span><span class="p">.</span><span class="n">request</span><span class="p">(</span>
-            <span class="n">pylunar</span><span class="p">.</span><span class="n">endpoints</span><span class="p">.</span><span class="n">nsfw</span><span class="p">(</span><span class="s">"gif"</span><span class="p">)</span>
+            <span class="n">lunarapi</span><span class="p">.</span><span class="n">endpoints</span><span class="p">.</span><span class="n">nsfw</span><span class="p">(</span><span class="s">"gif"</span><span class="p">)</span>
         <span class="p">)</span>
         <span class="n">data</span> <span class="o">=</span> <span class="k">await</span> <span class="n">image</span><span class="p">.</span><span class="n">to_dict</span><span class="p">()</span>
 
@@ -1174,7 +1174,7 @@ Remember — This is returning a JSON object!
 <td>The direct image URL for the image retrieved. You can use this in embeds and whatever else you wish.</td>
 </tr>
 </tbody></table>
-<h2 id='hololive'>Hololive</h2><div class="highlight"><pre class="highlight python tab-python"><code><span class="kn">from</span> <span class="nn">pylunar</span> <span class="kn">import</span> <span class="n">Client</span><span class="p">,</span> <span class="n">endpoints</span>
+<h2 id='hololive'>Hololive</h2><div class="highlight"><pre class="highlight python tab-python"><code><span class="kn">from</span> <span class="nn">lunarapi</span> <span class="kn">import</span> <span class="n">Client</span><span class="p">,</span> <span class="n">endpoints</span>
 <span class="kn">from</span> <span class="nn">aiohttp</span> <span class="kn">import</span> <span class="n">ClientSession</span>
 <span class="kn">import</span> <span class="nn">asyncio</span>
 
@@ -1195,12 +1195,12 @@ Remember — This is returning a JSON object!
 <span class="o">@</span><span class="n">commands</span><span class="p">.</span><span class="n">command</span><span class="p">()</span>
 <span class="k">async</span> <span class="k">def</span> <span class="nf">hololive</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ctx</span><span class="p">):</span>
     <span class="k">async</span> <span class="k">with</span> <span class="n">aiohttp</span><span class="p">.</span><span class="n">ClientSession</span><span class="p">()</span> <span class="k">as</span> <span class="n">session</span><span class="p">:</span>
-        <span class="n">client</span> <span class="o">=</span> <span class="n">pylunar</span><span class="p">.</span><span class="n">Client</span><span class="p">(</span>
+        <span class="n">client</span> <span class="o">=</span> <span class="n">lunarapi</span><span class="p">.</span><span class="n">Client</span><span class="p">(</span>
             <span class="n">session</span><span class="o">=</span><span class="n">session</span><span class="p">,</span>
             <span class="n">token</span><span class="o">=</span><span class="n">token</span><span class="p">,</span>
         <span class="p">)</span>
         <span class="n">image</span> <span class="o">=</span> <span class="k">await</span> <span class="n">client</span><span class="p">.</span><span class="n">request</span><span class="p">(</span>
-            <span class="n">pylunar</span><span class="p">.</span><span class="n">endpoints</span><span class="p">.</span><span class="n">nsfw</span><span class="p">(</span><span class="s">"hololive"</span><span class="p">)</span>
+            <span class="n">lunarapi</span><span class="p">.</span><span class="n">endpoints</span><span class="p">.</span><span class="n">nsfw</span><span class="p">(</span><span class="s">"hololive"</span><span class="p">)</span>
         <span class="p">)</span>
         <span class="n">data</span> <span class="o">=</span> <span class="k">await</span> <span class="n">image</span><span class="p">.</span><span class="n">to_dict</span><span class="p">()</span>
 
@@ -1233,7 +1233,7 @@ Remember — This is returning a JSON object!
 <td>The direct image URL for the image retrieved. You can use this in embeds and whatever else you wish.</td>
 </tr>
 </tbody></table>
-<h2 id='jpg'>Jpg</h2><div class="highlight"><pre class="highlight python tab-python"><code><span class="kn">from</span> <span class="nn">pylunar</span> <span class="kn">import</span> <span class="n">Client</span><span class="p">,</span> <span class="n">endpoints</span>
+<h2 id='jpg'>Jpg</h2><div class="highlight"><pre class="highlight python tab-python"><code><span class="kn">from</span> <span class="nn">lunarapi</span> <span class="kn">import</span> <span class="n">Client</span><span class="p">,</span> <span class="n">endpoints</span>
 <span class="kn">from</span> <span class="nn">aiohttp</span> <span class="kn">import</span> <span class="n">ClientSession</span>
 <span class="kn">import</span> <span class="nn">asyncio</span>
 
@@ -1254,12 +1254,12 @@ Remember — This is returning a JSON object!
 <span class="o">@</span><span class="n">commands</span><span class="p">.</span><span class="n">command</span><span class="p">()</span>
 <span class="k">async</span> <span class="k">def</span> <span class="nf">jpg</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ctx</span><span class="p">):</span>
     <span class="k">async</span> <span class="k">with</span> <span class="n">aiohttp</span><span class="p">.</span><span class="n">ClientSession</span><span class="p">()</span> <span class="k">as</span> <span class="n">session</span><span class="p">:</span>
-        <span class="n">client</span> <span class="o">=</span> <span class="n">pylunar</span><span class="p">.</span><span class="n">Client</span><span class="p">(</span>
+        <span class="n">client</span> <span class="o">=</span> <span class="n">lunarapi</span><span class="p">.</span><span class="n">Client</span><span class="p">(</span>
             <span class="n">session</span><span class="o">=</span><span class="n">session</span><span class="p">,</span>
             <span class="n">token</span><span class="o">=</span><span class="n">token</span><span class="p">,</span>
         <span class="p">)</span>
         <span class="n">image</span> <span class="o">=</span> <span class="k">await</span> <span class="n">client</span><span class="p">.</span><span class="n">request</span><span class="p">(</span>
-            <span class="n">pylunar</span><span class="p">.</span><span class="n">endpoints</span><span class="p">.</span><span class="n">nsfw</span><span class="p">(</span><span class="s">"jpg"</span><span class="p">)</span>
+            <span class="n">lunarapi</span><span class="p">.</span><span class="n">endpoints</span><span class="p">.</span><span class="n">nsfw</span><span class="p">(</span><span class="s">"jpg"</span><span class="p">)</span>
         <span class="p">)</span>
         <span class="n">data</span> <span class="o">=</span> <span class="k">await</span> <span class="n">image</span><span class="p">.</span><span class="n">to_dict</span><span class="p">()</span>
 
@@ -1292,7 +1292,7 @@ Remember — This is returning a JSON object!
 <td>The direct image URL for the image retrieved. You can use this in embeds and whatever else you wish.</td>
 </tr>
 </tbody></table>
-<h2 id='neko'>Neko</h2><div class="highlight"><pre class="highlight python tab-python"><code><span class="kn">from</span> <span class="nn">pylunar</span> <span class="kn">import</span> <span class="n">Client</span><span class="p">,</span> <span class="n">endpoints</span>
+<h2 id='neko'>Neko</h2><div class="highlight"><pre class="highlight python tab-python"><code><span class="kn">from</span> <span class="nn">lunarapi</span> <span class="kn">import</span> <span class="n">Client</span><span class="p">,</span> <span class="n">endpoints</span>
 <span class="kn">from</span> <span class="nn">aiohttp</span> <span class="kn">import</span> <span class="n">ClientSession</span>
 <span class="kn">import</span> <span class="nn">asyncio</span>
 
@@ -1313,12 +1313,12 @@ Remember — This is returning a JSON object!
 <span class="o">@</span><span class="n">commands</span><span class="p">.</span><span class="n">command</span><span class="p">()</span>
 <span class="k">async</span> <span class="k">def</span> <span class="nf">neko</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ctx</span><span class="p">):</span>
     <span class="k">async</span> <span class="k">with</span> <span class="n">aiohttp</span><span class="p">.</span><span class="n">ClientSession</span><span class="p">()</span> <span class="k">as</span> <span class="n">session</span><span class="p">:</span>
-        <span class="n">client</span> <span class="o">=</span> <span class="n">pylunar</span><span class="p">.</span><span class="n">Client</span><span class="p">(</span>
+        <span class="n">client</span> <span class="o">=</span> <span class="n">lunarapi</span><span class="p">.</span><span class="n">Client</span><span class="p">(</span>
             <span class="n">session</span><span class="o">=</span><span class="n">session</span><span class="p">,</span>
             <span class="n">token</span><span class="o">=</span><span class="n">token</span><span class="p">,</span>
         <span class="p">)</span>
         <span class="n">image</span> <span class="o">=</span> <span class="k">await</span> <span class="n">client</span><span class="p">.</span><span class="n">request</span><span class="p">(</span>
-            <span class="n">pylunar</span><span class="p">.</span><span class="n">endpoints</span><span class="p">.</span><span class="n">nsfw</span><span class="p">(</span><span class="s">"neko"</span><span class="p">)</span>
+            <span class="n">lunarapi</span><span class="p">.</span><span class="n">endpoints</span><span class="p">.</span><span class="n">nsfw</span><span class="p">(</span><span class="s">"neko"</span><span class="p">)</span>
         <span class="p">)</span>
         <span class="n">data</span> <span class="o">=</span> <span class="k">await</span> <span class="n">image</span><span class="p">.</span><span class="n">to_dict</span><span class="p">()</span>
 
@@ -1351,7 +1351,7 @@ Remember — This is returning a JSON object!
 <td>The direct image URL for the image retrieved. You can use this in embeds and whatever else you wish.</td>
 </tr>
 </tbody></table>
-<h2 id='panties'>Panties</h2><div class="highlight"><pre class="highlight python tab-python"><code><span class="kn">from</span> <span class="nn">pylunar</span> <span class="kn">import</span> <span class="n">Client</span><span class="p">,</span> <span class="n">endpoints</span>
+<h2 id='panties'>Panties</h2><div class="highlight"><pre class="highlight python tab-python"><code><span class="kn">from</span> <span class="nn">lunarapi</span> <span class="kn">import</span> <span class="n">Client</span><span class="p">,</span> <span class="n">endpoints</span>
 <span class="kn">from</span> <span class="nn">aiohttp</span> <span class="kn">import</span> <span class="n">ClientSession</span>
 <span class="kn">import</span> <span class="nn">asyncio</span>
 
@@ -1372,12 +1372,12 @@ Remember — This is returning a JSON object!
 <span class="o">@</span><span class="n">commands</span><span class="p">.</span><span class="n">command</span><span class="p">()</span>
 <span class="k">async</span> <span class="k">def</span> <span class="nf">panties</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ctx</span><span class="p">):</span>
     <span class="k">async</span> <span class="k">with</span> <span class="n">aiohttp</span><span class="p">.</span><span class="n">ClientSession</span><span class="p">()</span> <span class="k">as</span> <span class="n">session</span><span class="p">:</span>
-        <span class="n">client</span> <span class="o">=</span> <span class="n">pylunar</span><span class="p">.</span><span class="n">Client</span><span class="p">(</span>
+        <span class="n">client</span> <span class="o">=</span> <span class="n">lunarapi</span><span class="p">.</span><span class="n">Client</span><span class="p">(</span>
             <span class="n">session</span><span class="o">=</span><span class="n">session</span><span class="p">,</span>
             <span class="n">token</span><span class="o">=</span><span class="n">token</span><span class="p">,</span>
         <span class="p">)</span>
         <span class="n">image</span> <span class="o">=</span> <span class="k">await</span> <span class="n">client</span><span class="p">.</span><span class="n">request</span><span class="p">(</span>
-            <span class="n">pylunar</span><span class="p">.</span><span class="n">endpoints</span><span class="p">.</span><span class="n">nsfw</span><span class="p">(</span><span class="s">"panties"</span><span class="p">)</span>
+            <span class="n">lunarapi</span><span class="p">.</span><span class="n">endpoints</span><span class="p">.</span><span class="n">nsfw</span><span class="p">(</span><span class="s">"panties"</span><span class="p">)</span>
         <span class="p">)</span>
         <span class="n">data</span> <span class="o">=</span> <span class="k">await</span> <span class="n">image</span><span class="p">.</span><span class="n">to_dict</span><span class="p">()</span>
 
@@ -1410,7 +1410,7 @@ Remember — This is returning a JSON object!
 <td>The direct image URL for the image retrieved. You can use this in embeds and whatever else you wish.</td>
 </tr>
 </tbody></table>
-<h2 id='thighs'>Thighs</h2><div class="highlight"><pre class="highlight python tab-python"><code><span class="kn">from</span> <span class="nn">pylunar</span> <span class="kn">import</span> <span class="n">Client</span><span class="p">,</span> <span class="n">endpoints</span>
+<h2 id='thighs'>Thighs</h2><div class="highlight"><pre class="highlight python tab-python"><code><span class="kn">from</span> <span class="nn">lunarapi</span> <span class="kn">import</span> <span class="n">Client</span><span class="p">,</span> <span class="n">endpoints</span>
 <span class="kn">from</span> <span class="nn">aiohttp</span> <span class="kn">import</span> <span class="n">ClientSession</span>
 <span class="kn">import</span> <span class="nn">asyncio</span>
 
@@ -1431,12 +1431,12 @@ Remember — This is returning a JSON object!
 <span class="o">@</span><span class="n">commands</span><span class="p">.</span><span class="n">command</span><span class="p">()</span>
 <span class="k">async</span> <span class="k">def</span> <span class="nf">thighs</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ctx</span><span class="p">):</span>
     <span class="k">async</span> <span class="k">with</span> <span class="n">aiohttp</span><span class="p">.</span><span class="n">ClientSession</span><span class="p">()</span> <span class="k">as</span> <span class="n">session</span><span class="p">:</span>
-        <span class="n">client</span> <span class="o">=</span> <span class="n">pylunar</span><span class="p">.</span><span class="n">Client</span><span class="p">(</span>
+        <span class="n">client</span> <span class="o">=</span> <span class="n">lunarapi</span><span class="p">.</span><span class="n">Client</span><span class="p">(</span>
             <span class="n">session</span><span class="o">=</span><span class="n">session</span><span class="p">,</span>
             <span class="n">token</span><span class="o">=</span><span class="n">token</span><span class="p">,</span>
         <span class="p">)</span>
         <span class="n">image</span> <span class="o">=</span> <span class="k">await</span> <span class="n">client</span><span class="p">.</span><span class="n">request</span><span class="p">(</span>
-            <span class="n">pylunar</span><span class="p">.</span><span class="n">endpoints</span><span class="p">.</span><span class="n">nsfw</span><span class="p">(</span><span class="s">"thighs"</span><span class="p">)</span>
+            <span class="n">lunarapi</span><span class="p">.</span><span class="n">endpoints</span><span class="p">.</span><span class="n">nsfw</span><span class="p">(</span><span class="s">"thighs"</span><span class="p">)</span>
         <span class="p">)</span>
         <span class="n">data</span> <span class="o">=</span> <span class="k">await</span> <span class="n">image</span><span class="p">.</span><span class="n">to_dict</span><span class="p">()</span>
 
@@ -1469,7 +1469,7 @@ Remember — This is returning a JSON object!
 <td>The direct image URL for the image retrieved. You can use this in embeds and whatever else you wish.</td>
 </tr>
 </tbody></table>
-<h2 id='yuri'>Yuri</h2><div class="highlight"><pre class="highlight python tab-python"><code><span class="kn">from</span> <span class="nn">pylunar</span> <span class="kn">import</span> <span class="n">Client</span><span class="p">,</span> <span class="n">endpoints</span>
+<h2 id='yuri'>Yuri</h2><div class="highlight"><pre class="highlight python tab-python"><code><span class="kn">from</span> <span class="nn">lunarapi</span> <span class="kn">import</span> <span class="n">Client</span><span class="p">,</span> <span class="n">endpoints</span>
 <span class="kn">from</span> <span class="nn">aiohttp</span> <span class="kn">import</span> <span class="n">ClientSession</span>
 <span class="kn">import</span> <span class="nn">asyncio</span>
 
@@ -1490,12 +1490,12 @@ Remember — This is returning a JSON object!
 <span class="o">@</span><span class="n">commands</span><span class="p">.</span><span class="n">command</span><span class="p">()</span>
 <span class="k">async</span> <span class="k">def</span> <span class="nf">yuri</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ctx</span><span class="p">):</span>
     <span class="k">async</span> <span class="k">with</span> <span class="n">aiohttp</span><span class="p">.</span><span class="n">ClientSession</span><span class="p">()</span> <span class="k">as</span> <span class="n">session</span><span class="p">:</span>
-        <span class="n">client</span> <span class="o">=</span> <span class="n">pylunar</span><span class="p">.</span><span class="n">Client</span><span class="p">(</span>
+        <span class="n">client</span> <span class="o">=</span> <span class="n">lunarapi</span><span class="p">.</span><span class="n">Client</span><span class="p">(</span>
             <span class="n">session</span><span class="o">=</span><span class="n">session</span><span class="p">,</span>
             <span class="n">token</span><span class="o">=</span><span class="n">token</span><span class="p">,</span>
         <span class="p">)</span>
         <span class="n">image</span> <span class="o">=</span> <span class="k">await</span> <span class="n">client</span><span class="p">.</span><span class="n">request</span><span class="p">(</span>
-            <span class="n">pylunar</span><span class="p">.</span><span class="n">endpoints</span><span class="p">.</span><span class="n">nsfw</span><span class="p">(</span><span class="s">"yuri"</span><span class="p">)</span>
+            <span class="n">lunarapi</span><span class="p">.</span><span class="n">endpoints</span><span class="p">.</span><span class="n">nsfw</span><span class="p">(</span><span class="s">"yuri"</span><span class="p">)</span>
         <span class="p">)</span>
         <span class="n">data</span> <span class="o">=</span> <span class="k">await</span> <span class="n">image</span><span class="p">.</span><span class="n">to_dict</span><span class="p">()</span>
 
