@@ -3,7 +3,7 @@
 ## Hug
 
 ```python
-from pylunar import Client, endpoints
+from lunarapi import Client, endpoints
 from aiohttp import ClientSession
 import asyncio
 
@@ -24,12 +24,12 @@ import lunarapi
 @commands.command()
 async def hug(self, ctx):
     async with aiohttp.ClientSession() as session:
-        client = pylunar.Client(
+        client = lunarapi.Client(
             session=session,
             token=token,
         )
         image = await client.request(
-            pylunar.endpoints.sfw("hug")
+            lunarapi.endpoints.sfw("hug")
         )
         data = await image.to_dict()
 
@@ -65,7 +65,7 @@ Remember — This is returning a JSON object!
 ## Pat
 
 ```python
-from pylunar import Client, endpoints
+from lunarapi import Client, endpoints
 from aiohttp import ClientSession
 import asyncio
 
@@ -86,12 +86,12 @@ import lunarapi
 @commands.command()
 async def pat(self, ctx):
     async with aiohttp.ClientSession() as session:
-        client = pylunar.Client(
+        client = lunarapi.Client(
             session=session,
             token=token,
         )
         image = await client.request(
-            pylunar.endpoints.sfw("pat")
+            lunarapi.endpoints.sfw("pat")
         )
         data = await image.to_dict()
 

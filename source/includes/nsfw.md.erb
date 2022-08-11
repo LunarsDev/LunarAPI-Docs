@@ -3,7 +3,7 @@
 ## Ahegao
 
 ```python
-from pylunar import Client, endpoints
+from lunarapi import Client, endpoints
 from aiohttp import ClientSession
 import asyncio
 
@@ -24,12 +24,12 @@ import lunarapi
 @commands.command()
 async def ahegao(self, ctx):
     async with aiohttp.ClientSession() as session:
-        client = pylunar.Client(
+        client = lunarapi.Client(
             session=session,
             token=token,
         )
         image = await client.request(
-            pylunar.endpoints.nsfw("ahegao")
+            lunarapi.endpoints.nsfw("ahegao")
         )
         data = await image.to_dict()
 
@@ -64,7 +64,7 @@ Remember — This is returning a JSON object!
 ## Ass
 
 ```python
-from pylunar import Client, endpoints
+from lunarapi import Client, endpoints
 from aiohttp import ClientSession
 import asyncio
 
@@ -85,12 +85,12 @@ import lunarapi
 @commands.command()
 async def ass(self, ctx):
     async with aiohttp.ClientSession() as session:
-        client = pylunar.Client(
+        client = lunarapi.Client(
             session=session,
             token=token,
         )
         image = await client.request(
-            pylunar.endpoints.nsfw("ass")
+            lunarapi.endpoints.nsfw("ass")
         )
         data = await image.to_dict()
 
@@ -121,7 +121,7 @@ url | The direct image URL for the image retrieved. You can use this in embeds a
 ## Boobs
 
 ```python
-from pylunar import Client, endpoints
+from lunarapi import Client, endpoints
 from aiohttp import ClientSession
 import asyncio
 
@@ -142,12 +142,12 @@ import lunarapi
 @commands.command()
 async def boobs(self, ctx):
     async with aiohttp.ClientSession() as session:
-        client = pylunar.Client(
+        client = lunarapi.Client(
             session=session,
             token=token,
         )
         image = await client.request(
-            pylunar.endpoints.nsfw("boobs")
+            lunarapi.endpoints.nsfw("boobs")
         )
         data = await image.to_dict()
 
@@ -178,7 +178,7 @@ url | The direct image URL for the image retrieved. You can use this in embeds a
 ## Cum
 
 ```python
-from pylunar import Client, endpoints
+from lunarapi import Client, endpoints
 from aiohttp import ClientSession
 import asyncio
 
@@ -199,12 +199,12 @@ import lunarapi
 @commands.command()
 async def cum(self, ctx):
     async with aiohttp.ClientSession() as session:
-        client = pylunar.Client(
+        client = lunarapi.Client(
             session=session,
             token=token,
         )
         image = await client.request(
-            pylunar.endpoints.nsfw("cum")
+            lunarapi.endpoints.nsfw("cum")
         )
         data = await image.to_dict()
 
@@ -235,7 +235,7 @@ url | The direct image URL for the image retrieved. You can use this in embeds a
 ## Gif
 
 ```python
-from pylunar import Client, endpoints
+from lunarapi import Client, endpoints
 from aiohttp import ClientSession
 import asyncio
 
@@ -256,12 +256,12 @@ import lunarapi
 @commands.command()
 async def gif(self, ctx):
     async with aiohttp.ClientSession() as session:
-        client = pylunar.Client(
+        client = lunarapi.Client(
             session=session,
             token=token,
         )
         image = await client.request(
-            pylunar.endpoints.nsfw("gif")
+            lunarapi.endpoints.nsfw("gif")
         )
         data = await image.to_dict()
 
@@ -292,7 +292,7 @@ url | The direct image URL for the image retrieved. You can use this in embeds a
 ## Hololive
 
 ```python
-from pylunar import Client, endpoints
+from lunarapi import Client, endpoints
 from aiohttp import ClientSession
 import asyncio
 
@@ -313,12 +313,12 @@ import lunarapi
 @commands.command()
 async def hololive(self, ctx):
     async with aiohttp.ClientSession() as session:
-        client = pylunar.Client(
+        client = lunarapi.Client(
             session=session,
             token=token,
         )
         image = await client.request(
-            pylunar.endpoints.nsfw("hololive")
+            lunarapi.endpoints.nsfw("hololive")
         )
         data = await image.to_dict()
 
@@ -349,7 +349,7 @@ url | The direct image URL for the image retrieved. You can use this in embeds a
 ## Jpg
 
 ```python
-from pylunar import Client, endpoints
+from lunarapi import Client, endpoints
 from aiohttp import ClientSession
 import asyncio
 
@@ -370,12 +370,12 @@ import lunarapi
 @commands.command()
 async def jpg(self, ctx):
     async with aiohttp.ClientSession() as session:
-        client = pylunar.Client(
+        client = lunarapi.Client(
             session=session,
             token=token,
         )
         image = await client.request(
-            pylunar.endpoints.nsfw("jpg")
+            lunarapi.endpoints.nsfw("jpg")
         )
         data = await image.to_dict()
 
@@ -406,7 +406,7 @@ url | The direct image URL for the image retrieved. You can use this in embeds a
 ## Neko
 
 ```python
-from pylunar import Client, endpoints
+from lunarapi import Client, endpoints
 from aiohttp import ClientSession
 import asyncio
 
@@ -427,12 +427,12 @@ import lunarapi
 @commands.command()
 async def neko(self, ctx):
     async with aiohttp.ClientSession() as session:
-        client = pylunar.Client(
+        client = lunarapi.Client(
             session=session,
             token=token,
         )
         image = await client.request(
-            pylunar.endpoints.nsfw("neko")
+            lunarapi.endpoints.nsfw("neko")
         )
         data = await image.to_dict()
 
@@ -463,7 +463,7 @@ url | The direct image URL for the image retrieved. You can use this in embeds a
 ## Panties
 
 ```python
-from pylunar import Client, endpoints
+from lunarapi import Client, endpoints
 from aiohttp import ClientSession
 import asyncio
 
@@ -484,12 +484,12 @@ import lunarapi
 @commands.command()
 async def panties(self, ctx):
     async with aiohttp.ClientSession() as session:
-        client = pylunar.Client(
+        client = lunarapi.Client(
             session=session,
             token=token,
         )
         image = await client.request(
-            pylunar.endpoints.nsfw("panties")
+            lunarapi.endpoints.nsfw("panties")
         )
         data = await image.to_dict()
 
@@ -520,7 +520,7 @@ url | The direct image URL for the image retrieved. You can use this in embeds a
 ## Thighs
 
 ```python
-from pylunar import Client, endpoints
+from lunarapi import Client, endpoints
 from aiohttp import ClientSession
 import asyncio
 
@@ -541,12 +541,12 @@ import lunarapi
 @commands.command()
 async def thighs(self, ctx):
     async with aiohttp.ClientSession() as session:
-        client = pylunar.Client(
+        client = lunarapi.Client(
             session=session,
             token=token,
         )
         image = await client.request(
-            pylunar.endpoints.nsfw("thighs")
+            lunarapi.endpoints.nsfw("thighs")
         )
         data = await image.to_dict()
 
@@ -577,7 +577,7 @@ url | The direct image URL for the image retrieved. You can use this in embeds a
 ## Yuri
 
 ```python
-from pylunar import Client, endpoints
+from lunarapi import Client, endpoints
 from aiohttp import ClientSession
 import asyncio
 
@@ -598,12 +598,12 @@ import lunarapi
 @commands.command()
 async def yuri(self, ctx):
     async with aiohttp.ClientSession() as session:
-        client = pylunar.Client(
+        client = lunarapi.Client(
             session=session,
             token=token,
         )
         image = await client.request(
-            pylunar.endpoints.nsfw("yuri")
+            lunarapi.endpoints.nsfw("yuri")
         )
         data = await image.to_dict()
 

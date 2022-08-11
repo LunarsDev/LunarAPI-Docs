@@ -3,7 +3,7 @@
 ## Welcome
 
 ```python
-from pylunar import Client, endpoints
+from lunarapi import Client, endpoints
 from aiohttp import ClientSession
 import asyncio
 
@@ -25,12 +25,12 @@ import discord
 @commands.command()
 async def welcome(self, ctx, *, user: Member, member_count: str):
     async with aiohttp.ClientSession() as session:
-        client = pylunar.Client(
+        client = lunarapi.Client(
             session=session,
             token=token,
         )
         image = await client.request(
-            pylunar.endpoints.generate_welcome,
+            lunarapi.endpoints.generate_welcome,
             avatar=user.avatar.url,
             username=user.name,
             members=member_count
@@ -70,7 +70,7 @@ Remember — This is returning a bytes-like object!
 ## Achievement
 
 ```python
-from pylunar import Client, endpoints
+from lunarapi import Client, endpoints
 from aiohttp import ClientSession
 import asyncio
 
@@ -92,12 +92,12 @@ import discord
 @commands.command()
     async def achievement(self, ctx, *, text: str):
         async with aiohttp.ClientSession() as session:
-            client = pylunar.Client(
+            client = lunarapi.Client(
                 session=session,
                 token=token,
             )
             image = await client.request(
-                pylunar.endpoints.generate_achievement, text=text
+                lunarapi.endpoints.generate_achievement, text=text
             )
 
             await ctx.send(file=await image.file(discord))
@@ -128,7 +128,7 @@ icon | random | Set the icon for the achievement. This is an int 1-45 | False
 ## Amiajoke
 
 ```python
-from pylunar import Client, endpoints
+from lunarapi import Client, endpoints
 from aiohttp import ClientSession
 import asyncio
 
@@ -150,12 +150,12 @@ import discord
 @commands.command()
 async def amiajoke(self, ctx, *, user: discord.User):
     async with aiohttp.ClientSession() as session:
-        client = pylunar.Client(
+        client = lunarapi.Client(
             session=session,
             token=token,
         )
         image = await client.request(
-            pylunar.endpoints.generate_amiajoke, image=user.avatar.url
+            lunarapi.endpoints.generate_amiajoke, image=user.avatar.url
         )
 
         await ctx.send(file=await image.file(discord))
@@ -185,7 +185,7 @@ image | null | Set the image top place on the meme. | True
 ## Bad
 
 ```python
-from pylunar import Client, endpoints
+from lunarapi import Client, endpoints
 from aiohttp import ClientSession
 import asyncio
 
@@ -207,12 +207,12 @@ import discord
 @commands.command()
 async def amiajoke(self, ctx, *, user: discord.User):
     async with aiohttp.ClientSession() as session:
-        client = pylunar.Client(
+        client = lunarapi.Client(
             session=session,
             token=token,
         )
         image = await client.request(
-            pylunar.endpoints.generate_bad, image=user.avatar.url
+            lunarapi.endpoints.generate_bad, image=user.avatar.url
         )
 
         await ctx.send(file=await image.file(discord))
@@ -242,7 +242,7 @@ image | null | Set the image top place on the meme. | True
 ## Calling
 
 ```python
-from pylunar import Client, endpoints
+from lunarapi import Client, endpoints
 from aiohttp import ClientSession
 import asyncio
 
@@ -264,12 +264,12 @@ import discord
 @commands.command()
 async def amiajoke(self, ctx, *, text: str):
     async with aiohttp.ClientSession() as session:
-        client = pylunar.Client(
+        client = lunarapi.Client(
             session=session,
             token=token,
         )
         image = await client.request(
-            pylunar.endpoints.generate_calling, text=text
+            lunarapi.endpoints.generate_calling, text=text
         )
 
         await ctx.send(file=await image.file(discord))
