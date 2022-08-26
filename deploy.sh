@@ -22,7 +22,6 @@ Options:
 
 run_build() {
   bundle exec middleman build --clean
-  echo docs.lunardev.group > CNAME
 }
 
 parse_args() {
