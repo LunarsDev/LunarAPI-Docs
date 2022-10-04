@@ -64,7 +64,7 @@
 <td>True</td>
 </tr>
 <tr>
-<td>membres</td>
+<td>members</td>
 <td>null</td>
 <td>Set the member count for the image</td>
 <td>True</td>
