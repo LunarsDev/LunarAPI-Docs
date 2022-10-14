@@ -35,7 +35,7 @@ async def hug(self, ctx):
         )
         data = await image.to_dict()
 
-        await ctx.send(f"{data["url"]}")
+        await ctx.send(f"{data['url']}")
 ```
 
 > The above returns a JSON object:
@@ -97,7 +97,7 @@ async def pat(self, ctx):
         )
         data = await image.to_dict()
 
-        await ctx.send(f"{data["url"]}")
+        await ctx.send(f"{data['url']}")
 ```
 
 > The above returns a JSON object:
