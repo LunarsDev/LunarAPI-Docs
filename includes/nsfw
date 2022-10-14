@@ -30,7 +30,7 @@
         <span class="p">)</span>
         <span class="n">data</span> <span class="o">=</span> <span class="k">await</span> <span class="n">image</span><span class="p">.</span><span class="n">to_dict</span><span class="p">()</span>
 
-        <span class="k">await</span> <span class="n">ctx</span><span class="p">.</span><span class="n">send</span><span class="p">(</span><span class="sa">f</span><span class="s">"</span><span class="si">{</span><span class="n">data</span><span class="p">[</span><span class="s">"url"</span><span class="p">]</span><span class="si">}</span><span class="s">"</span><span class="p">)</span>
+        <span class="k">await</span> <span class="n">ctx</span><span class="p">.</span><span class="n">send</span><span class="p">(</span><span class="sa">f</span><span class="s">"</span><span class="si">{</span><span class="n">data</span><span class="p">[</span><span class="s">'url'</span><span class="p">]</span><span class="si">}</span><span class="s">"</span><span class="p">)</span>
 </code></pre></div>
 <blockquote>
 <p>The above returns a JSON object:</p>
@@ -93,7 +93,7 @@ Remember — This is returning a JSON object!
         <span class="p">)</span>
         <span class="n">data</span> <span class="o">=</span> <span class="k">await</span> <span class="n">image</span><span class="p">.</span><span class="n">to_dict</span><span class="p">()</span>
 
-        <span class="k">await</span> <span class="n">ctx</span><span class="p">.</span><span class="n">send</span><span class="p">(</span><span class="sa">f</span><span class="s">"</span><span class="si">{</span><span class="n">data</span><span class="p">[</span><span class="s">"url"</span><span class="p">]</span><span class="si">}</span><span class="s">"</span><span class="p">)</span>
+        <span class="k">await</span> <span class="n">ctx</span><span class="p">.</span><span class="n">send</span><span class="p">(</span><span class="sa">f</span><span class="s">"</span><span class="si">{</span><span class="n">data</span><span class="p">[</span><span class="s">'url'</span><span class="p">]</span><span class="si">}</span><span class="s">"</span><span class="p">)</span>
 </code></pre></div>
 <blockquote>
 <p>The above returns a JSON object:</p>
@@ -152,7 +152,7 @@ Remember — This is returning a JSON object!
         <span class="p">)</span>
         <span class="n">data</span> <span class="o">=</span> <span class="k">await</span> <span class="n">image</span><span class="p">.</span><span class="n">to_dict</span><span class="p">()</span>
 
-        <span class="k">await</span> <span class="n">ctx</span><span class="p">.</span><span class="n">send</span><span class="p">(</span><span class="sa">f</span><span class="s">"</span><span class="si">{</span><span class="n">data</span><span class="p">[</span><span class="s">"url"</span><span class="p">]</span><span class="si">}</span><span class="s">"</span><span class="p">)</span>
+        <span class="k">await</span> <span class="n">ctx</span><span class="p">.</span><span class="n">send</span><span class="p">(</span><span class="sa">f</span><span class="s">"</span><span class="si">{</span><span class="n">data</span><span class="p">[</span><span class="s">'url'</span><span class="p">]</span><span class="si">}</span><span class="s">"</span><span class="p">)</span>
 </code></pre></div>
 <blockquote>
 <p>The above returns a JSON object:</p>
@@ -211,7 +211,7 @@ Remember — This is returning a JSON object!
         <span class="p">)</span>
         <span class="n">data</span> <span class="o">=</span> <span class="k">await</span> <span class="n">image</span><span class="p">.</span><span class="n">to_dict</span><span class="p">()</span>
 
-        <span class="k">await</span> <span class="n">ctx</span><span class="p">.</span><span class="n">send</span><span class="p">(</span><span class="sa">f</span><span class="s">"</span><span class="si">{</span><span class="n">data</span><span class="p">[</span><span class="s">"url"</span><span class="p">]</span><span class="si">}</span><span class="s">"</span><span class="p">)</span>
+        <span class="k">await</span> <span class="n">ctx</span><span class="p">.</span><span class="n">send</span><span class="p">(</span><span class="sa">f</span><span class="s">"</span><span class="si">{</span><span class="n">data</span><span class="p">[</span><span class="s">'url'</span><span class="p">]</span><span class="si">}</span><span class="s">"</span><span class="p">)</span>
 </code></pre></div>
 <blockquote>
 <p>The above returns a JSON object:</p>
@@ -270,7 +270,7 @@ Remember — This is returning a JSON object!
         <span class="p">)</span>
         <span class="n">data</span> <span class="o">=</span> <span class="k">await</span> <span class="n">image</span><span class="p">.</span><span class="n">to_dict</span><span class="p">()</span>
 
-        <span class="k">await</span> <span class="n">ctx</span><span class="p">.</span><span class="n">send</span><span class="p">(</span><span class="sa">f</span><span class="s">"</span><span class="si">{</span><span class="n">data</span><span class="p">[</span><span class="s">"url"</span><span class="p">]</span><span class="si">}</span><span class="s">"</span><span class="p">)</span>
+        <span class="k">await</span> <span class="n">ctx</span><span class="p">.</span><span class="n">send</span><span class="p">(</span><span class="sa">f</span><span class="s">"</span><span class="si">{</span><span class="n">data</span><span class="p">[</span><span class="s">'url'</span><span class="p">]</span><span class="si">}</span><span class="s">"</span><span class="p">)</span>
 </code></pre></div>
 <blockquote>
 <p>The above returns a JSON object:</p>
@@ -329,7 +329,7 @@ Remember — This is returning a JSON object!
         <span class="p">)</span>
         <span class="n">data</span> <span class="o">=</span> <span class="k">await</span> <span class="n">image</span><span class="p">.</span><span class="n">to_dict</span><span class="p">()</span>
 
-        <span class="k">await</span> <span class="n">ctx</span><span class="p">.</span><span class="n">send</span><span class="p">(</span><span class="sa">f</span><span class="s">"</span><span class="si">{</span><span class="n">data</span><span class="p">[</span><span class="s">"url"</span><span class="p">]</span><span class="si">}</span><span class="s">"</span><span class="p">)</span>
+        <span class="k">await</span> <span class="n">ctx</span><span class="p">.</span><span class="n">send</span><span class="p">(</span><span class="sa">f</span><span class="s">"</span><span class="si">{</span><span class="n">data</span><span class="p">[</span><span class="s">'url'</span><span class="p">]</span><span class="si">}</span><span class="s">"</span><span class="p">)</span>
 </code></pre></div>
 <blockquote>
 <p>The above returns a JSON object:</p>
@@ -388,7 +388,7 @@ Remember — This is returning a JSON object!
         <span class="p">)</span>
         <span class="n">data</span> <span class="o">=</span> <span class="k">await</span> <span class="n">image</span><span class="p">.</span><span class="n">to_dict</span><span class="p">()</span>
 
-        <span class="k">await</span> <span class="n">ctx</span><span class="p">.</span><span class="n">send</span><span class="p">(</span><span class="sa">f</span><span class="s">"</span><span class="si">{</span><span class="n">data</span><span class="p">[</span><span class="s">"url"</span><span class="p">]</span><span class="si">}</span><span class="s">"</span><span class="p">)</span>
+        <span class="k">await</span> <span class="n">ctx</span><span class="p">.</span><span class="n">send</span><span class="p">(</span><span class="sa">f</span><span class="s">"</span><span class="si">{</span><span class="n">data</span><span class="p">[</span><span class="s">'url'</span><span class="p">]</span><span class="si">}</span><span class="s">"</span><span class="p">)</span>
 </code></pre></div>
 <blockquote>
 <p>The above returns a JSON object:</p>
@@ -447,7 +447,7 @@ Remember — This is returning a JSON object!
         <span class="p">)</span>
         <span class="n">data</span> <span class="o">=</span> <span class="k">await</span> <span class="n">image</span><span class="p">.</span><span class="n">to_dict</span><span class="p">()</span>
 
-        <span class="k">await</span> <span class="n">ctx</span><span class="p">.</span><span class="n">send</span><span class="p">(</span><span class="sa">f</span><span class="s">"</span><span class="si">{</span><span class="n">data</span><span class="p">[</span><span class="s">"url"</span><span class="p">]</span><span class="si">}</span><span class="s">"</span><span class="p">)</span>
+        <span class="k">await</span> <span class="n">ctx</span><span class="p">.</span><span class="n">send</span><span class="p">(</span><span class="sa">f</span><span class="s">"</span><span class="si">{</span><span class="n">data</span><span class="p">[</span><span class="s">'url'</span><span class="p">]</span><span class="si">}</span><span class="s">"</span><span class="p">)</span>
 </code></pre></div>
 <blockquote>
 <p>The above returns a JSON object:</p>
@@ -506,7 +506,7 @@ Remember — This is returning a JSON object!
         <span class="p">)</span>
         <span class="n">data</span> <span class="o">=</span> <span class="k">await</span> <span class="n">image</span><span class="p">.</span><span class="n">to_dict</span><span class="p">()</span>
 
-        <span class="k">await</span> <span class="n">ctx</span><span class="p">.</span><span class="n">send</span><span class="p">(</span><span class="sa">f</span><span class="s">"</span><span class="si">{</span><span class="n">data</span><span class="p">[</span><span class="s">"url"</span><span class="p">]</span><span class="si">}</span><span class="s">"</span><span class="p">)</span>
+        <span class="k">await</span> <span class="n">ctx</span><span class="p">.</span><span class="n">send</span><span class="p">(</span><span class="sa">f</span><span class="s">"</span><span class="si">{</span><span class="n">data</span><span class="p">[</span><span class="s">'url'</span><span class="p">]</span><span class="si">}</span><span class="s">"</span><span class="p">)</span>
 </code></pre></div>
 <blockquote>
 <p>The above returns a JSON object:</p>
@@ -565,7 +565,7 @@ Remember — This is returning a JSON object!
         <span class="p">)</span>
         <span class="n">data</span> <span class="o">=</span> <span class="k">await</span> <span class="n">image</span><span class="p">.</span><span class="n">to_dict</span><span class="p">()</span>
 
-        <span class="k">await</span> <span class="n">ctx</span><span class="p">.</span><span class="n">send</span><span class="p">(</span><span class="sa">f</span><span class="s">"</span><span class="si">{</span><span class="n">data</span><span class="p">[</span><span class="s">"url"</span><span class="p">]</span><span class="si">}</span><span class="s">"</span><span class="p">)</span>
+        <span class="k">await</span> <span class="n">ctx</span><span class="p">.</span><span class="n">send</span><span class="p">(</span><span class="sa">f</span><span class="s">"</span><span class="si">{</span><span class="n">data</span><span class="p">[</span><span class="s">'url'</span><span class="p">]</span><span class="si">}</span><span class="s">"</span><span class="p">)</span>
 </code></pre></div>
 <blockquote>
 <p>The above returns a JSON object:</p>
@@ -624,7 +624,7 @@ Remember — This is returning a JSON object!
         <span class="p">)</span>
         <span class="n">data</span> <span class="o">=</span> <span class="k">await</span> <span class="n">image</span><span class="p">.</span><span class="n">to_dict</span><span class="p">()</span>
 
-        <span class="k">await</span> <span class="n">ctx</span><span class="p">.</span><span class="n">send</span><span class="p">(</span><span class="sa">f</span><span class="s">"</span><span class="si">{</span><span class="n">data</span><span class="p">[</span><span class="s">"url"</span><span class="p">]</span><span class="si">}</span><span class="s">"</span><span class="p">)</span>
+        <span class="k">await</span> <span class="n">ctx</span><span class="p">.</span><span class="n">send</span><span class="p">(</span><span class="sa">f</span><span class="s">"</span><span class="si">{</span><span class="n">data</span><span class="p">[</span><span class="s">'url'</span><span class="p">]</span><span class="si">}</span><span class="s">"</span><span class="p">)</span>
 </code></pre></div>
 <blockquote>
 <p>The above returns a JSON object:</p>
