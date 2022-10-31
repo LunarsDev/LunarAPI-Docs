@@ -27,3 +27,24 @@
 <aside class="notice">
 You must replace <code>JWT</code> with your personal API key.
 </aside>
+<h2 id='register'>Register</h2><div class="highlight"><pre class="highlight plaintext"><code>curl --request POST \
+  --url https://api.lunardev.group/register \
+  --header 'Content-Type: application/json' \
+  --data '{
+    "username": "username",
+    "password": "password"
+}'
+</code></pre></div>
+<blockquote>
+<p>The above returns a JSON object:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"bearer"</span><span class="p">:</span><span class="w"> </span><span class="s2">"eYxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div><h3 id='http-request'>HTTP Request</h3>
+<p><code>POST https://api.lunardev.group/register</code></p>
+<h3 id='returned-data'>Returned data</h3>
+<p>Key | Description
+bearer | LunarAPI Authentication token</p>
+
+<p>Register for a JWT key using username and password in a JSON Body</p>
