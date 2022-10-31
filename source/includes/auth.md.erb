@@ -27,3 +27,33 @@ Lunar expects for the API key to be included in all API requests to the server i
 <aside class="notice">
 You must replace <code>JWT</code> with your personal API key.
 </aside>
+
+## Register
+
+```curl
+curl --request POST \
+  --url https://api.lunardev.group/register \
+  --header 'Content-Type: application/json' \
+  --data '{
+	"username": "username",
+	"password": "password"
+}'
+```
+
+> The above returns a JSON object:
+
+```json
+{
+  "bearer": "eYxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+}
+```
+
+### HTTP Request
+
+`POST https://api.lunardev.group/register`
+
+### Returned data
+Key | Description
+bearer | LunarAPI Authentication token
+
+Register for a JWT key using username and password in a JSON Body
